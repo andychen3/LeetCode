@@ -4,21 +4,15 @@ class Solution:
         
         for token in tokens:
             if token in '+*-/':
-                if token == '+':
-                    second_num = stack.pop()
-                    first_num = stack.pop()
+                second_num = stack.pop()
+                first_num = stack.pop()
+                if token == '+':    
                     stack.append(first_num+second_num)
                 elif token == '*':
-                    second_num = stack.pop()
-                    first_num = stack.pop()
                     stack.append(first_num*second_num)
                 elif token == '-':
-                    second_num = stack.pop()
-                    first_num = stack.pop()
                     stack.append(first_num-second_num)
                 elif token =='/':
-                    second_num = stack.pop()
-                    first_num = stack.pop()
                     stack.append(int(first_num/second_num))
             else:
                 stack.append(int(token))
