@@ -1,15 +1,12 @@
 class Solution:
-    def reverseString(self, s: List[str], start=None, end=None) -> None:
+    def reverseString(self, s: List[str]) -> None:
         """
         Do not return anything, modify s in-place instead.
         """
-        if start == None and end == None:
-            start = 0
-            end = len(s)-1
+        l, r = 0, len(s)-1
         
-        if start >= end:
-            return
-        
-        s[start], s[end] = s[end], s[start]
-        self.reverseString(s, start+1, end-1)
-        
+        while l < r:
+            s[l], s[r] = s[r], s[l]
+            l+= 1
+            r -=1
+        return s
