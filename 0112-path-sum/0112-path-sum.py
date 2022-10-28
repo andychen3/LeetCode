@@ -14,9 +14,10 @@ class Solution:
         
         if not root.left and not root.right:
             return root.val+curr == targetSum
-
         
-        return self.hasPathSum(root.left, targetSum, curr+root.val) or self.hasPathSum(root.right, targetSum, curr+root.val)
+        left = self.hasPathSum(root.left, targetSum, curr+root.val)
+        right = self.hasPathSum(root.right, targetSum, curr+root.val)
+        return left or right
 
             
        
