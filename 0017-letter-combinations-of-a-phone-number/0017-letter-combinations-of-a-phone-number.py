@@ -1,32 +1,60 @@
 class Solution:
     def letterCombinations(self, digits: str) -> List[str]:
-        if not digits:
+        # If the input is empty, immediately return an empty answer array
+        if len(digits) == 0: 
             return []
         
-        digit_hash = {'2':['a','b','c'],
-                      '3':['d','e','f'],
-                      '4':['g','h','i'],
-                      '5':['j','k','l'],
-                      '6':['m','n','o'],
-                      '7':['p','q','r','s'],
-                      '8':['t','u','v'],
-                      '9':['w','x','y','z']}
+        # Map all the digits to their corresponding letters
+        letters = {"2": "abc", "3": "def", "4": "ghi", "5": "jkl", 
+                   "6": "mno", "7": "pqrs", "8": "tuv", "9": "wxyz"}
         
-        def backtrack(curr, i):
-            if len(curr) == len(digits):
-                string = "".join(curr)
-                ans.append(string)
-                return
+        def backtrack(index, path):
+            # If the path is the same length as digits, we have a complete combination
+            if len(path) == len(digits):
+                combinations.append("".join(path))
+                return # Backtrack
+            
+            # Get the letters that the current digit maps to, and loop through them
+            possible_letters = letters[digits[index]]
+            for letter in possible_letters:
+                # Add the letter to our current path
+                path.append(letter)
+                # Move on to the next digit
+                backtrack(index + 1, path)
+                # Backtrack by removing the letter before moving onto the next
+                path.pop()
 
-            for index in range(i, len(digits)):
-                for letters in digit_hash[digits[index]]:
-                    curr.append(letters)
-                    backtrack(curr, i+1)
-                    curr.pop()
-                break
+        # Initiate backtracking with an empty path and starting index of 0
+        combinations = []
+        backtrack(0, [])
+        return combinations
+#         if not digits:
+#             return []
         
-        ans = []
-        backtrack([], 0)
-        return ans
+#         digit_hash = {'2':['a','b','c'],
+#                       '3':['d','e','f'],
+#                       '4':['g','h','i'],
+#                       '5':['j','k','l'],
+#                       '6':['m','n','o'],
+#                       '7':['p','q','r','s'],
+#                       '8':['t','u','v'],
+#                       '9':['w','x','y','z']}
+        
+#         def backtrack(curr, i):
+#             if len(curr) == len(digits):
+#                 string = "".join(curr)
+#                 ans.append(string)
+#                 return
+
+#             for index in range(i, len(digits)):
+#                 for letters in digit_hash[digits[index]]:
+#                     curr.append(letters)
+#                     backtrack(curr, i+1)
+#                     curr.pop()
+#                 break
+        
+#         ans = []
+#         backtrack([], 0)
+#         return ans
         
         
