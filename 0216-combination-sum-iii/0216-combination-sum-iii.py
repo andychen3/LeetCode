@@ -5,10 +5,9 @@ class Solution:
                 return ans.append(arr[:])
             
             for i in range(j, 10):
-                if i not in arr:
-                    arr.append(i)
-                    backtrack(arr, i+1, length+1, total+i)
-                    arr.pop()
+                arr.append(i)
+                backtrack(arr, i+1, length+1, total+i)
+                arr.pop()
             
         ans = []
         backtrack([], 1, 0, 0)
