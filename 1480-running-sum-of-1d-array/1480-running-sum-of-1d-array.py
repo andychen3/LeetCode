@@ -1,8 +1,10 @@
 class Solution:
     def runningSum(self, nums: List[int]) -> List[int]:
-        res = [nums[0]]
+        prefix = [nums[0]]
         
-        for index in range(1,len(nums)):
-            res.append(res[-1]+nums[index])
+        for i in range(1, len(nums)):
+            prefix.append(prefix[-1] + nums[i])
+            
+        return prefix
         
-        return res
+        
