@@ -1,16 +1,25 @@
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
-        hash_s = collections.defaultdict()
-        hash_t = collections.defaultdict()
+        s_hash = collections.defaultdict(int)
+        t_hash = collections.defaultdict(int)
         
-        for index, char in enumerate(s):
-            if char not in hash_s and t[index] not in hash_t:
-                hash_s[char] = t[index]
-                hash_t[t[index]] = char
-            if hash_s.get(char) != t[index] or hash_t.get(t[index]) != char:
-                return False
+        for index, s_char in enumerate(s):
+            t_char = t[index]
+            if s_char not in s_hash and t_char not in t_hash:
+                s_hash[s_char] = t_char
+                t_hash[t_char] = s_char
+            else:
+                if s_char in s_hash and s_hash[s_char] != t_char or t_char in t_hash and t_hash[t_char] != s_char:
+                    return False
         return True
+                
         
+
+            
+        
+        
+        
+
 
                 
                 
