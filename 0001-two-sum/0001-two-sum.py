@@ -1,13 +1,11 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        hash = {}
+        hash_set = collections.defaultdict(int)
         
-        for index, num in enumerate(nums):
-            diff = target-num
-            if diff in hash:
-                return [index, hash[diff]]
-            hash[num] = index
+        for index, val in enumerate(nums):
+            diff = target-val
+            if diff in hash_set:
+                return [index, hash_set[diff]]
+            hash_set[val] = index
         
-
-
         
