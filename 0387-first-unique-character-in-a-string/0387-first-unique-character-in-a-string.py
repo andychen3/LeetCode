@@ -1,11 +1,12 @@
 class Solution:
     def firstUniqChar(self, s: str) -> int:
-        s_hash = collections.Counter(s)
-        res = -1
+        s_count = Counter(s)
         
         for index, char in enumerate(s):
-            if s_hash[char] == 1:
-                res = index
+            if s_count[char] == 1:
                 return index
-        return res
+            
+        return -1
+            
+
         
