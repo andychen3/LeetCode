@@ -11,19 +11,16 @@ class Solution:
         even = head.next
         evenHead = even
         odd = head
-        beginning = odd
         
-        while odd and odd.next:
+        while even and even.next:
             temp = odd.next.next
             odd.next = odd.next.next
-            if odd.next == None:
-                break
             odd = temp
             even.next = odd.next
             even = even.next
         
         odd.next = evenHead
-        return beginning
+        return head
             
             
 
