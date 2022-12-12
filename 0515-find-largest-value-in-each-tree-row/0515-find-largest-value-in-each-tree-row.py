@@ -9,20 +9,20 @@ class Solution:
         if not root:
             return []
         
-        queue = collections.deque([root])
-        res = []
+        ans = []
+        q = collections.deque([root])
         
-        while queue:
-            current_level = len(queue)
-            max_val = float('-inf')
+        while q:
+            level = len(q)
+            curr_max = float('-inf')
             
-            for _ in range(current_level):
-                node = queue.popleft()
-                max_val = max(max_val, node.val)
+            for _ in range(level):
+                node = q.popleft()
+                curr_max = max(curr_max, node.val)
                 if node.left:
-                    queue.append(node.left)
+                    q.append(node.left)
                 if node.right:
-                    queue.append(node.right)
-            res.append(max_val)
-        return res
-        
+                    q.append(node.right)
+            ans.append(curr_max)
+            
+        return ans
