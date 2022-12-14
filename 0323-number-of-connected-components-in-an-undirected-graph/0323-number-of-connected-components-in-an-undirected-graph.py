@@ -14,12 +14,10 @@ class Solution:
             
         seen = set()
         ans = 0
-        for neigh in graph:
+        for neigh in range(n):
             if neigh not in seen:
                 dfs(neigh, graph[neigh])
                 ans += 1
-        
-        if len(graph) < n:
-            ans += n - len(graph)
+
         return ans
             
