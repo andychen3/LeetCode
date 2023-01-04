@@ -1,26 +1,30 @@
+from collections import deque
 class Solution:
     def updateMatrix(self, mat: List[List[int]]) -> List[List[int]]:
-        rows = len(mat)
-        cols = len(mat[0])
-        
-        q = deque()
+        m = len(mat)
+        n = len(mat[0])
+        queue = deque()
         seen = set()
         
-        for r in range(rows):
-            for c in range(cols):
-                if mat[r][c] == 0:
-                    q.append((r, c, 1))
-                    seen.add((r,c))
+        for row in range(m):
+            for col in range(n):
+                if mat[row][col] == 0:
+                    queue.append((row, col, 1))
+                    seen.add((row, col))
+                    
+        directions = [(0,1), (1,0), (0,-1), (-1,0)]
+        
+        def valid(row, col):
+            return 0 <= row < m and 0 <= col < n and mat[row][col] == 1
+        
+        while queue:
+            row, col, steps = queue.popleft()
             
-        while q:
-            r, c, distance = q.popleft()
-            for x, y in ((0,1), (0,-1), (1,0), (-1,0)):
-                new_x = r + x
-                new_y = c + y
-                if new_x < rows and new_x >= 0 and new_y < cols and new_y >= 0 and (new_x, new_y) not in seen:
-                    seen.add((new_x, new_y))
-                    q.append((new_x, new_y, distance + 1))
-                    mat[new_x][new_y] = distance
-
+            for dx, dy in directions:
+                next_row, next_col = row + dx, col + dy
+                if (next_row, next_col) not in seen and valid(next_row, next_col):
+                    seen.add((next_row, next_col))
+                    queue.append((next_row, next_col, steps+1))
+                    mat[next_row][next_col] = steps
+                    
         return mat
-            
