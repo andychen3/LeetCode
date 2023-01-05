@@ -10,7 +10,7 @@ class Solution:
         if not root:
             return
         
-        if root == q or root == p:
+        if root == p or root == q:
             return root
         
         left = self.lowestCommonAncestor(root.left, p, q)
@@ -20,4 +20,12 @@ class Solution:
             return root
         
         return left or right
+        #three cases
+        
+        # if p or q is the root then teh answer is root
+        
+        # if p is left of root and q is right of root then answer is root
+        
+        # if p or q is found in the subtree but not found in the other then return left or right
+        
         
