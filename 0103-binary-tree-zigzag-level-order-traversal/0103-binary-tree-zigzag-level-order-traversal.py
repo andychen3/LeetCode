@@ -16,22 +16,19 @@ class Solution:
         
         while queue:
             q_len = len(queue)
-            curr_level = []
+            curr_level = deque()
             
             for _ in range(q_len):
+                node = queue.popleft()
                 if flag:
-                    node = queue.popleft()
-                    if node.left:
-                        queue.append(node.left)
-                    if node.right:
-                        queue.append(node.right)
+                    curr_level.append(node.val)    
                 else:
-                    node = queue.pop()
-                    if node.right:
-                        queue.appendleft(node.right)
-                    if node.left:
-                        queue.appendleft(node.left)
-                curr_level.append(node.val)
+                    curr_level.appendleft(node.val)    
+                        
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
                 
             if flag:
                 flag = False
