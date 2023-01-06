@@ -9,10 +9,10 @@ class Solution:
         if not p and not q:
             return True
         
-        if not p and q:
+        if p and not q:
             return False
         
-        if p and not q:
+        if not p and q:
             return False
         
         if p.val != q.val:
@@ -21,4 +21,4 @@ class Solution:
         left = self.isSameTree(p.left, q.left)
         right = self.isSameTree(p.right, q.right)
         return left and right
-        
+            
