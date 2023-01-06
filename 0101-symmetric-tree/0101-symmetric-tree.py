@@ -10,15 +10,11 @@ class Solution:
             if not node1 and not node2:
                 return True
             
-            if not node1 or not node2:
-                return False
-            
-            if node1.val == node2.val:
-                left = dfs(node1.left, node2.right)
-                right = dfs(node1.right, node2.left)
-                return left and right
-            
-            
+            if node1 and node2:
+                if node1.val == node2.val:
+                    left = dfs(node1.left, node2.right)
+                    right = dfs(node1.right, node2.left)
+                    return left and right
         
         return dfs(root, root)
 
