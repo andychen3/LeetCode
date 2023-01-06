@@ -4,44 +4,39 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+from collections import deque
 class Solution:
     def zigzagLevelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         if not root:
             return []
         
+        queue = deque([root])
         ans = []
-        q = collections.deque([root])
-        direction = 'left'
+        flag = True
         
-        while q:
-            levels = len(q)
-            curr_level = []
+        while queue:
+            q_len = len(queue)
+            curr_level = deque()
             
-            for _ in range(levels):
-                if direction == 'left':
-                    node = q.popleft()
+            for _ in range(q_len):
+                node = queue.popleft()
+                if flag:
+                    curr_level.append(node.val)    
                 else:
-                    node = q.pop()
-                curr_level.append(node.val)
+                    curr_level.appendleft(node.val)    
+                        
+                if node.left:
+                    queue.append(node.left)
+                if node.right:
+                    queue.append(node.right)
                 
-                if direction is 'left':
-                    if node.left:
-                        q.append(node.left)
-                    if node.right:
-                        q.append(node.right)
-                else:
-                    if node.right:
-                        q.appendleft(node.right)
-                    if node.left:
-                        q.appendleft(node.left)
-                            
-            ans.append(curr_level)
-            
-            if direction == 'left':
-                direction = 'right'
+            if flag:
+                flag = False
             else:
-                direction = 'left'
-        
+                flag = True
+            ans.append(curr_level)
         return ans
                 
+                
+            
         
