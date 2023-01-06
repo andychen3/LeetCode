@@ -10,19 +10,19 @@ class Solution:
         if not root:
             return []
         
-        q = deque([root])
+        queue = deque([root])
         ans = []
         
-        while q:
-            level = len(q)
+        while queue:
+            queue_len = len(queue)
+            ans.append(queue[-1].val)
             
-            
-            for _ in range(level):
-                node = q.popleft()
+            for _ in range(queue_len):
+                node = queue.popleft()
                 if node.left:
-                    q.append(node.left)
+                    queue.append(node.left)
                 if node.right:
-                    q.append(node.right)
-            ans.append(node.val)
+                    queue.append(node.right)
+        
         return ans
         
