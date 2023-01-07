@@ -6,8 +6,8 @@
 #         self.right = right
 class Solution:
     def isSymmetric(self, root: Optional[TreeNode]) -> bool:
-        # if not root:
-        #     return True
+        if not root:
+            return True
         
         def dfs(node1, node2):
             if not node1 and not node2:
@@ -15,9 +15,7 @@ class Solution:
             
             if node1 and node2:
                 if node1.val == node2.val:
-                    left = dfs(node1.left, node2.right)
-                    right = dfs(node1.right, node2.left)
-                    return left and right
+                    return dfs(node1.left, node2.right) and dfs(node1.right, node2.left)
         
         return dfs(root, root)
         
