@@ -15,9 +15,9 @@ class Solution:
             
             if node1 and node2:
                 if node1.val == node2.val:
-                    return dfs(node1.left, node2.right) and dfs(node1.right, node2.left)
-        
-        return dfs(root, root)
-        
+                    left = dfs(node1.left, node2.right)
+                    right = dfs(node1.right, node2.left)
+                    return left and right
             
+        return dfs(root, root)
         
