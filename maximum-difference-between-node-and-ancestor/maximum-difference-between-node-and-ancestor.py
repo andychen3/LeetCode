@@ -8,11 +8,13 @@ class Solution:
     def maxAncestorDiff(self, root: Optional[TreeNode]) -> int:
         def dfs(node, curr_max, curr_min):
             if not node:
-                return curr_max-curr_min
+                return 0
             
-            left = dfs(node.left, max(curr_max, node.val), min(curr_min, node.val))
-            right = dfs(node.right, max(curr_max, node.val), min(curr_min, node.val))
+            self.ans = max(self.ans, curr_max-node.val, node.val-curr_min)
             
-            return max(left, right)
-            
-        return dfs(root, root.val, root.val)
+            dfs(node.left, max(curr_max, node.val), min(curr_min, node.val))
+            dfs(node.right, max(curr_max, node.val), min(curr_min, node.val))
+        
+        self.ans = 0    
+        dfs(root, root.val, root.val)
+        return self.ans
