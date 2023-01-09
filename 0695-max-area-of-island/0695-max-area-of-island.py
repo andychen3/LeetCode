@@ -1,29 +1,32 @@
 class Solution:
     def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
-        result = 0
         rows = len(grid)
         cols = len(grid[0])
         seen = set()
+        directions = [(0,1), (0,-1), (1,0), (-1,0)]
+        max_area = 0
         
-        def validate(r, c):
-            return r < rows and r >= 0 and c < cols and c >= 0 and grid[r][c] == 1
+        def valid(row, col):
+            return 0 <= row < rows and 0 <= col < cols and grid[row][col] == 1
         
-        def dfs(x,y, tracker):
-            for x1, y1 in ((0,1), (0,-1), (1,0), (-1,0)):
-                new_x = x + x1
-                new_y = y + y1
-                if validate(new_x, new_y) and (new_x, new_y) not in seen:
-                    tracker += 1
-                    seen.add((new_x, new_y))
-                    grid[new_x][new_y] = 0
-                    tracker = dfs(new_x, new_y, tracker)
-            return tracker
+        def dfs(x, y):
+            area = 1
             
+            for dx, dy in directions:
+                new_x = x + dx
+                new_y = y + dy
+                if valid(new_x, new_y) and (new_x, new_y) not in seen:
+                    seen.add((new_x, new_y))
+                    # area += 1
+                    area += dfs(new_x, new_y)
+            
+            return area
+        
         for r in range(rows):
             for c in range(cols):
-                if grid[r][c] == 1:
+                if grid[r][c] == 1 and (r,c) not in seen:
                     seen.add((r,c))
-                    result = max(result, dfs(r, c, 1))
+                    max_area = max(dfs(r, c), max_area)
+        return max_area
                     
-        return result
-            
+                    
