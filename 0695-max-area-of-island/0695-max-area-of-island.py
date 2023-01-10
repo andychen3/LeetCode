@@ -17,7 +17,6 @@ class Solution:
                 new_y = y + dy
                 if valid(new_x, new_y) and (new_x, new_y) not in seen:
                     seen.add((new_x, new_y))
-                    # area += 1
                     area += dfs(new_x, new_y)
             
             return area
