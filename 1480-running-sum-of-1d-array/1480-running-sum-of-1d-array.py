@@ -3,8 +3,6 @@ class Solution:
         prefix = [nums[0]]
         
         for i in range(1, len(nums)):
-            prefix.append(prefix[-1] + nums[i])
-            
+            prefix.append(nums[i] + prefix[-1])
+        
         return prefix
-        
-        
