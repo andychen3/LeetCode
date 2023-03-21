@@ -1,18 +1,8 @@
 class Solution:
     def minStartValue(self, nums: List[int]) -> int:
-        res = 1
+        prefix = [nums[0]]
         
         for i in range(1, len(nums)):
-            nums[i] = nums[i-1]+nums[i]
+            prefix.append(nums[i] + prefix[-1])
             
-        for num in nums:
-            if num >= 1:
-                continue
-            else:
-                res = max(res, abs(num-1))
-                
-        return res
-
-            
-
-        
+        return abs(min(prefix)) + 1 if min(prefix) < 0 else 1
