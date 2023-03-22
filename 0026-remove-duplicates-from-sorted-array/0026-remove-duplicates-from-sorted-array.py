@@ -1,19 +1,9 @@
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        left, right = 1, 1
+        index = 1 #This is where to insert the next unique element
         
-        
-        while right < len(nums):
-            # only increment left when you swap
-            if nums[left-1] != nums[right]:
-                nums[left] = nums[right]
-                left += 1
-            right += 1
-            
-        return left
-
-
-            
-
-
-            
+        for right in range(1, len(nums)):
+            if nums[index-1] != nums[right]:
+                nums[index] = nums[right]
+                index += 1
+        return index
