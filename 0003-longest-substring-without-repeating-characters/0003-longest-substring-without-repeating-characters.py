@@ -1,17 +1,18 @@
+from collections import defaultdict
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        char_set = set()
-        longest_sub = 0
-        window_start = 0
+        hash_table = defaultdict(int)
+        ans = 0
+        left = 0
         
-        for window_end, char in enumerate(s):    
-            while char in char_set:
-                char_set.remove(s[window_start])
-                window_start += 1
-            
-            char_set.add(char)
-            longest_sub = max(longest_sub, len(char_set))
-            
-            
-        return longest_sub
-            
+        for right, val in enumerate(s):
+            hash_table[val] += 1    
+            while hash_table[val] > 1:
+                left_char = s[left]
+                hash_table[left_char] -= 1
+                if hash_table[left_char] == 0:
+                    del hash_table[left_char]
+                left += 1
+            ans = max(ans, right - left + 1)
+        
+        return ans
