@@ -1,14 +1,12 @@
+from collections import Counter
 class Solution:
     def numJewelsInStones(self, jewels: str, stones: str) -> int:
-        jewels_set = set(jewels)
-        res = 0
+        counter = Counter(stones)
+        ans = 0
         
-        for rocks in stones:
-            if rocks in jewels_set:
-                res += 1
-        return res
-
-
-        
-            
+        for rocks in counter:
+            if rocks in jewels:
+                ans += counter[rocks]
+                
+        return ans
         
