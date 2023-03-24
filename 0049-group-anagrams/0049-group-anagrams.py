@@ -1,10 +1,9 @@
+from collections import defaultdict
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        hash = collections.defaultdict(list)
+        group_hash = defaultdict(list)
         
-        for word in strs:
-            sorted_word = "".join(sorted(word))
-            hash[sorted_word].append(word)
-
-        return list(hash.values())
-        
+        for vals in strs:
+            group_hash[tuple(sorted(vals))].append(vals)
+            
+        return list(group_hash.values())
