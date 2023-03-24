@@ -1,10 +1,12 @@
+from collections import Counter
 class Solution:
     def largestUniqueNumber(self, nums: List[int]) -> int:
-        counter = collections.Counter(nums)
-        max_int = -1
+        counter = Counter(nums)
         
-        for key, value in counter.items():
-            if value == 1:
-                max_int = max(max_int, key)            
+        max_num = -1
         
-        return max_int
+        for key, val in counter.items():
+            if val == 1:
+                max_num = max(max_num, key)
+                
+        return max_num
