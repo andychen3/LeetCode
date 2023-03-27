@@ -12,7 +12,8 @@ class Solution:
         left = self.minDepth(root.left)
         right = self.minDepth(root.right)
         
-        if left and right:
-            return min(left, right) + 1
-        else:
+        if left and not right or right and not left:
             return max(left, right) + 1
+        
+        
+        return min(left, right)+1
