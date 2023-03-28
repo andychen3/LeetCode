@@ -10,13 +10,15 @@ class Solution:
             if not node:
                 return []
             
-            return inorder(node.left)+ [node.val] + inorder(node.right)
+            left = inorder(node.left)
+            right = inorder(node.right)
+            
+            return left + [node.val] + right
         
-        values = inorder(root)
-        ans = float('inf')
+        sorted_list = inorder(root)
+        n = len(sorted_list)
+        ans = float("inf")
         
-        for i in range(1, len(values)):
-            ans = min(ans, values[i]-values[i-1])
+        for i in range(n-1):
+            ans = min(ans, sorted_list[i+1] - sorted_list[i])
         return ans
-        
-        
