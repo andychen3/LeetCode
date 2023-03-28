@@ -15,19 +15,16 @@ class Solution:
         seen = set()
         
         while queue:
-            queue_len = len(queue)
-            
-            for _ in range(queue_len):
-                x, y, steps = queue.popleft()
-                
-                if (x, y) == (row-1, col-1):
-                    return steps
-                
-                for dx, dy in directions:
-                    new_x, new_y = dx + x, dy + y
-                    if valid(new_x, new_y) and (new_x, new_y) not in seen:
-                        seen.add((new_x, new_y))
-                        queue.append((new_x, new_y, steps+1))
+            x, y, steps = queue.popleft()
+
+            if (x, y) == (row-1, col-1):
+                return steps
+
+            for dx, dy in directions:
+                new_x, new_y = dx + x, dy + y
+                if valid(new_x, new_y) and (new_x, new_y) not in seen:
+                    seen.add((new_x, new_y))
+                    queue.append((new_x, new_y, steps+1))
                         
         return -1
                         
