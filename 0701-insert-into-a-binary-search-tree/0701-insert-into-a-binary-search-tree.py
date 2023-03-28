@@ -6,14 +6,18 @@
 #         self.right = right
 class Solution:
     def insertIntoBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
-        if not root:
-            return TreeNode(val)
+        def insert(node, value):
+            if not node:
+                return TreeNode(value)
+            
+            if value < node.val:
+                node.left = insert(node.left, value)
+                
+            if value > node.val:
+                node.right = insert(node.right, value)
+                
+            return node
         
-        if val < root.val:
-            root.left = self.insertIntoBST(root.left, val)
-            
-        if val > root.val:
-            root.right = self.insertIntoBST(root.right, val)
-            
-        return root
+        return insert(root, val)
+        
         
