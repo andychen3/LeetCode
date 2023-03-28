@@ -12,31 +12,31 @@ class Solution:
         
         queue = deque([root])
         ans = []
-        flag = True
+        left = True
         
         while queue:
-            q_len = len(queue)
-            curr_level = deque()
+            queue_len = len(queue)
+            level = []
             
-            for _ in range(q_len):
-                node = queue.popleft()
-                if flag:
-                    curr_level.append(node.val)    
+            for _ in range(queue_len):
+                if left:
+                    node = queue.popleft()
+                    if node.left:
+                        queue.append(node.left)
+                    if node.right:
+                        queue.append(node.right)
                 else:
-                    curr_level.appendleft(node.val)    
-                        
-                if node.left:
-                    queue.append(node.left)
-                if node.right:
-                    queue.append(node.right)
-                
-            if flag:
-                flag = False
-            else:
-                flag = True
-            ans.append(curr_level)
-        return ans
-                
-                
+                    node = queue.pop()
+                    if node.right:
+                        queue.appendleft(node.right)
+                    if node.left:
+                        queue.appendleft(node.left)
+                          
+                level.append(node.val)       
             
-        
+            ans.append(level)
+            if left:
+                left = False
+            else:
+                left = True
+        return ans
