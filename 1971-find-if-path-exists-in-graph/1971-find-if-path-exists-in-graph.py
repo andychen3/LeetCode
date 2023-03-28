@@ -20,7 +20,7 @@ class Solution:
                     seen.add(neighbors)
                     if dfs(neighbors):
                         return True
-            return False
+
 
         seen = {source}
         
