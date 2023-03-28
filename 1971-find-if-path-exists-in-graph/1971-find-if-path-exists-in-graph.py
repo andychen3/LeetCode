@@ -2,8 +2,6 @@
 from collections import defaultdict
 class Solution:
     def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
-        if source == destination:
-            return True
         
         graph = defaultdict(list)
         
