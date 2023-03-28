@@ -19,12 +19,13 @@ class Solution:
             
             for _ in range(queue_len):
                 node = queue.popleft()
-                curr_max = max(curr_max, node.val)
+                curr_max = max(node.val, curr_max)
+                
                 if node.left:
                     queue.append(node.left)
+                    
                 if node.right:
                     queue.append(node.right)
                     
             ans.append(curr_max)
         return ans
-        
