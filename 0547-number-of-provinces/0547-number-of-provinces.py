@@ -1,15 +1,7 @@
 class Solution:
     def findCircleNum(self, isConnected: List[List[int]]) -> int:
-        N = len(isConnected)
-        seen = set()
-        ans = 0
         graph = collections.defaultdict(list)
-        
-        for r in range(N):
-            for c in range(r+1, N):
-                if isConnected[r][c] == 1:
-                    graph[r].append(c)
-                    graph[c].append(r)
+        n = len(isConnected)
 
         def dfs(node):
             for neighbors in graph[node]:
@@ -17,14 +9,23 @@ class Solution:
                     seen.add(neighbors)
                     dfs(neighbors)
         
-        for i in range(N):
+        
+        for x in range(n):
+            for y in range(x + 1, n):
+                if isConnected[x][y]:
+                    graph[x].append(y)
+                    graph[y].append(x)
+        
+        
+        
+        seen = set()
+        ans = 0
+        
+        for i in range(n):
             if i not in seen:
-                ans += 1
                 seen.add(i)
                 dfs(i)
+                ans += 1
         return ans
         
-            
-        
-    
         
