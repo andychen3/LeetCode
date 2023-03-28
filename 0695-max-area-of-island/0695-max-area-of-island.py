@@ -1,31 +1,29 @@
 class Solution:
     def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
-        rows = len(grid)
-        cols = len(grid[0])
-        seen = set()
-        directions = [(0,1), (0,-1), (1,0), (-1,0)]
-        max_area = 0
+        def valid(r, c):
+            return 0 <= r < row and 0 <= c < col and grid[r][c] == 1
         
-        def valid(row, col):
-            return 0 <= row < rows and 0 <= col < cols and grid[row][col] == 1
+        
         
         def dfs(x, y):
-            area = 1
-            
-            for dx, dy in directions:
-                new_x = x + dx
-                new_y = y + dy
+            ans = 1
+            for dx, dy in ((0,1), (1,0), (-1,0), (0,-1)):
+                new_x, new_y = dx + x, dy + y
                 if valid(new_x, new_y) and (new_x, new_y) not in seen:
                     seen.add((new_x, new_y))
-                    area += dfs(new_x, new_y)
-            
-            return area
+                    ans += dfs(new_x, new_y)
+            return ans
         
-        for r in range(rows):
-            for c in range(cols):
-                if grid[r][c] == 1 and (r,c) not in seen:
+        
+        row = len(grid)
+        col = len(grid[0])
+        seen = set()
+        ans = 0
+        
+        for r in range(row):
+            for c in range(col):
+                if grid[r][c] and (r,c) not in seen:
                     seen.add((r,c))
-                    max_area = max(dfs(r, c), max_area)
-        return max_area
-                    
+                    ans = max(ans, dfs(r, c))
+        return ans
                     
