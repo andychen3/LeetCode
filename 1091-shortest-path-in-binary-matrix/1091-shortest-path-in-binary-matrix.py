@@ -1,38 +1,36 @@
 from collections import deque
 class Solution:
     def shortestPathBinaryMatrix(self, grid: List[List[int]]) -> int:
-        def valid(rows, cols):
-            return rows < N and rows >= 0 and cols < col and cols >= 0 and grid[rows][cols] == 0
-        
-        N = len(grid)
-        col = len(grid[0])
-        if grid[0][0] or grid[N-1][N-1]:
+        if grid[0][0] == 1:
             return -1
         
-        q = deque([(0,0)])
-        seen = {(0,0)}
-        directions = ((0,1), (0,-1), (1,0), (-1,0), (1,1), (-1,-1), (-1,1), (1,-1))
-        steps = 1
+        def valid(r, c):
+            return 0 <= r < row and 0 <= c < col and grid[r][c] == 0
         
-        while q:
-            q_len = len(q)
+        
+        row = len(grid)
+        col = len(grid[0])
+        queue = deque([(0,0,1)])
+        directions = ((0,1), (1,0), (0,-1), (-1,0), (1,1), (1,-1), (-1,1), (-1,-1))
+        seen = set()
+        
+        while queue:
+            queue_len = len(queue)
             
-            for _ in range(q_len):
-                x, y = q.popleft()
-
-                if (x, y) == (N-1, N-1):
-                        return steps
-
-                for x1, y1 in directions:
-                    new_x = x + x1
-                    new_y = y + y1
-
+            for _ in range(queue_len):
+                x, y, steps = queue.popleft()
+                
+                if (x, y) == (row-1, col-1):
+                    return steps
+                
+                for dx, dy in directions:
+                    new_x, new_y = dx + x, dy + y
                     if valid(new_x, new_y) and (new_x, new_y) not in seen:
                         seen.add((new_x, new_y))
-                        q.append((new_x, new_y))
-            steps += 1
-
+                        queue.append((new_x, new_y, steps+1))
+                        
         return -1
-            
-            
-       
+                        
+        
+        
+        
