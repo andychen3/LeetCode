@@ -1,15 +1,14 @@
 import heapq
 class Solution:
     def minStoneSum(self, piles: List[int], k: int) -> int:
-        max_heap = [-x for x in piles]
+        piles = [-pile for pile in piles]
+        heapq.heapify(piles)
+        i = 0
         
-        heapq.heapify(max_heap)
+        while i < k:
+            rocks = heapq.heappop(piles)
+            heapq.heappush(piles, rocks//2)
+            i += 1
         
-        while k > 0:
-            k -= 1
-            largest_pile = heapq.heappop(max_heap)
-            heapq.heappush(max_heap, (largest_pile//2))
+        return abs(sum(piles))
             
-        return abs(sum(max_heap))
-        
-        
