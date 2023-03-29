@@ -6,7 +6,7 @@ class Solution:
         for x, y in edges:
             graph[x].append(y)
             graph[y].append(x)
-
+            
         def dfs(node):
             if node == destination:
                 return True
@@ -14,14 +14,10 @@ class Solution:
             for neighbors in graph[node]:
                 if neighbors not in seen:
                     seen.add(neighbors)
-                    result = dfs(neighbors)
-                    if result:
+                    if dfs(neighbors):
                         return True
-            
             return False
-                    
-        
+            
         seen = {source}
         return dfs(source)
         
-            
