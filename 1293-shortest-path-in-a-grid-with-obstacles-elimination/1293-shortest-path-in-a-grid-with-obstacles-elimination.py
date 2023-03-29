@@ -1,39 +1,33 @@
+
 from collections import deque
 class Solution:
     def shortestPath(self, grid: List[List[int]], k: int) -> int:
-        rows = len(grid)
-        cols = len(grid[0])
-        
-        q = deque([(0,0,k,0)])
+        queue = deque([(0,0,k,0)])
         seen = {(0,0,k)}
-        directions = [(0,1), (0,-1), (1,0), (-1,0)]
+        row = len(grid)
+        col = len(grid[0])
+        directions = ((0,1), (1,0), (-1,0), (0,-1))
         
-        def valid(row, col):
-            return row < rows and row >= 0 and col < cols and col >= 0
+        def valid(r, c):
+            return 0 <= r < row and 0 <= c < col
         
-        while q:
-            x, y, obstacles, steps = q.popleft()
-
-            if (x, y) == (rows-1, cols-1):
+        while queue:
+            x, y, remaining, steps = queue.popleft()
+            
+            if (x, y) == (row-1, col-1):
                 return steps
-
-            for r, c in directions:
-                new_x = x + r
-                new_y = y + c
-
-                if valid(new_x, new_y):
-
-                    if grid[new_x][new_y] == 1 and obstacles > 0 and (new_x, new_y, obstacles-1) not in seen:
-                        seen.add((new_x, new_y, obstacles-1))
-                        q.append((new_x, new_y, obstacles-1, steps+1))
-                    elif grid[new_x][new_y] == 0 and (new_x, new_y, obstacles) not in seen:
-                        seen.add((new_x, new_y, obstacles))
-                        q.append((new_x, new_y, obstacles, steps+1))
-        
+            
+            for dx, dy in directions:
+                new_x, new_y = dx + x, dy + y
+                
+                if valid(new_x, new_y) and (new_x, new_y, remaining) not in seen:
+                    if grid[new_x][new_y] == 0:
+                        seen.add((new_x, new_y, remaining))
+                        queue.append((new_x, new_y, remaining, steps + 1))
+                    elif remaining and (new_x, new_y, remaining - 1) not in seen:
+                        seen.add((new_x, new_y, remaining - 1))
+                        queue.append((new_x, new_y, remaining - 1, steps + 1))
+                        
         return -1
-                            
-                    
-                    
-
-                            
+            
             
