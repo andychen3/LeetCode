@@ -20,10 +20,11 @@ class Solution:
             for dx, dy in directions:
                 new_x, new_y = dx + x, dy + y
                 
-                if valid(new_x, new_y) and (new_x, new_y, remaining) not in seen:
+                if valid(new_x, new_y):
                     if grid[new_x][new_y] == 0:
-                        seen.add((new_x, new_y, remaining))
-                        queue.append((new_x, new_y, remaining, steps + 1))
+                        if (new_x, new_y, remaining) not in seen:
+                            seen.add((new_x, new_y, remaining))
+                            queue.append((new_x, new_y, remaining, steps + 1))
                     elif remaining and (new_x, new_y, remaining - 1) not in seen:
                         seen.add((new_x, new_y, remaining - 1))
                         queue.append((new_x, new_y, remaining - 1, steps + 1))
