@@ -1,29 +1,28 @@
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
-        def valid(x, y):
-            return x >= 0 and x < rows and y >= 0 and y < cols and grid[x][y] == '1'
+        
+        def valid(r, c):
+            return 0 <= r < row and 0 <= c < col and grid[r][c] == "1"
         
         
         def dfs(x, y):
-            for x1, y1 in directions:
-                new_x = x + x1
-                new_y = y + y1
+            for dx, dy in directions:
+                new_x, new_y = dx + x, dy + y
                 if valid(new_x, new_y) and (new_x, new_y) not in seen:
                     seen.add((new_x, new_y))
                     dfs(new_x, new_y)
         
-        rows = len(grid)
-        cols = len(grid[0])
+        row = len(grid)
+        col = len(grid[0])
         seen = set()
-        directions = ((0,1), (1,0), (0,-1), (-1,0))
+        directions = ((0,1), (1,0), (-1,0), (0,-1))
         ans = 0
         
-        for r in range(rows):
-            for c in range(cols):
-                if grid[r][c] == '1' and (r,c) not in seen:
+        for r in range(row):
+            for c in range(col):
+                if grid[r][c] == "1" and (r,c) not in seen:
                     ans += 1
+                    seen.add((r,c))
                     dfs(r,c)
-                    
         return ans
                     
-        
