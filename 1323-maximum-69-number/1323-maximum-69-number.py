@@ -1,9 +1,10 @@
 class Solution:
     def maximum69Number (self, num: int) -> int:
-        string_num = [digit for digit in str(num)]
+        new = list(str(num))
         
-        for index, digits in enumerate(string_num):
-            if digits == '6':
-                string_num[index] = '9'
+        for index, n in enumerate(new):
+            if n == '6':
+                new[index] = '9'
                 break
-        return int("".join(string_num))
+        
+        return int("".join(new))
