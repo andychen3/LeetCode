@@ -13,10 +13,10 @@ class Solution:
             
             if number == target:
                 return True
-            if number > target:
-                right = mid -1
-            else:
+            if number < target:
                 left = mid + 1
+            else:
+                right = mid -1
         return False
         
         
