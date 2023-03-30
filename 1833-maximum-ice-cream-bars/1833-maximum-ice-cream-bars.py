@@ -10,8 +10,6 @@ class Solution:
             if money + cost <= coins:
                 money += cost
                 ans += 1
-            else:
-                break
         
         return ans
             
