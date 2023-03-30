@@ -1,24 +1,17 @@
 class Solution:
     def maximumUnits(self, boxTypes: List[List[int]], truckSize: int) -> int:
-        boxTypes.sort(key=lambda x: x[1], reverse=True)
-        total_units = 0
-        total_boxes = 0
+        by_units = sorted(boxTypes, key=lambda x:-x[1])
+        size = 0
+        total = 0
         
-        for boxes in boxTypes:
-            num_boxes = boxes[0]
-            unit_per_box = boxes[1]
-            difference = truckSize-total_boxes
+        for num_boxes, units in by_units:
+            if truckSize - size - num_boxes >= 0:
+                size += num_boxes
+                total += num_boxes*units
+            elif truckSize - size < num_boxes:
+                remainder = truckSize - size
+                if remainder <= num_boxes:
+                    total += remainder*units
+                    break
+        return total
             
-            if difference >= num_boxes:
-                total_boxes += num_boxes
-                total_units += num_boxes*unit_per_box
-            else:
-                total_units += difference*unit_per_box
-                total_boxes += difference
-            
-            if total_boxes == truckSize:
-                return total_units
-        return total_units
-        
-
-        
