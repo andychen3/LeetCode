@@ -22,4 +22,4 @@ class Solution:
             else:
                 left = mid
         
-        return left
+        return right
