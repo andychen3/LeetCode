@@ -6,7 +6,7 @@ class Solution:
             
             for sweets in sweetness:
                 curr_sweetness += sweets
-                if curr_sweetness > chunks:
+                if curr_sweetness >= chunks:
                     curr_sweetness = 0
                     num_people += 1
             
@@ -15,11 +15,11 @@ class Solution:
         left = min(sweetness)
         right = sum(sweetness) // (k+1)
         
-        while left <= right:
-            mid = (left + right) // 2
+        while left < right:
+            mid = (left + right + 1) // 2
             if check(mid):
                 right = mid - 1
             else:
-                left = mid + 1
+                left = mid
         
         return left
