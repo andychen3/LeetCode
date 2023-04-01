@@ -1,15 +1,12 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
-        memo = defaultdict(int)
-        def dfs(steps):
-            if steps <= 2:
-                return steps
+        @cache
+        def dp(i):
+            if i <= 1:
+                return 1
             
-            if steps in memo:
-                return memo[steps]
             
-            memo[steps] = dfs(steps-1)+dfs(steps-2)
-            return memo[steps]
+            
+            return dp(i-1) + dp(i-2)
         
-        return dfs(n)
-        
+        return dp(n)
