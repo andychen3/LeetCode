@@ -5,8 +5,5 @@ class Solution:
             if i <= 1:
                 return 1
             
-            
-            
             return dp(i-1) + dp(i-2)
-        
         return dp(n)
