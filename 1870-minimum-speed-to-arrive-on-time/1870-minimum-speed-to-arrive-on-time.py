@@ -8,9 +8,8 @@ class Solution:
             
             for d in dist:
                 time = ceil(time)
-                time += d/speed
-                
-                
+                time += (d/speed)
+            
             return time <= hour
         
         left = 1
@@ -24,8 +23,3 @@ class Solution:
                 left = mid + 1
         
         return left
-            
-            
-        
-        
-        
