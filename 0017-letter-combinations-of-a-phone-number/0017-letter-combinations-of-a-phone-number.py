@@ -8,15 +8,18 @@ class Solution:
         
         def backtrack(curr, i):
             if len(curr) == len(digits):
-                ans.append("".join(curr[:]))
+                ans.append("".join(curr))
                 return
             
+            
             curr_digits = letters[digits[i]]
-            for c in curr_digits:
-                curr.append(c)                
-                backtrack(curr, i + 1)
+            for char in curr_digits:
+                curr.append(char)
+                backtrack(curr, i+1)
                 curr.pop()
-                
+            
+                  
         ans = []
         backtrack([], 0)
         return ans
+        
