@@ -5,6 +5,7 @@ class Solution:
         
         for r in range(row-1):
             for c in range(col-1):
-                if matrix[r][c] != matrix[r +1][c +1]:
+                if matrix[r][c] != matrix[r+1][c+1]:
                     return False
+                
         return True
