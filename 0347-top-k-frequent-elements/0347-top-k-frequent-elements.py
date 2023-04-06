@@ -1,7 +1,14 @@
+from collections import Counter
+import heapq
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        hash = collections.Counter(nums)
-        res = [x[0] for x in hash.most_common(k)]
-        return res
-  
+        freq = Counter(nums)
+        heap = []
         
+        for key, val in freq.items():
+            heapq.heappush(heap, (val, key))
+            
+            if len(heap) > k:
+                heapq.heappop(heap)
+        
+        return [vals[1] for vals in heap]
