@@ -3,14 +3,10 @@ class Solution:
         row = len(grid)
         col = len(grid[0])
         
-        N = row*col
+        mat = [[0]*col for _ in range(row)]
         
-        res = [[0]*col for _ in range(row)]
+        for i in range(row*col):
+            index = (i+k) % (row*col)
+            mat[index//col][index%col] = grid[i//col][i%col]
         
-        for i in range(N):
-            j = (i+k)%N
-            res[j//col][j%col] = grid[i//col][i%col]
-        return res
-                
-        
-        
+        return mat
