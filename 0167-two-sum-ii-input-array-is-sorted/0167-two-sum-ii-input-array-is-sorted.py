@@ -8,9 +8,11 @@ class Solution:
             
             if left_num + right_num == target:
                 return [left+1, right+1]
-            elif left_num + right_num > target:
+            
+            if left_num + right_num > target:
                 right -= 1
             else:
                 left += 1
         
         return -1
+            
