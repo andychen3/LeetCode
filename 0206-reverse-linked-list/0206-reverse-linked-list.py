@@ -6,37 +6,17 @@
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         if not head:
-            return
+            return None
         
         prev = None
+        curr = head
         
-        while head:
-            temp = head.next
-            head.next = prev
-            prev = head
-            head = temp
+        while curr:
+            temp = curr.next
+            curr.next = prev
+            prev = curr
+            curr = temp
         
         return prev
-        
-#         def reverse(node, prev):
-#             if not node:
-#                 return
             
-#             temp, node.next, prev = node.next, prev, node
-            
-#             return head
-            
-            
-        
-#         prev = None
-#         return reverse(head, prev)
-        
-        
-
-
-        
-        
-
-        
-        
         
