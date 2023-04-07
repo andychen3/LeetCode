@@ -5,15 +5,19 @@ class Solution:
         """
         N = len(matrix)
         
-        def transpose(r, c):
-            for rows in range(N):
-                for cols in range(rows+1, N):
-                    matrix[rows][cols], matrix[cols][rows] = matrix[cols][rows], matrix[rows][cols]
+        def transpose():
             
+            for r in range(N):
+                for c in range(r + 1, N):
+                    matrix[r][c], matrix[c][r] = matrix[c][r], matrix[r][c]
+                    
+        transpose()
         
-        transpose(N,N)
-        
-        for r in range(N):
-            matrix[r].reverse()
+        for row in range(N):
+            matrix[row].reverse()
             
         return matrix
+            
+            
+        
+        
