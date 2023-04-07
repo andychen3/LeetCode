@@ -3,37 +3,38 @@ class Solution:
         def valid(r, c):
             return 0 <= r < rows and 0 <= c < cols
         
-        coordinates = [[rStart, cStart]]
+        ans = [[rStart, cStart]]
         steps = 1
         x, y = rStart, cStart
-    
         
-        while len(coordinates) < rows*cols:
+        while len(ans) < rows*cols:
             
+            # right
             for _ in range(steps):
                 x, y = x, y+1
                 if valid(x, y):
-                    coordinates.append([x,y])
+                    ans.append([x,y])
                     
+            # down
             for _ in range(steps):
                 x, y = x+1, y
                 if valid(x, y):
-                    coordinates.append([x,y])
-            
+                    ans.append([x,y])
+                    
             steps += 1
+            
+            # left
             
             for _ in range(steps):
                 x, y = x, y-1
-                if valid(x, y):
-                    coordinates.append([x,y])
-            
+                if valid(x,y):
+                    ans.append([x,y])
+                    
+            # up 
             for _ in range(steps):
                 x, y = x-1, y
-                if valid(x, y):
-                    coordinates.append([x,y])
+                if valid(x,y):
+                    ans.append([x,y])
             
             steps += 1
-            
-        return coordinates
-        
-        
+        return ans
