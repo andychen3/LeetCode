@@ -2,24 +2,21 @@ class Codec:
     def encode(self, strs: List[str]) -> str:
         """Encodes a list of strings to a single string.
         """
-
         return "".join(f'{len(string)}#{string}' for string in strs)
-            
-        
         
 
     def decode(self, s: str) -> List[str]:
         """Decodes a single string to a list of strings.
         """
-        res, i = [], 0
+        res, index = [], 0
         
-        while i < len(s):
-            j = i
+        while index < len(s):
+            j = index
             while s[j] != '#':
                 j += 1
-            length = int(s[i:j])
-            res.append(s[j+1:j+1+length])
-            i = j+ 1 + length
+            length = int(s[index:j])
+            res.append(s[j + 1:j + 1 + length])
+            index = j + 1 + length
         return res
         
 
