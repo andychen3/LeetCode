@@ -1,7 +1,7 @@
 class Solution:
     def generateMatrix(self, n: int) -> List[List[int]]:
         matrix = [[0]*n for _ in range(n)]
-        left, right, top, bottom = 0, n, 0, n
+        top, bottom, left, right = 0, n, 0, n
         num = 1
         
         while left < right and top < bottom:
@@ -13,13 +13,16 @@ class Solution:
             
             # top to bottom
             for i in range(top, bottom):
-                matrix[i][right-1] = num
+                matrix[i][right - 1] = num
                 num += 1
             right -= 1
             
+            # if not (left < right and top < bottom):
+            #     break
+            
             # right to left
             for i in range(right - 1, left - 1, -1):
-                matrix[bottom-1][i] = num
+                matrix[bottom - 1][i] = num
                 num += 1
             bottom -= 1
             
@@ -29,5 +32,4 @@ class Solution:
                 num += 1
             left += 1
         return matrix
-            
         
