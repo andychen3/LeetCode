@@ -10,9 +10,6 @@ class Solution:
             
             while hash_map[s[right]] > 1:
                 hash_map[s[left]] -= 1
-                if hash_map[s[left]] == 0:
-                    del hash_map[s[left]]
                 left += 1
             longest = max(longest, right - left + 1)
         return longest
-                
