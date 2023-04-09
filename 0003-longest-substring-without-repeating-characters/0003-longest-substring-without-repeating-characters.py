@@ -5,11 +5,13 @@ class Solution:
         longest = 0
         left = 0
         
-        for right in range(len(s)):
-            hash_map[s[right]] += 1
+        for right, word in enumerate(s):
+            hash_map[word] += 1
             
-            while hash_map[s[right]] > 1:
-                hash_map[s[left]] -= 1
+            while hash_map[word] > 1:
+                left_word = s[left]
+                hash_map[left_word] -= 1
                 left += 1
+            
             longest = max(longest, right - left + 1)
         return longest
