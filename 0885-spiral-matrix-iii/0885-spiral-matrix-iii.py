@@ -4,37 +4,35 @@ class Solution:
             return 0 <= r < rows and 0 <= c < cols
         
         ans = [[rStart, cStart]]
-        steps = 1
         x, y = rStart, cStart
+        steps = 1
         
         while len(ans) < rows*cols:
-            
             # right
             for _ in range(steps):
-                x, y = x, y+1
+                x, y = x, y + 1
                 if valid(x, y):
-                    ans.append([x,y])
+                    ans.append([x, y])
                     
             # down
             for _ in range(steps):
                 x, y = x+1, y
                 if valid(x, y):
-                    ans.append([x,y])
+                    ans.append([x, y])
                     
             steps += 1
             
             # left
-            
             for _ in range(steps):
                 x, y = x, y-1
                 if valid(x,y):
-                    ans.append([x,y])
+                    ans.append([x, y])
                     
-            # up 
+            # up
             for _ in range(steps):
-                x, y = x-1, y
+                x, y = x - 1, y
                 if valid(x,y):
-                    ans.append([x,y])
-            
+                    ans.append([x, y])
+                    
             steps += 1
         return ans
