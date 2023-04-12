@@ -4,11 +4,11 @@ class Solution:
         ans = [0]*len(temperatures)
         
         for index, temps in enumerate(temperatures):
-            while stack and stack[-1][1] < temps:
-                idx, temp = stack.pop()
+            while stack and temperatures[stack[-1]] < temps:
+                idx = stack.pop()
                 ans[idx] = index-idx
                 
-            stack.append([index, temps])
+            stack.append(index)
         return ans
             
             
