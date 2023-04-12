@@ -4,9 +4,9 @@ class Solution:
         ans = prices.copy()
         
         for index, price in enumerate(prices):
-            while stack and stack[-1][0] >= price:
-                prev_price, idx = stack.pop()
-                ans[idx] = prev_price - price
+            while stack and prices[stack[-1]] >= price:
+                idx = stack.pop()
+                ans[idx] -= price
             
-            stack.append([price, index])
+            stack.append(index)
         return ans
