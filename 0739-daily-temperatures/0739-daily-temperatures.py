@@ -3,10 +3,16 @@ class Solution:
         stack = []
         ans = [0]*len(temperatures)
         
-        for index, temp in enumerate(temperatures):
-            while stack and stack[-1][1] < temp:
-                latest_index, latest_temp  = stack.pop()
-                ans[latest_index] = index - latest_index
-            
-            stack.append([index, temp])
+        for index, temps in enumerate(temperatures):
+            while stack and stack[-1][1] < temps:
+                idx, temp = stack.pop()
+                ans[idx] = index-idx
+                
+            stack.append([index, temps])
         return ans
+            
+            
+        
+
+                    
+            
