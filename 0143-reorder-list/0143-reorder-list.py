@@ -22,20 +22,13 @@ class Solution:
         prev = None
         
         while curr:
-            temp = curr.next
-            curr.next = prev
-            prev = curr
-            curr = temp
+            curr.next, curr, prev = prev, curr.next, curr
             
         ptr1 = head
         
         while prev.next:
-            temp = ptr1.next
-            ptr1.next = prev
-            temp2 = prev.next
-            prev.next = temp
-            ptr1 = temp
-            prev = temp2
+            ptr1.next, ptr1 = prev, ptr1.next
+            prev.next, prev = ptr1, prev.next
         
         
         # start merging the two lists together
