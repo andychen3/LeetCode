@@ -5,7 +5,7 @@ class Solution:
         ans = []
         
         for i in range(len(nums)):
-            while q and nums[i] >= nums[q[-1]]:
+            while q and nums[i] > nums[q[-1]]:
                 q.pop()
             q.append(i)
             
