@@ -4,8 +4,8 @@ class Solution:
         q = deque()
         ans = []
         
-        for i in range(len(nums)):
-            while q and nums[q[-1]] < nums[i]:
+        for i, num in enumerate(nums):
+            while q and nums[q[-1]] < num:
                 q.pop()
             q.append(i)
             
