@@ -5,13 +5,14 @@ class Solution:
         ans = []
         
         for i in range(len(nums)):
-            while q and nums[i] > nums[q[-1]]:
+            while q and nums[q[-1]] < nums[i]:
                 q.pop()
             q.append(i)
             
             if q[0] + k == i:
                 q.popleft()
-            
+                
             if i >= k - 1:
                 ans.append(nums[q[0]])
+        
         return ans
