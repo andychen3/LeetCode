@@ -4,13 +4,12 @@ class Solution:
         s_map = defaultdict(int)
         t_map = defaultdict(int)
         
-        for index, s_char in enumerate(s):
-            t_char = t[index]
-            if s_char in s_map and s_map[s_char] != t_char:
+        for index, char in enumerate(s):
+            left_char = t[index]
+            if char in s_map and t_map[left_char] != char:
                 return False
-            if t_char in t_map and t_map[t_char] != s_char:
+            if left_char in t_map and s_map[char] != left_char:
                 return False
-            s_map[s_char] = t_char
-            t_map[t_char] = s_char
-                
+            s_map[char] = left_char
+            t_map[left_char] = char
         return True
