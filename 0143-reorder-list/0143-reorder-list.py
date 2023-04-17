@@ -28,7 +28,7 @@ class Solution:
         first_ptr = head
         second_ptr = prev
         
-        while second_ptr and second_ptr.next:
+        while second_ptr.next:
             first_ptr.next, first_ptr = second_ptr, first_ptr.next
             second_ptr.next, second_ptr = first_ptr, second_ptr.next
         
