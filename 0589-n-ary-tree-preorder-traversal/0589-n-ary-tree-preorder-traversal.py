@@ -5,25 +5,20 @@ class Node:
         self.val = val
         self.children = children
 """
-from collections import deque
+
 class Solution:
     def preorder(self, root: 'Node') -> List[int]:
-        if not root:
-            return []
-        
-        d = deque([root])
-        res = []
-        
-        while d:
-            node = d.popleft()
-            res.append(node.val)
+        ans = []
+        def dfs(node):
+            if not node:
+                return
+            ans.append(node.val)
             
-            for child in reversed(node.children):
-                d.appendleft(child)
-        return res
-            
-            
-            
-            
+            for val in node.children:
+                dfs(val)
                 
-        
+            
+            
+            
+        dfs(root)
+        return ans
