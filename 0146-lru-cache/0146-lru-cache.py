@@ -24,10 +24,13 @@ class LRUCache:
         node.prev = prev
         
     def _remove(self, node):
-        prev = node.prev
-        nxt = node.next
-        prev.next = nxt
-        nxt.prev = prev
+        prev, nxt = node.prev, node.next
+        prev.next, nxt.prev = nxt, prev
+        
+        # prev = node.prev
+        # nxt = node.next
+        # prev.next = nxt
+        # nxt.prev = prev
     
     def get(self, key: int) -> int:
         if key in self.cache:
