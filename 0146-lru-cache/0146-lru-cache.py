@@ -42,16 +42,14 @@ class LRUCache:
     def put(self, key: int, value: int) -> None:
         if key in self.cache:
             self._remove(self.cache[key])
-            self.cache[key] = Node(key, value)
-            self._add(self.cache[key])
-        else:
-            self.cache[key] = Node(key, value)
-            self._add(self.cache[key])
+        
+        self.cache[key] = Node(key, value)
+        self._add(self.cache[key])
             
-            if len(self.cache) > self.capacity:
-                lru = self.head.next
-                self._remove(lru)
-                del self.cache[lru.key]
+        if len(self.cache) > self.capacity:
+            lru = self.head.next
+            self._remove(lru)
+            del self.cache[lru.key]
         
 
 
