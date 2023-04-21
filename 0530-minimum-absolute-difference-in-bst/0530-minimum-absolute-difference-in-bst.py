@@ -9,16 +9,11 @@ class Solution:
         def inorder(node):
             if not node:
                 return []
-            
-            left = inorder(node.left)
-            right = inorder(node.right)
-            
-            return left + [node.val] + right
+            return inorder(node.left) + [node.val] + inorder(node.right)
         
-        sorted_list = inorder(root)
-        n = len(sorted_list)
-        ans = float("inf")
+        res = inorder(root)
+        min_diff = float('inf')
         
-        for i in range(n-1):
-            ans = min(ans, sorted_list[i+1] - sorted_list[i])
-        return ans
+        for i in range(1, len(res)):
+            min_diff = min(abs(res[i] - res[i-1]), min_diff)
+        return min_diff
