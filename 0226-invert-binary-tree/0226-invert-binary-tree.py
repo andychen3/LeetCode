@@ -15,4 +15,3 @@ class Solution:
         right = self.invertTree(root.right)
         
         return root
-        
