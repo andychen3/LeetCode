@@ -1,14 +1,15 @@
 import heapq
 class Solution:
     def lastStoneWeight(self, stones: List[int]) -> int:
-        stone = [-rock for rock in stones]
-        heapq.heapify(stone)
+        max_heap = [-stone for stone in stones]
         
-        while len(stone) > 1:
-            first_rock = abs(heapq.heappop(stone))
-            second_rock = abs(heapq.heappop(stone))
+        heapq.heapify(max_heap)
+        
+        while len(max_heap) > 1:
+            second = heapq.heappop(max_heap)
+            first = heapq.heappop(max_heap)
             
-            if first_rock != second_rock:
-                heapq.heappush(stone, -abs(first_rock-second_rock))
-        return -stone[0] if stone else 0
-            
+            if first != second:
+                heapq.heappush(max_heap, -first+second)
+        
+        return abs(max_heap[0]) if len(max_heap) == 1 else 0
