@@ -21,6 +21,7 @@ class Solution:
         for i in range(n):
             if i not in seen:
                 ans += 1
+                seen.add(i)
                 dfs(i)
         return ans
                 
