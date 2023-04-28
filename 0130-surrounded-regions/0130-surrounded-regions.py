@@ -3,7 +3,6 @@ class Solution:
         """
         Do not return anything, modify board in-place instead.
         """
-        
         if not board:
             return
         
@@ -18,18 +17,20 @@ class Solution:
             dfs(r, c+1)
             dfs(r, c-1)
             
-        # mark all connected os from boundary as visited
-        for i in range(rows):
-            dfs(i, 0)
-            dfs(i, cols-1)
-        for j in range(cols):
-            dfs(0, j)
-            dfs(rows-1, j)
+        
+        #mark all connected O's from boundary as visisted
+        for r in range(rows):
+            dfs(r, 0)
+            dfs(r, cols-1)
+        for c in range(cols):
+            dfs(0, c)
+            dfs(rows-1, c)
             
-        # flip all unvisited os to xs and all visited vs back to os
-        for i in range(rows):
-            for j in range(cols):
-                if board[i][j] == 'O':
-                    board[i][j] = 'X'
-                elif board[i][j] == 'V':
-                    board[i][j] = 'O'
+        for r in range(rows):
+            for c in range(cols):
+                if board[r][c] == 'O':
+                    board[r][c] = 'X'
+                elif board[r][c] == 'V':
+                    board[r][c] = 'O'
+        return board
+                
