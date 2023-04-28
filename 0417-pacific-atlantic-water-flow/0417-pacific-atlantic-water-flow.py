@@ -13,12 +13,11 @@ class Solution:
         directions = ((0,1), (1,0), (-1,0), (0,-1))
         
         def traverse(x, y, visited):
-            if (x, y) in visited:
-                return
             visited.add((x, y))
             for dx, dy in directions:
                 new_x, new_y = dx + x, dy + y
-                if valid(new_x, new_y):
+                if valid(new_x, new_y) and (new_x, new_y) not in visited:
+                    
                     if heights[new_x][new_y] >= heights[x][y]:
                         traverse(new_x, new_y, visited)
         
