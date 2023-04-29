@@ -3,10 +3,7 @@ class Solution:
         """
         Do not return anything, modify board in-place instead.
         """
-        if not board:
-            return
         
-        rows, cols = len(board), len(board[0])
         
         def dfs(r, c):
             if r < 0 or r >= rows or c < 0 or c >= cols or board[r][c] != 'O':
@@ -16,9 +13,10 @@ class Solution:
             dfs(r-1, c)
             dfs(r, c+1)
             dfs(r, c-1)
-            
         
-        #mark all connected O's from boundary as visisted
+        rows = len(board)
+        cols = len(board[0])
+        # Find os in border
         for r in range(rows):
             dfs(r, 0)
             dfs(r, cols-1)
@@ -33,4 +31,3 @@ class Solution:
                 elif board[r][c] == 'V':
                     board[r][c] = 'O'
         return board
-                
