@@ -11,12 +11,13 @@ class Solution:
             graph[y].append(x)
         
         def dfs(node):
-            seen.add(node)
+            
             for neighbors in graph[node]:
                 if neighbors not in seen:
+                    seen.add(neighbors)
                     dfs(neighbors)
         
-        seen = set()
+        seen = {0}
         dfs(0)
         
         return len(seen) == n
