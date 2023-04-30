@@ -16,12 +16,12 @@ class Solution:
         
         while q:
             word, steps = q.popleft()
+            if word == endWord:
+                return steps
 
             for j in range(len(word)):
                 pattern = word[:j] + "*" + word[j+1:]
                 for words in nei[pattern]:
-                    if word == endWord:
-                        return steps
                     if words not in visit:
                         visit.add(words)
                         q.append((words, steps+1))
