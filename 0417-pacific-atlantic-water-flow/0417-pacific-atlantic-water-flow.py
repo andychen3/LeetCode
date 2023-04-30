@@ -11,10 +11,12 @@ class Solution:
         directions = ((0,1), (1,0), (-1,0), (0,-1))
         
         def dfs(x, y, visited):
+            if (x,y) in visited:
+                return
             visited.add((x,y))
             for dx, dy in directions:
                 new_dx, new_dy = dx + x, dy + y
-                if valid(new_dx, new_dy) and (new_dx, new_dy) not in visited:
+                if valid(new_dx, new_dy):
                     if heights[new_dx][new_dy] >= heights[x][y]:
                         dfs(new_dx, new_dy, visited)
         
