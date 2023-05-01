@@ -1,32 +1,18 @@
-from collections import defaultdict, deque
+from collections import deque
 class Solution:
     def minMutation(self, startGene: str, endGene: str, bank: List[str]) -> int:
-        if endGene not in bank:
-            return -1
-        
-        neighbors = defaultdict(list)
-        bank.append(startGene)
-        
-        for words in bank:
-            for chars in "ACGT":
-                for j in range(len(words)):
-                    pattern = words[:j] + chars + words[j+1:]
-                    if pattern in bank:
-                        neighbors[words].append(pattern)
-
-        
         q = deque([(startGene, 0)])
-        seen = {startGene}
+        seen ={startGene}
         
         while q:
-            word, mutations = q.popleft()
+            node, steps = q.popleft()
+            if node == endGene:
+                return steps
             
-            for words in neighbors[word]:
-                if words == endGene:
-                    return mutations+1
-                if words not in seen:
-                    seen.add(words)
-                    q.append((words, mutations+1))
+            for c in "ACGT":
+                for i in range(len(node)):
+                    neighbor = node[:i] + c + node[i+1:]
+                    if neighbor not in seen and neighbor in bank:
+                        seen.add(neighbor)
+                        q.append((neighbor, steps+1))
         return -1
-            
-            
