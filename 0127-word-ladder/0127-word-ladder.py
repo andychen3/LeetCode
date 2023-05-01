@@ -1,29 +1,28 @@
-from collections import defaultdict, deque
+from collections import deque, defaultdict
 class Solution:
     def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
         if endWord not in wordList:
             return 0
         
-        nei = defaultdict(list)
-        wordList.append(beginWord)
-        
+        neighbors = defaultdict(list)
+        # build neighbors list
         for word in wordList:
             for j in range(len(word)):
                 pattern = word[:j] + "*" + word[j+1:]
-                nei[pattern].append(word)
-        visit = {beginWord}
-        q = deque([(beginWord, 1)])
-        
-        while q:
-            word, steps = q.popleft()
+                neighbors[pattern].append(word)
+                
+        d = deque([(beginWord, 1)])
+        wordList.append(beginWord)
+        seen = {beginWord}
+                
+        while d:
+            word, steps = d.popleft()
             if word == endWord:
                 return steps
-
             for j in range(len(word)):
                 pattern = word[:j] + "*" + word[j+1:]
-                for words in nei[pattern]:
-                    if words not in visit:
-                        visit.add(words)
-                        q.append((words, steps+1))
+                for chars in neighbors[pattern]:
+                    if chars not in seen:
+                        seen.add(chars)
+                        d.append((chars, steps+1))
         return 0
-        
