@@ -17,11 +17,11 @@ class Solution:
                 
         while d:
             word, steps = d.popleft()
-            if word == endWord:
-                return steps
             for j in range(len(word)):
                 pattern = word[:j] + "*" + word[j+1:]
                 for chars in neighbors[pattern]:
+                    if chars == endWord:
+                        return steps+1
                     if chars not in seen:
                         seen.add(chars)
                         d.append((chars, steps+1))
