@@ -9,10 +9,11 @@ class Solution:
                 num = candidates[j]
                 if j > i and candidates[j] == candidates[j-1]:
                     continue
-                if curr_sum + num <= target:
-                    arr.append(num)
-                    backtrack(arr, curr_sum+num, j+1)
-                    arr.pop()
+                if curr_sum + num > target:
+                    return
+                arr.append(num)
+                backtrack(arr, curr_sum+num, j+1)
+                arr.pop()
             
             
         candidates.sort()
