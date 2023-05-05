@@ -8,7 +8,7 @@ class Solution:
         
         def backtrack(row):
             if row == n:
-                ans.append(["".join(empty_board[r]) for r in range(row)])
+                ans.append(["".join(row) for row in empty_board])
                 return
                 
             for col in range(n):
