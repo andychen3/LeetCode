@@ -1,31 +1,33 @@
 class Solution:
     def totalNQueens(self, n: int) -> int:
-        def backtrack(row, col, diagonal, anti_diagonal):
+        board = [["."]*n for _ in range(n)]
+        col_set = set()
+        diag_set = set()
+        anti_diag_set = set()
+        res = 0
+        
+        def backtrack(row):
+            nonlocal res
             if row == n:
-                return 1
+                res += 1
+                return
             
-            solution = 0
-            
-            for cols in range(n):
-                curr_diagonal = row - cols
-                curr_anti_diagonal = row + cols
-                if (cols in col or 
-                    curr_diagonal in diagonal or 
-                    curr_anti_diagonal in anti_diagonal):
+            for col in range(n):
+                if (col in col_set or (row-col) in diag_set
+                   or (row + col) in anti_diag_set):
                     continue
                 
-                col.add(cols)
-                diagonal.add(curr_diagonal)
-                anti_diagonal.add(curr_anti_diagonal)
+                col_set.add(col)
+                diag_set.add(row-col)
+                anti_diag_set.add(row+col)
+                board[row][col] = 'Q'
                 
-                solution += backtrack(row+1, col, diagonal, anti_diagonal)
+                backtrack(row+1)
                 
-                col.remove(cols)
-                diagonal.remove(curr_diagonal)
-                anti_diagonal.remove(curr_anti_diagonal)
-            
-            return solution
+                col_set.remove(col)
+                diag_set.remove(row-col)
+                anti_diag_set.remove(row+col)
+                board[row][col] = '.'
                 
-                
-                
-        return backtrack(0, set(), set(), set())
+        backtrack(0)
+        return res
