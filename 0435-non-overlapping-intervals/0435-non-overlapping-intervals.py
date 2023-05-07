@@ -5,7 +5,7 @@ class Solution:
         end = intervals[0][1]
         
         for i in range(1, len(intervals)):
-            if intervals[i][0] >= end:
+            if end <= intervals[i][0]:
                 end = intervals[i][1]
             else:
                 res += 1
