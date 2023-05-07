@@ -5,11 +5,8 @@ class Solution:
         heap = []
         
         for interval in intervals:
-            if not heap:
-                heapq.heappush(heap, interval[1])
-            elif heap[0] <= interval[0]:
-                heapq.heappop(heap)
-                heapq.heappush(heap, interval[1])
+            if heap and heap[0] <= interval[0]:
+                heapq.heapreplace(heap, interval[1])
             else:
                 heapq.heappush(heap, interval[1])
         return len(heap)
