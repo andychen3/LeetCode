@@ -7,7 +7,7 @@ class Solution:
         left = 0
         nums = 1
         
-        while left < right and top < bottom:
+        while left < right or top < bottom:
             # Move left to right
             for i in range(left, right):
                 matrix[top][i] = nums
@@ -19,9 +19,6 @@ class Solution:
                 nums += 1
             right -= 1
             # Right to left
-            
-            # if not (left < right and top < bottom):
-            #     break
             
             for i in range(right - 1, left - 1, -1):
                 matrix[bottom - 1][i] = nums
