@@ -1,7 +1,7 @@
 class Solution:
     def missingNumber(self, nums: List[int]) -> int:
-        hash_set = set(nums)
+        missing = len(nums)
         
-        for i in range(len(nums)+1):
-            if i not in hash_set:
-                return i
+        for i, num in enumerate(nums):
+            missing ^= i ^ num
+        return missing
