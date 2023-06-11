@@ -7,7 +7,7 @@ class Solution:
         right = x // 2
         
         while left <= right:
-            mid = (left + right)//2
+            mid = (left + right) // 2
             num = mid * mid
             if num > x:
                 right = mid - 1
@@ -16,3 +16,4 @@ class Solution:
             else:
                 return mid
         return right
+        
