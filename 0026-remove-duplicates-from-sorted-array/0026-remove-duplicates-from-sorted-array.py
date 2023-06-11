@@ -1,9 +1,10 @@
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        index = 1 #This is where to insert the next unique element
+        size = len(nums)
+        insert = 1
         
-        for right in range(1, len(nums)):
-            if nums[index-1] != nums[right]:
-                nums[index] = nums[right]
-                index += 1
-        return index
+        for i in range(1, size):
+            if nums[i-1] != nums[i]:
+                nums[insert] = nums[i]
+                insert += 1
+        return insert
