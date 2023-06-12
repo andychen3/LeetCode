@@ -1,14 +1,12 @@
 class Solution:
     def threeSumSmaller(self, nums: List[int], target: int) -> int:
-        if len(nums) < 3:
-            return 0
-        
         nums.sort()
         res = 0
+        size = len(nums)
         
         for index, num in enumerate(nums):
             left = index + 1
-            right = len(nums) - 1
+            right = size - 1
             while left < right:
                 curr_sum = num + nums[left] + nums[right]
                 if curr_sum < target:
@@ -17,7 +15,3 @@ class Solution:
                 else:
                     right -= 1
         return res
-        
-        
-        
-        
