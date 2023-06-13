@@ -14,8 +14,8 @@ class Solution:
                     ans.add((num, nums[left], nums[right]))
                     left += 1
                     right -= 1
-                    # while left < right and nums[left] == nums[left - 1]:
-                    #     left += 1
+                    while left < right and nums[left] == nums[left - 1]:
+                        left += 1
                 elif _sum > 0:
                     right -= 1
                 else:
