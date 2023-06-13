@@ -5,7 +5,9 @@ class Solution:
         
         for a in nums1:
             for b in nums2:
-                counts[a+b] = counts.get(a+b, 0)+1
+                if (a+b) not in counts:
+                    counts[a+b] = 0
+                counts[a+b] += 1
                 
         
         for c in nums3:
