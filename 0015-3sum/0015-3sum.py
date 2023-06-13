@@ -4,8 +4,8 @@ class Solution:
         ans = set()
         
         for index, num in enumerate(nums):
-            # if index > 0 and num == nums[index-1]:
-            #     continue
+            if index > 0 and num == nums[index-1]:
+                continue
             left = index + 1
             right = len(nums) - 1
             while left < right:
