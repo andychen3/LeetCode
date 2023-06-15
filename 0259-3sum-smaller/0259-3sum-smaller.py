@@ -11,9 +11,11 @@ class Solution:
                 total = num + nums[left] + nums[right]
                 if total < target:
                     res += right - left
-                    left += 1
-                elif total >= target:
+                    
+                if total >= target:
                     right -= 1
+                else:
+                    left += 1
                 
                     
         return res
