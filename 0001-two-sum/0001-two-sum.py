@@ -4,7 +4,7 @@ class Solution:
         
         for index, num in enumerate(nums):
             diff = target - num
-            if diff in hash_map and diff + num == target:
+            if diff in hash_map:
                 return [hash_map[diff], index]
             hash_map[num] = index
         
