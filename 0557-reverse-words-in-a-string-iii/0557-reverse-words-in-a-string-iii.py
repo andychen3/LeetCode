@@ -1,21 +1,18 @@
 class Solution:
     def reverseWords(self, s: str) -> str:
-        array = s.split(" ")
+        word_array = s.split(" ")
+        ans = []
         
-        for index, words in enumerate(array):
-            array[index] = self.reverse(words)
-        
-        return " ".join(array)
-        
-    def reverse(self, string):
-        new_array = list(string)
-        
-        left = 0
-        right = len(new_array)-1
-        
+        for words in word_array:
+            ans.append(self.reverse(list(words)))
+        return " ".join(ans)
+
+
+    
+    def reverse(self, word):
+        left, right = 0, len(word)-1
         while left < right:
-            new_array[left], new_array[right] = new_array[right], new_array[left]
+            word[left], word[right] = word[right], word[left]
             left += 1
             right -= 1
-            
-        return "".join(new_array)
+        return "".join(word)
