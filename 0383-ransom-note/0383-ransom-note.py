@@ -1,15 +1,11 @@
+from collections import Counter
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
-        if len(ransomNote) > len(magazine):
-            return False
-        
-        magazine_hash = collections.Counter(magazine)
-        
-        for letters in ransomNote:
-            if letters not in magazine_hash:
+        ransom_count = Counter(ransomNote)
+        magazine_count = Counter(magazine)
+
+        for char, count in ransom_count.items():
+            if magazine_count[char] < count:
                 return False
-            magazine_hash[letters] -= 1
-            if magazine_hash[letters] == 0:
-                del magazine_hash[letters]
-        
         return True
+        
