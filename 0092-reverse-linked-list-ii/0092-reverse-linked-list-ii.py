@@ -9,20 +9,26 @@ class Solution:
             return None
         
         dummy = ListNode(0, head)
-        
+
         prev = dummy
         curr = head
-        
-        for i in range(1, left):
+
+        for _ in range(left - 1):
             prev = curr
             curr = curr.next
-            
+        
+        # Reverse list
         second_prev = prev
-        
-        for i in range(right - left + 1):
-            curr.next, curr, second_prev = second_prev, curr.next, curr
-        
-        prev.next.next = curr
+        reversed_tail = curr
+
+        for _ in range(right - left + 1):
+            next_node = curr.next
+            curr.next = second_prev
+
+            second_prev = curr
+            curr = next_node
+
         prev.next = second_prev
-        
+        reversed_tail.next = curr
+
         return dummy.next
