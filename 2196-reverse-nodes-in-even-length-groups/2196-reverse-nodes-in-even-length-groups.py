@@ -6,36 +6,41 @@
 class Solution:
     def reverseEvenLengthGroups(self, head: Optional[ListNode]) -> Optional[ListNode]:
         group = 2
-        tail = head  # The tail of the previous group
-        
+        tail = head
+
         while tail and tail.next:
-            cnt = 1  # Actual size of the current group
-            cur = tail.next  # First node of the current group
-            
-            # Calculate the size of the current group
-            while cur.next and cnt < group:
-                cur = cur.next
-                cnt += 1
-            
-            pre, cur = tail, tail.next
-            
-            if cnt % 2 == 0:  # If group size is even
-                while cnt and cur:
-                    nxt = cur.next
-                    cur.next = pre
-                    pre = cur
-                    cur = nxt
-                    cnt -= 1
-                first = tail.next  # First node of the original group
-                first.next = cur
-                tail.next = pre
+            count = 1
+            curr = tail.next
+
+            # Finding the number of nodes in the next group
+            while curr.next and count < group:
+                curr = curr.next
+                count += 1
+
+            prev = tail
+            curr = tail.next
+
+            if count % 2 == 0:
+                # reverse the nodes in the group
+                while count and curr:
+                    next_node = curr.next
+                    curr.next = prev
+
+                    prev = curr
+                    curr = next_node
+                    count -= 1
+                first = tail.next
+                first.next = curr
+                tail.next = prev
                 tail = first
             else:
-                while cnt and cur:
-                    pre, cur = cur, cur.next
-                    cnt -= 1
-                tail = pre
+                while count and curr:
+                    prev = curr
+                    curr = curr.next
+                    count -= 1
+                tail = prev
             
             group += 1
         
         return head
+        
