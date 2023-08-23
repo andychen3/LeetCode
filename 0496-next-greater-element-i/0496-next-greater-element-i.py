@@ -3,15 +3,11 @@ class Solution:
         stack = []
         map = {}
 
-        # build the hashmap with numbers:greater number
         for num in nums2:
             while stack and stack[-1] < num:
                 map[stack.pop()] = num
             stack.append(num)
-
-        # check if stack is empty
-        for num in stack:
-            map[num] = -1
         
-        return [map[nums] for nums in nums1]
+        return [map.get(nums, -1) for nums in nums1]
+
 
