@@ -19,6 +19,8 @@ class Solution:
 
             for _ in range(len(q)):
                 node = q.popleft()
+                # the root starts left to right
+                # This is where you append the elements for the answer
                 if left_to_right:
                     levels.append(node.val)
                 else:
