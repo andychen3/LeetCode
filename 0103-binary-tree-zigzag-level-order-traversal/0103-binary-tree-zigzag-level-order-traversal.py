@@ -10,33 +10,30 @@ class Solution:
         if not root:
             return []
         
-        queue = deque([root])
+        q = deque([root])
         ans = []
-        left = True
-        
-        while queue:
-            queue_len = len(queue)
-            level = []
-            
-            for _ in range(queue_len):
-                if left:
-                    node = queue.popleft()
-                    if node.left:
-                        queue.append(node.left)
-                    if node.right:
-                        queue.append(node.right)
+        left_to_right = False
+
+        while q:
+            levels = deque()
+
+            for _ in range(len(q)):
+                node = q.popleft()
+                if left_to_right:
+                    levels.appendleft(node.val)
                 else:
-                    node = queue.pop()
-                    if node.right:
-                        queue.appendleft(node.right)
-                    if node.left:
-                        queue.appendleft(node.left)
-                          
-                level.append(node.val)       
+                    levels.append(node.val)
+                
+                if node.left:
+                    q.append(node.left)
+                if node.right:
+                    q.append(node.right)
             
-            ans.append(level)
-            if left:
-                left = False
+            if left_to_right:
+                left_to_right = False
             else:
-                left = True
+                left_to_right = True
+            
+            ans.append(levels)
         return ans
+                    
