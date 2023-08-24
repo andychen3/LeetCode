@@ -11,18 +11,18 @@ class Solution:
             return 0
         
         d = deque([root])
-        ans = []
+        ans = 0
 
         while d:
-            curr_sum = 0
+            ans = 0
 
             for _ in range(len(d)):
                 node = d.popleft()
-                curr_sum += node.val
+                ans += node.val
                 if node.left:
                     d.append(node.left)
                 if node.right:
                     d.append(node.right)
-            ans.append(curr_sum)
+            
         
-        return ans[-1]
+        return ans
