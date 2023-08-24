@@ -12,7 +12,7 @@ class Solution:
         
         q = deque([root])
         ans = []
-        left_to_right = False
+        left_to_right = True
 
         while q:
             levels = deque()
@@ -20,19 +20,16 @@ class Solution:
             for _ in range(len(q)):
                 node = q.popleft()
                 if left_to_right:
-                    levels.appendleft(node.val)
-                else:
                     levels.append(node.val)
+                else:
+                    levels.appendleft(node.val)
                 
                 if node.left:
                     q.append(node.left)
                 if node.right:
                     q.append(node.right)
             
-            if left_to_right:
-                left_to_right = False
-            else:
-                left_to_right = True
+            left_to_right = not left_to_right
             
             ans.append(levels)
         return ans
