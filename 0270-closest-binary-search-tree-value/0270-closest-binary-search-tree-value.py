@@ -5,20 +5,9 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def closestValue(self, root: Optional[TreeNode], target: float) -> int:
-        def inorder(node):
-            if not node:
-                return []
-            
-            return inorder(node.left) + [node.val] + inorder(node.right)
-        
-        sorted_order = inorder(root)
-        closet = float("inf")
-        ans = 0
-        for val in sorted_order:
-            if abs(val-target) < closet:
-                ans = val
-                closet = abs(val-target)
-        return ans
-            
-        
+    def closestValue(self, root: TreeNode, target: float) -> int:
+        closest = root.val
+        while root:
+            closest = min(root.val, closest, key = lambda x: (abs(target - x), x))
+            root = root.left if target < root.val else root.right
+        return closest
