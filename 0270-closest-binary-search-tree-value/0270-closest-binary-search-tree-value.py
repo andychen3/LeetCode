@@ -6,25 +6,19 @@
 #         self.right = right
 class Solution:
     def closestValue(self, root: Optional[TreeNode], target: float) -> int:
-        def dfs(node):
+        def inorder(node):
             if not node:
-                return
+                return []
             
-            if node.val == target:
-                self.closet = root.val
-            
-            if abs(target-node.val) < abs(target-self.closet):
-                self.closet = node.val
-            
-            if node.val > target:
-                dfs(node.left)
-            
-            if node.val < target:
-                dfs(node.right)
-            
-            return
+            return inorder(node.left) + [node.val] + inorder(node.right)
         
-        self.closet = root.val
-        dfs(root)
+        sorted_order = inorder(root)
+        closet = float("inf")
+        ans = 0
+        for val in sorted_order:
+            if abs(val-target) < closet:
+                ans = val
+                closet = abs(val-target)
+        return ans
+            
         
-        return self.closet
