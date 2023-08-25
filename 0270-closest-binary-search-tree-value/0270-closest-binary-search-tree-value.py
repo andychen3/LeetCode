@@ -6,8 +6,17 @@
 #         self.right = right
 class Solution:
     def closestValue(self, root: TreeNode, target: float) -> int:
-        closest = root.val
-        while root:
-            closest = min(root.val, closest, key = lambda x: (abs(target - x), x))
-            root = root.left if target < root.val else root.right
-        return closest
+        def dfs(node, closest):
+            if not node:
+                return closest
+            
+            closest = min(node.val, closest, key=lambda x: (abs(target-x), x))
+
+            if target < node.val:
+                return dfs(node.left, closest)
+            else:
+                return dfs(node.right, closest)
+
+
+
+        return dfs(root, root.val)
