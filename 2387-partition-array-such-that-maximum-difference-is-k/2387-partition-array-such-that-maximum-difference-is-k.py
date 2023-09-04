@@ -5,12 +5,8 @@ class Solution:
         ans = 1
 
         for right, num in enumerate(nums):
-            if num - nums[left] <= k:
-                continue
-            
-            ans += 1
-
-            while num - nums[left] > k:
+            if num - nums[left] > k:
+                ans += 1    
                 left = right 
         
         return ans
