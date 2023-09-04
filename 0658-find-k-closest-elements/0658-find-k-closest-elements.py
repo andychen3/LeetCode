@@ -9,5 +9,5 @@ class Solution:
             heapq.heappush(heap, (-abs(num-x), -num))
             while len(heap) > k:
                 heapq.heappop(heap)
-        
+        # This approach is still slow, but is better than my other approach because sorting is klogk and not nlogn since we only are sorting k elements. 
         return sorted([-num[1] for num in heap])
