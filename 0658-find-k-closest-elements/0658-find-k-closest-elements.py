@@ -10,11 +10,4 @@ class Solution:
             while len(heap) > k:
                 heapq.heappop(heap)
         
-        while heap:
-            heapq.heappush(second_heap, -heapq.heappop(heap)[1])
-        
-        ans = []
-
-        while second_heap:
-            ans.append(heapq.heappop(second_heap))
-        return ans
+        return sorted([-num[1] for num in heap])
