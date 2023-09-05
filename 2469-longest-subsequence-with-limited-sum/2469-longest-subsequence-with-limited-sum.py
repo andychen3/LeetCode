@@ -25,10 +25,7 @@ class Solution:
                     right = mid - 1
                 else:
                     left = mid + 1
-            # The answer is left because to break out of the loop we always move left up one. because its
-            # zero indexed by moving up one we will get the total number of elements that are less than
-            # or equal to the query.
-            # We also keep this formula to find the leftmost index even though the answer is the rightmost index so it's easier to manipulate the formula.
+            # We consider left because left will have the leftmost index to insert the query
             return left
 
         for query in queries:
