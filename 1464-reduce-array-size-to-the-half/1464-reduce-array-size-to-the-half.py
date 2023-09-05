@@ -9,9 +9,7 @@ class Solution:
         freq = sorted(counts.values())
         ans = 0
         
-        while freq:
-            if n <= 0:
-                break
+        while n > 0:
             val = freq[-1]
             n -= val
             freq.pop()
