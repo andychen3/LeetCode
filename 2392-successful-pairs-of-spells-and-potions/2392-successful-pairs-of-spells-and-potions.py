@@ -6,13 +6,17 @@ class Solution:
         ans = []
         n = len(potions)
 
-        # This is the binary search pattern to find left most insert point for arrays that contain duplicates
+        # This keeps the basic BS format
         def binary_search(arr, target):
-            left, right = 0, len(arr)
-            while left < right:
+            left, right = 0, len(arr) - 1
+            while left <= right:
                 mid = (left + right) // 2
+                # We combine the equal and don't return early if we found mid equal target
+                # because if we have duplicates in the array we want to find the index where 
+                # the element just became successful
+                # This will be in the left most index
                 if arr[mid] >= target:
-                    right = mid
+                    right = mid - 1
                 else:
                     left = mid + 1
             return n - left
