@@ -6,6 +6,7 @@ class Solution:
         ans = []
         n = len(potions)
 
+        # This is the binary search pattern to find left most insert point for arrays that contain duplicates
         def binary_search(arr, target):
             left, right = 0, len(arr)
             while left < right:
