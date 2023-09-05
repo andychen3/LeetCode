@@ -18,10 +18,17 @@ class Solution:
             left, right = 0, len(arr) - 1
             while left <= right:
                 mid = (left + right) // 2
+                # So the reason why we don't want to return if we find target is because
+                # it is asking us for a sum that is less than or equal. So if we returned when we found
+                # target we could be missing a duplicate.
                 if arr[mid] > target:
                     right = mid - 1
                 else:
                     left = mid + 1
+            # The answer is left because to break out of the loop we always move left up one. because its
+            # zero indexed by moving up one we will get the total number of elements that are less than
+            # or equal to the query.
+            # We also keep this formula to find the leftmost index even though the answer is the rightmost index so it's easier to manipulate the formula.
             return left
 
         for query in queries:
