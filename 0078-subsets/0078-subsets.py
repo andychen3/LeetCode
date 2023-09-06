@@ -1,8 +1,7 @@
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
         def backtrack(i, arr):
-            if i == n:
-                ans.append(arr[:])
+            if i > n:
                 return
             
             ans.append(arr[:])
