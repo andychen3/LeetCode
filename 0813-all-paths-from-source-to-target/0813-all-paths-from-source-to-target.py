@@ -5,6 +5,7 @@ class Solution:
         def backtrack(node, path):
             if node == len(graph) - 1:
                 ans.append(path[:])
+                return
             
             for neighbor in graph[node]:
                 path.append(neighbor)
