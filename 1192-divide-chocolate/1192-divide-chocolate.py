@@ -15,8 +15,11 @@ class Solution:
                     ans += 1
                     groups = 0
             # When do you reduce the sweetness level?
+            # When ans is greater than the amount of groups. Which tells us that
+            # The sweetness level is not big enough so we have to increase our left range
             return ans >= k + 1 
 
+        # This is the binary search template for finding a maximum
         left = 1
         right = sum(sweetness)
         while left <= right:
@@ -25,6 +28,4 @@ class Solution:
                 left = mid + 1
             else:
                 right = mid - 1
-        print(right)
-        print(mid)
         return right
