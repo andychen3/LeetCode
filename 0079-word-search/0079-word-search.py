@@ -1,28 +1,44 @@
 class Solution:
     def exist(self, board: List[List[str]], word: str) -> bool:
-        def valid(r,c):
-            return 0 <= r < rows and 0 <= c < cols
-        
-        rows = len(board)
-        cols = len(board[0])
-        directions = ((0,1), (1,0), (-1,0), (0,-1))
-        
-        def backtrack(x, y, pos, seen):
-            if pos == len(word):
+        # The reason you can identify that this problem is a candidate for backtracking is because
+        # It involes search pruning for an answer. And the time complexity
+
+        row = len(board)
+        col = len(board[0])
+
+        def valid(r, c):
+            return 0 <= r < row and 0 <= c < col
+
+        def backtrack(x, y, index, seen):
+            # Since it's backtrack we need a base case
+            if index == len(word):
                 return True
             
+            directions = ((0,1), (1,0), (-1,0), (0,-1))
+
             for dx, dy in directions:
-                new_dx, new_dy = dx + x, dy + y
-                if valid(new_dx, new_dy) and (new_dx, new_dy) not in seen:
-                    if word[pos] == board[new_dx][new_dy]:
-                        seen.add((new_dx, new_dy))
-                        if backtrack(new_dx, new_dy, pos + 1, seen):
+                next_row, next_col = dx + x, dy + y
+                if valid(next_row, next_col) and (next_row, next_col) not in seen:
+                    # Check if the next coordinate is the next word
+                    if board[next_row][next_col] == word[index]:
+                        seen.add((next_row, next_col))
+                        # We backtrack to explore the next option and if it comes back true
+                        # means we found the answer. If not it keeps searching
+                        if backtrack(next_row, next_col, index + 1, seen):
                             return True
-                        seen.remove((new_dx, new_dy))
+                        seen.remove((next_row, next_col))
             return False
+
+
+
+
         
-        for r in range(rows):
-            for c in range(cols):
-                if board[r][c] == word[0] and backtrack(r, c, 1, {(r,c)}):
+        # Traverse the graph
+        for i in range(row):
+            for j in range(col):
+                # We only check if we find the first letter of word. We also pass 1
+                # because we are looking for the second char
+                if board[i][j] == word[0] and backtrack(i, j, 1, {(i, j)}):
                     return True
+        
         return False
