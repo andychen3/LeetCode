@@ -1,10 +1,9 @@
 class Solution:
     def rob(self, nums: List[int]) -> int:
+        if len(nums) == 1:
+            return nums[0]
+            
         n = len(nums)
-
-        if n < 2:
-            return max(nums)
-
         arr = [0] * (n)
         arr[0] = nums[0]
         arr[1] = max(nums[0], nums[1])
