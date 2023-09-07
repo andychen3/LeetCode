@@ -1,10 +1,15 @@
 class Solution:
     def rob(self, nums: List[int]) -> int:
+        # Check if only one element then return that one house
         if len(nums) == 1:
             return nums[0]
-            
+
         n = len(nums)
-        arr = [0] * (n)
+        # We only multiply n instead of n + 1 because the first index you always rob
+        # if one house.
+        # it's different from fibonacci because the 0th index you have to have it as 0.
+        # while here it is not. You can rewrite it to have 0 as the index if you want.
+        arr = [0] * n
         arr[0] = nums[0]
         arr[1] = max(nums[0], nums[1])
 
