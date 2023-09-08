@@ -4,12 +4,6 @@ class Solution:
         
         @cache
         def dp(amount):
-            # We return float("inf") because if an amount is less than 0
-            # that means the amount is invalid so we return a huge number
-            # so when doing dp it will allow finding hte min answer to work
-            if amount < 0:
-                return float("inf")
-
             # amount == 0 return 0 because when the amount is 0 we don't need any coins
             # to form 0
             if amount == 0:
@@ -21,7 +15,8 @@ class Solution:
                 # This recurrence relationship tries to solve the minimum number of coins to
                 # create the amount.
                 # we add 1 + dp(amount-coin) because when a total can be made it takes 1 coin.
-                min_coins = min(min_coins, 1 + dp(amount - coin))
+                if amount - coin >= 0:
+                    min_coins = min(min_coins, 1 + dp(amount - coin))
             
             return min_coins 
         
