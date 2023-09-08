@@ -3,6 +3,8 @@ class Solution:
     def minCostClimbingStairs(self, cost: List[int]) -> int:
         @cache
         def dp(i):
+            # The reason why i == 0 and i == 1 is 0 is because you can start at index 0 or 1.
+            # You only incur cost after you leave the step to go to the next
             if i == 0:
                 return 0
             if i == 1:
