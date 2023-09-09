@@ -19,6 +19,8 @@ class Solution:
             for x2, y2 in arr2:
                 # Transformation vector
                 trans_vector = (x2 - x1, y2-y1)
+                # Use the transformation vector as a key and add 1 everytime a pair shares the same vector
                 overlaps[trans_vector] += 1
+                # Find the max overlap
                 ans = max(ans, overlaps[trans_vector])
         return ans
