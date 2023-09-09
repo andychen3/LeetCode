@@ -1,21 +1,20 @@
-from collections import defaultdict
 class Solution:
     def findDiagonalOrder(self, mat: List[List[int]]) -> List[int]:
-        diagonals = defaultdict(list)
-        rows = len(mat)
-        col = len(mat[0])
-        
-        for r in range(rows):
-            for c in range(col):
-                diagonals[r+c].append(mat[r][c])
-                
-        ans = []
-        
-        for key, vals in diagonals.items():
-            if key % 2 == 0:
-                ans += vals[::-1]
+        m, n = len(mat), len(mat[0])
+        result = []
+
+        for d in range(m + n - 1):
+            if d % 2 == 0:
+                i, j = min(d, m - 1), max(0, d - m + 1)
+                while i >= 0 and j < n:
+                    result.append(mat[i][j])
+                    i -= 1
+                    j += 1
             else:
-                ans += vals
-        
-        return ans
-        
+                i, j = max(0, d - n + 1), min(d, n - 1)
+                while i < m and j >= 0:
+                    result.append(mat[i][j])
+                    i += 1
+                    j -= 1
+
+        return result
