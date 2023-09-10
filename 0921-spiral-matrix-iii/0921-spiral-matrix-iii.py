@@ -7,9 +7,12 @@ class Solution:
         # problems
         steps = 1 
 
-        while len(ans) < rows * cols:
+        # The reason it's len(ans) < then row * cols instead of row * cols > 0 
+        # is because we don't decrement rows and cols. And you can never have more len(ans) then row*cols
+        while len(ans) < rows * cols: 
             for _ in range(steps):
                 cStart += directions
+                # To make sure to only append points that are within bounds since we traverse out of bounds
                 if 0 <= cStart < cols and 0 <= rStart < rows:
                     ans.append([rStart, cStart])
 
