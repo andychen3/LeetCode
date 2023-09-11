@@ -1,13 +1,25 @@
+from functools import cache
 class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
-        dp = [float("inf")] * (amount + 1)
-        dp[0] = 0 # 0 coins to make 0 value
+        # what do i want my function to return? I want it to return the fewest number of coins
+        # What is my state variable. curr to track the amount 
+        # What is my recurrence relation? My recurrence relation is.... 
+        @cache
+        def dp(curr):
+            # If the curr sum is invalid. We return a huge coin value
+            # Because this answer is not possible
+            if curr < 0:
+                return float("inf")
+            # If we get the curr sum to equal amount that means we found a solution.
+            # We return 0 because when the recursion returns it already adds 1 to the possible solution
+            if curr == 0:
+                return 0
 
-        # We should start from iterating through the coins list because we can only use those coins
-        # instead of starting from iterating through the range of 1 to amount + 1 inclusive.
-        # This saves unnecessary iterations.
-        for coin in coins:
-            for i in range(coin, amount + 1):
-                dp[i] = min(dp[i], dp[i-coin] + 1)
+            min_coins = float("inf") # We float inf because we want the fewest num of coins
+            for c in coins:
+                min_coins = min(min_coins, 1 + dp(curr - c))
+            
+            return min_coins if min_coins != float("inf") else float("inf")
         
-        return dp[amount] if dp[amount] != float("inf") else -1
+        result = dp(amount)
+        return result if result != float("inf") else -1
