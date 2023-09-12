@@ -1,20 +1,20 @@
+from functools import cache
 class Solution:
     def climbStairs(self, n: int) -> int:
-        # This is the correct solution and the other solutions are wrong even though they work
-        # We return n == 1 to cover the edge case if n == 1
-        if n == 1:
-            return 1
-        
-        # An array that represents the answer to the problem for a given state
-        # We create an array of 0's because this problem is similar to the fib sequence
-        # The base cases are that at step 1 it takes 1 step and for step 2 it takes 2 ways
-        # 1 + 1 or 2.
-        dp = [0] * (n + 1)
-        dp[1] = 1 # Base cases
-        dp[2] = 2 # Base cases
-        
-        for i in range(3, n + 1):
-            dp[i] = dp[i - 1] + dp[i - 2] # Recurrence relation
+        # This is the correct recursive definition the others are wrong even though they work
+        @cache 
+        def dp(i):
+            # We could so the shorthand of i <= 2 return i but this is more explicit
 
-        
-        return dp[n]
+            # The reason we don't do 0 is because our constraint is n >= 1. So we will never get 0
+            # as a testcase.
+            # This also makes sense since we don't get zero that means the number of ways to reach 1 step
+            # is 1 and to reach 2 is 2. (1+1) and (2)
+            if i == 1:
+                return 1
+
+            if i == 2:
+                return 2
+            
+            return dp(i-1) + dp(i-2)
+        return dp(n)
