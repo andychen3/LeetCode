@@ -6,6 +6,7 @@ class Solution:
         dp = [[0] * (m + 1) for _ in range(m+1)]
 
         for i in range(m - 1, -1, -1):
+            # It starts at i because in order to find how many operations left has done is to start from i
             for left in range(i, -1, -1):
                 mult = multipliers[i]
                 right = (n -1) - (i - left)
