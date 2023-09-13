@@ -1,22 +1,14 @@
-from functools import cache
 class Solution:
     def maximalSquare(self, matrix: List[List[str]]) -> int:
-        @cache
-        def dp(row, col):
-            if row >= n or col >= m:
-                return 0
-            val = 0
-            # IS it a one or not a one
-            if matrix[row][col] == '1':
-                # up, left, top left / You add 1 because because a square can only be limited
-                # by its shortest side. Then you add 1 to extend it
-                val = min(dp(row+1, col), dp(row, col + 1), dp(row+1, col+1)) + 1
-                self.ans = max(self.ans, val)
-            else:
-                dp(row+1, col), dp(row, col + 1), dp(row+1, col+1)
-            return val            
-        
-        self.ans = 0
         n, m = len(matrix), len(matrix[0])
-        dp(0,0)
-        return self.ans * self.ans 
+        dp = [[0] * (m+1) for _ in range(n+1)]
+        max_len = 0
+
+        for i in range(n - 1, -1, -1):
+            for j in range(m - 1, -1 , -1):
+                if matrix[i][j] == '1':
+                    dp[i][j] = min(dp[i+1][j], dp[i][j+1], dp[i+1][j+1]) + 1
+                    max_len = max(max_len, dp[i][j])
+        
+        return max_len*max_len
+
