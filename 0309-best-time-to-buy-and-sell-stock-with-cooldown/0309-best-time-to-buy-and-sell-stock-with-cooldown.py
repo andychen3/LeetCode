@@ -3,6 +3,8 @@ class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         @cache
         def dp(i, holding):
+            # The reason why we have >= instead of == is because of when you have a cooldown.
+            # +2 will go over len prices. 
             if i >= len(prices):
                 return 0
 
