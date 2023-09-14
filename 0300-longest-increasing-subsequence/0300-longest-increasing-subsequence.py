@@ -1,16 +1,23 @@
+from functools import cache
 class Solution:
     def lengthOfLIS(self, nums: List[int]) -> int:
-        n = len(nums)
-        # We set all the values to 1 because all numbers have a length of 1
-        dp = [1] * n
+        @cache
+        def dp(i):
+            # When you reach the end of the nums array
+            if i == len(nums):
+                return 0
 
-        for i in range(n):
-            # We iterate to the ith number because we are using j to iterate from the start to i.
-            # This allows us to check if there are any numbers before i that are less than i
-            for j in range(i):
-                if nums[i] > nums[j]:
-                    # We start building the answer by finding the max of the current ith number
-                    # or we add the current ith number which is 1 to the subsequence we were able to build
-                    # before i
-                    dp[i] = max(dp[j] + 1, dp[i])
-        return max(dp)
+            # Because every number itself can be a subsequence
+            ans = 1
+            # We iterate through nums starting at i because we can't reuse the same number
+            for j in range(i, len(nums)):
+                # If j which are all numbers that come after i. if any are greater tahn nums[i]
+                # that means a potnetial subsequence can be formed
+                if nums[j] > nums[i]:
+                    # We want the max of that and then we recurse on j. We also add 1 because that means
+                    # we extended the subsequence
+                    ans = max(ans, dp(j) + 1)
+            return ans
+
+        # We iterate through the whole length of nums and find the max subsequence that was formed
+        return max([dp(i) for i in range(len(nums))])
