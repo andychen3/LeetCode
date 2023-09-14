@@ -1,13 +1,22 @@
+from functools import cache
 class Solution:
     def lengthOfLIS(self, nums: List[int]) -> int:
-        n = len(nums)
-        dp = [1] * n
+        @cache
+        def dp(i):
+            # When you reach the end of the nums array
+            if i == len(nums):
+                return 0
 
-        for i in range(n):
-            # We are declaring that j is all elements before i. i is what we are using to iterate through
-            # the array. So that means in order to form an increasing sub we have to have j be all elements before i that are less than i.
+            # Because every number itself can be a subsequence
+            ans = 1
+            # J represents all elements before i. so that means in order to increase we j have to be
+            # less than i.
             for j in range(i):
                 if nums[j] < nums[i]:
-                    dp[i] = max(dp[i], dp[j] + 1)
-        
-        return max(dp)
+                    # We want the max of that and then we recurse on j. We also add 1 because that means
+                    # we extended the subsequence
+                    ans = max(ans, dp(j) + 1)
+            return ans
+
+        # We iterate through the whole length of nums and find the max subsequence that was formed
+        return max([dp(i) for i in range(len(nums))])
