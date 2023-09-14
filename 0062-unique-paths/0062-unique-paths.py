@@ -1,15 +1,19 @@
+from functools import cache
 class Solution:
     def uniquePaths(self, m: int, n: int) -> int:
+        # This is a dp problem because its asking for num of possible unique paths and 
+        # The types of movements are constrained to only down and right
         @cache
-        def dp(row, col):
-            if row == m or col == n:
-                return 0
-            
-            if (row, col) == (m-1, n-1):
+        def dp(row,col):
+            if row + col == 0:
                 return 1
-            
-                        
-            
-            return dp(row+1, col) + dp(row, col+1)
-        
-        return dp(0,0)
+
+            ways = 0
+            if row > 0:
+                ways += dp(row-1, col)
+
+            if col > 0:
+                ways += dp(row, col-1)
+            return ways
+
+        return dp(m-1,n-1)
