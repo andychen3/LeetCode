@@ -1,22 +1,17 @@
-from functools import cache
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        @cache
-        def dp(i, holding):
-            # The reason why we have >= instead of == is because of when you have a cooldown.
-            # +2 will go over len prices. 
-            if i >= len(prices):
-                return 0
+        n = len(prices)
+        dp = [[0] * 2 for _ in range(n+2)]
 
-            skip = dp(i+1, holding)
-            do_something = 0
+        for i in range(n - 1, -1 ,-1):
+            for holding in range(2):
+                skip = dp[i+1][holding]
 
-            if holding:
-                do_something = prices[i] + dp(i+2, 0)
-            else:
-                do_something = -prices[i] + dp(i+1, 1)
-            
-            return max(do_something, skip)
-        
-        return dp(0, 0)
-        
+                if holding:
+                    do_something = prices[i] + dp[i+2][0]
+                else:
+                    do_something = -prices[i] + dp[i+1][1]
+                
+                dp[i][holding] = max(skip, do_something)
+        print(dp)
+        return dp[0][0]
