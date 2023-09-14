@@ -1,9 +1,15 @@
 class Solution:
     def minCostClimbingStairs(self, cost: List[int]) -> int:
         n = len(cost)
-        dp = [0] * (n+1) # Because we need to include the top floor.
 
-        for i in range(2, n+1):
-            dp[i] = min(dp[i-1] + cost[i-1], dp[i-2] + cost[i-2])
+        if n == 2:
+            return min(cost[0], cost[1])
 
-        return dp[n]
+        one_step = 0
+        two_step = 0
+
+        for i in range(2, n + 1):
+            temp = one_step
+            one_step = min(one_step + cost[i-1], two_step + cost[i-2])
+            two_step = temp
+        return one_step
