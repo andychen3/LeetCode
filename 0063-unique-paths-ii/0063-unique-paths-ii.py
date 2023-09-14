@@ -13,10 +13,12 @@ class Solution:
                 if obstacleGrid[row][col] == 1:
                     dp[row][col] = 0
                     continue
-                
+                # Check if we aren't negative
                 if row > 0:
+                    # check how many steps were from the left
                     dp[row][col] += dp[row-1][col]
                 if col > 0:
+                    # check how many steps were from the up
                     dp[row][col] += dp[row][col-1]
 
         return dp[m-1][n-1]
