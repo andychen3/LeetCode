@@ -10,9 +10,11 @@ class Solution:
 
             ways = 0
             if row > 0:
+                # You are coming from the left
                 ways += dp(row-1, col)
 
             if col > 0:
+                # You are coming from up
                 ways += dp(row, col-1)
             return ways
 
