@@ -1,15 +1,20 @@
+from functools import cache
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         @cache
         def dp(i, holding):
             if i >= len(prices):
                 return 0
-            
-            ans = dp(i+1, holding)
-            
+
+            skip = dp(i+1, holding)
+            do_something = 0
+
             if holding:
-                ans = max(prices[i] + dp(i+2, False), ans)
+                do_something = prices[i] + dp(i+2, 0)
             else:
-                ans = max(-prices[i]+ dp(i+1, True), ans)
-            return ans
-        return dp(0, False)
+                do_something = -prices[i] + dp(i+1, 1)
+            
+            return max(do_something, skip)
+        
+        return dp(0, 0)
+        
