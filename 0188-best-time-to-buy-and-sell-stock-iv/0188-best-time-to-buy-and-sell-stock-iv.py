@@ -1,16 +1,21 @@
+from functools import cache
 class Solution:
     def maxProfit(self, k: int, prices: List[int]) -> int:
         @cache
-        def dp(i, holding, remaining):
-            if remaining == 0 or i == len(prices):
+        def dp(i, remaining, holding):
+            if i == len(prices) or remaining == 0:
                 return 0
-            
-            ans = dp(i+1, holding, remaining)
-            if holding:
-                ans = max(ans, prices[i] + dp(i+1, False, remaining-1))
+
+            # do nothing
+            skip = dp(i+1, remaining, holding)
+            ans = 0
+            #recurrence relation
+            # I can buy, sell, or do nothing
+            if holding: # We have a stock
+                ans = prices[i] + dp(i+1, remaining - 1, 0)
             else:
-                ans = max(ans, -prices[i] + dp(i+1, True, remaining))
-                
-            return ans
-        
-        return dp(0, False, k)
+                ans = -prices[i] + dp(i+1, remaining, 1)
+            
+            return max(ans, skip)
+
+        return dp(0, k, 0)
