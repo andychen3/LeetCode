@@ -1,7 +1,7 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         n = len(prices)
-        dp = [[0] * 2 for _ in range(n+2)]
+        dp = [[0] * 2 for _ in range(n+2)] # We +2 because of the cooldown which is +2
 
         for i in range(n - 1, -1 ,-1):
             for holding in range(2):
