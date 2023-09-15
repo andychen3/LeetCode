@@ -5,8 +5,6 @@ class Solution:
         while left < len(s) and right < len(t):
             if s[left] == t[right]:
                 left += 1
-                right += 1
-            elif s[left] != t[right]:
-                right += 1
+            right += 1
         
-        return True if left == len(s) else False
+        return left == len(s)
