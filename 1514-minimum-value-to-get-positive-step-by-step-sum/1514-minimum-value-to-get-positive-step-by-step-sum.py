@@ -1,10 +1,9 @@
 class Solution:
     def minStartValue(self, nums: List[int]) -> int:
-        curr_sum = nums[0]
-        min_val = nums[0]
-        
+        prefix = [nums[0]]
         for i in range(1, len(nums)):
-            curr_sum += nums[i]
-            min_val = min(min_val, curr_sum)
+            prefix.append(nums[i] + prefix[-1])
         
-        return -min_val + 1 if min_val < 1 else 1
+        min_val = min(prefix)
+
+        return -min_val+1 if min_val <= 0 else 1 
