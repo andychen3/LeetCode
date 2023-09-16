@@ -1,13 +1,16 @@
 class Solution:
     def getAverages(self, nums: List[int], k: int) -> List[int]:
-        prefix = [nums[0]]
-        for i in range(1, len(nums)):
-            prefix.append(nums[i] + prefix[-1])
-        print(prefix)
+        n = (k * 2) + 1
+
+         # We sum up to k *2 to start our running sum
+        running_sum = sum(nums[:2*k])
 
         ans = [-1] * len(nums)
-        n = (k * 2) + 1
+        # We start at k and then add i + k elements whcih is the next number
         for i in range(k, len(nums)-k):
-            curr = prefix[i+k] - prefix[i-k] + nums[i - k] # We add back the left most element since it was removed when subtracted from right_bound.
-            ans[i] = curr // n
+            running_sum += nums[i + k]
+            # We find the average
+            ans[i] = running_sum // n
+            # Than we remove from the leftmost element
+            running_sum -= nums[i-k]
         return ans 
