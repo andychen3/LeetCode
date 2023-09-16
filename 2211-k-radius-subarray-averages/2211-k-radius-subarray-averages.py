@@ -7,7 +7,6 @@ class Solution:
 
         ans = [-1] * len(nums)
         n = (k * 2) + 1
-        curr = 0
         for i in range(k, len(nums)-k):
             curr = prefix[i + k] - prefix[i - k] + nums[i - k]
             ans[i] = curr // n
