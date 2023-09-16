@@ -1,18 +1,19 @@
 class Solution:
     def numSubarrayProductLessThanK(self, nums: List[int], k: int) -> int:
+        # We have k <= 1 and not k <= 1 because we start our curr at 1
+        # Any answer in nums will exceed k if k == 1. Thus we have to have a condition to return 0
         if k <= 1:
             return 0
-        
-        res = 0
-        product = 1
-        left = 0
-        
+
+        left = ans = 0
+        curr = 1
+
         for right, num in enumerate(nums):
-            product *= num
-            
-            while product >= k:
-                product /= nums[left]
+            curr *= num
+
+            while curr >= k:
+                curr //= nums[left]
                 left += 1
             
-            res += right - left + 1
-        return res
+            ans += right - left + 1
+        return ans
