@@ -13,3 +13,4 @@ class Solution:
         for row in matrix:
             row.reverse()
 
+        return matrix
