@@ -1,17 +1,19 @@
 class Solution:
     def flipAndInvertImage(self, image: List[List[int]]) -> List[List[int]]:
-        N = len(image)
+        
+        # Flip image
+        for row in image:
+            row.reverse()
 
-        # Flipped the image horizontally
-        for rows in image:
-            rows.reverse()
+        n = len(image)
 
-        # Invert the image
-        for r in range(N):
-            for c in range(N):
-                # If the image is 1
+        for r in range(n):
+            for c in range(n):
                 if image[r][c]:
                     image[r][c] = 0
                 else:
                     image[r][c] = 1
         return image
+
+
+        
