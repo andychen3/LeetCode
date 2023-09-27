@@ -1,12 +1,8 @@
-from collections import defaultdict
+from collections import Counter
 class Solution:
     def areOccurrencesEqual(self, s: str) -> bool:
-        counts = defaultdict(int)
+        counts = Counter(s)
 
-        for char in s:
-            counts[char] += 1
-        
-        freq = counts.values()
+        return len(set(counts.values())) == 1
 
-        return len(set(freq)) == 1
         
