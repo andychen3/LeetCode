@@ -1,12 +1,13 @@
 class Solution:
     def destCity(self, paths: List[List[str]]) -> str:
-        source_set = set()
-        dest_set = set()
+        start = {}
 
-        for source, dest in paths:
-            source_set.add(source)
-            dest_set.add(dest)
+        for x, y in paths:
+            start[x] = y
         
-        for dest in dest_set:
-            if dest not in source_set:
-                return dest
+        for destination in start.values():
+            if destination not in start:
+                return destination
+        return -1
+            
+        
