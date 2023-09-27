@@ -7,5 +7,8 @@ class Solution:
             for x in num:
                 counts[x] += 1
         
-        return sorted([key for key, val in counts.items() if val == len(nums)])
-        
+        ans = []
+        for key, val in counts.items():
+            if val == len(nums):
+                ans.append(key)
+        return sorted(ans)
