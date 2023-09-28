@@ -1,21 +1,12 @@
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
-        left = 0
+        n = len(haystack)
+        m = len(needle)
 
-        for index, char in enumerate(haystack):
-            if char == needle[0]:
-                left = index
-                right = index
-                needle_idx = 0
-                while right < len(haystack) and needle_idx < len(needle):
-                    if haystack[right] == needle[needle_idx]:
-                        right += 1
-                        needle_idx += 1
-                    else:
-                        break
-                if needle_idx == len(needle):
-                    return left
+        for start in range(n - m + 1): # We subtract out the length of needle
+            for i in range(m):
+                if needle[i] != haystack[start + i]:
+                    break
+                if i == m - 1:
+                    return start
         return -1
-                
-                    
-            
