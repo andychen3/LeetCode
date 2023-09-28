@@ -1,7 +1,5 @@
 class Solution:
     def diagonalSum(self, mat: List[List[int]]) -> int:
-        if len(mat) == 1:
-            return mat[0][0]
         anti_diag = []
         diag = []
 
