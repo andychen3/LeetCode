@@ -1,17 +1,14 @@
 class Solution:
     def diagonalSum(self, mat: List[List[int]]) -> int:
-        anti_diag = []
-        diag = []
-
         N = len(mat)
-        for row in range(N):
-            for col in range(N):
-                if row == N//2 and col == N//2:
-                    anti_diag.append(mat[row][col])
-                    continue
-                if row + col == N - 1:
-                    anti_diag.append(mat[row][col])
-                if row - col == 0:
-                    diag.append(mat[row][col])
+        ans = 0
         
-        return sum(anti_diag) + sum(diag) 
+        for i in range(N):
+            ans += mat[i][i]
+
+            ans += mat[i][N-1-i]
+        if N % 2 != 0:
+            ans -= mat[N//2][N//2]
+        return ans
+
+               
