@@ -1,24 +1,20 @@
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
-        rows, cols = len(matrix), len(matrix[0])
-        directions = 1 # it starts at one because we are building horizontally first
-        # we start at 0 for x because we go through the first row first
-        # We start y at -1 to make sure we are at the first index when we start
-        x, y = 0, -1 
+        directions = 1
+        row, col = 0, -1
         ans = []
+        m = len(matrix)
+        n = len(matrix[0])
 
-        while rows * cols > 0:
-            for c in range(cols):
-                y += directions
-                ans.append(matrix[x][y])
-            
-            rows -= 1 # we decrement row because in a spiral after the first go row goes down 1
+        while m * n > 0:
+            for _ in range(n):
+                col += directions
+                ans.append(matrix[row][col])
+            m -= 1
 
-            for r in range(rows):
-                x += directions
-                ans.append(matrix[x][y])
-            
-            cols -= 1 # We decrement col after row because we start going horizontal again
-
+            for _ in range(m):
+                row += directions
+                ans.append(matrix[row][col])
+            n -= 1
             directions *= -1
         return ans
