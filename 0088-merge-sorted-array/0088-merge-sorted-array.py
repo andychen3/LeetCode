@@ -9,6 +9,8 @@ class Solution:
         for i in range(m + n - 1, -1, -1):
             if right < 0:
                 break
+            # The reason we have to iterate with nums1 instead of nums2 is because we are writing to nums1
+            # if this wasnt the case then it wouldnt matter if this if statement was nums2[right] >= nums1[left]
             if left >= 0 and nums1[left] >= nums2[right]:
                 nums1[i] = nums1[left]
                 left -=1
