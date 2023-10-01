@@ -1,9 +1,10 @@
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        N = len(nums)
-        insert = 1
-        for i in range(1, N):
-            if nums[i-1] != nums[i]:
-                nums[insert] = nums[i]
-                insert += 1
-        return insert
+        insert_index = 1
+
+        for i in range(1, len(nums)):
+            if nums[i] != nums[i-1]:
+                nums[insert_index] = nums[i]
+                insert_index += 1
+
+        return insert_index
