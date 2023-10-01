@@ -1,16 +1,13 @@
+import heapq
 class Solution:
     def thirdMax(self, nums: List[int]) -> int:
-        nums.sort(reverse=True)
-        distinct = 0
+        hash_set = set(nums)
+        heap = [-num for num in hash_set]
+        heapify(heap)
+        last = 0
+        i = 0
 
-        for i in range(len(nums)):
-            if i > 0 and nums[i] == nums[i-1]:
-                continue
-            else:
-                distinct += 1
-            if distinct == 3:
-                return nums[i]
-        
-        return nums[0]
-        
-
+        while heap and i < 3:
+            last = heapq.heappop(heap)
+            i += 1
+        return -last if i == 3 else max(nums)
