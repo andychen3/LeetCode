@@ -1,9 +1,15 @@
 class Solution:
     def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
-        hash_set = set(nums)
+        i = 0
+        while i < len(nums):
+            while nums[i] != i + 1:
+                curr = nums[i]-1
+                if nums[curr] == nums[i]:
+                    break
+                nums[i], nums[curr] = nums[curr], nums[i]
+            i += 1
         ans = []
-
-        for i in range(1,len(nums)+1):
-            if i not in hash_set:
-                ans.append(i)
+        for i in range(len(nums)):
+            if nums[i] != i+1:
+                ans.append(i+1)
         return ans
