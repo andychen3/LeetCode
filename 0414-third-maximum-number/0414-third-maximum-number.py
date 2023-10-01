@@ -11,6 +11,6 @@ class Solution:
             if distinct == 3:
                 return nums[i]
         
-        return max(nums)
+        return nums[0]
         
 
