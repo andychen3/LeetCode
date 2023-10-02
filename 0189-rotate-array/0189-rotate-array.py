@@ -4,10 +4,10 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         """
         n = len(nums)
-        arr = [0] * n
+        ans = [0] * n
 
         for i in range(n):
-            arr[(i + k) % n] = nums[i]
+            ans[(i + k) % n] = nums[i]
         
-        nums[:] = arr
+        nums[:] = ans
         return nums
