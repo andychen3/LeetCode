@@ -1,18 +1,18 @@
 from collections import defaultdict
 class Solution:
     def findDiagonalOrder(self, mat: List[List[int]]) -> List[int]:
-        anti_diags = defaultdict(list)
-        rows = len(mat)
-        cols = len(mat[0])
+        diag = defaultdict(list)
+        row, col = len(mat), len(mat[0])
 
-        for r in range(rows):
-            for c in range(cols):
-                anti_diags[r + c].append(mat[r][c])
-
+        for r in range(row):
+            for c in range(col):
+                diag[r+c].append(mat[r][c])
+        
         ans = []
-        for key, values in anti_diags.items():
+
+        for key, val in diag.items():
             if key % 2 == 0:
-                ans += values[::-1]
+                ans += val[::-1]
             else:
-                ans += values
+                ans += val
         return ans
