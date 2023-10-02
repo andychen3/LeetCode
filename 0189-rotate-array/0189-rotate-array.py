@@ -4,10 +4,17 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         """
         n = len(nums)
-        ans = [0] * n
+        start = counts = 0
 
-        for i in range(n):
-            ans[(i + k) % n] = nums[i]
-        
-        nums[:] = ans
+        while counts < n:
+            current, prev = start, nums[start]
+            while True:
+                next_idx = (current + k) % n
+                nums[next_idx], prev = prev, nums[next_idx]
+                current = next_idx
+                counts += 1
+                
+                if start == current:
+                    break
+            start += 1
         return nums
