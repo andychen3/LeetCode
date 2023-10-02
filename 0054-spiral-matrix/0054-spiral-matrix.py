@@ -1,7 +1,7 @@
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
         directions = 1
-        x, y = 0, -1
+        x, y = 0,-1
         row, col = len(matrix), len(matrix[0])
         ans = []
 
@@ -15,6 +15,7 @@ class Solution:
             for _ in range(row):
                 x += directions
                 ans.append(matrix[x][y])
+            
             col -= 1
             directions *= -1
         return ans
