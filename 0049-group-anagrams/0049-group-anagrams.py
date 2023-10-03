@@ -6,4 +6,4 @@ class Solution:
         for words in strs:
             groups[tuple(sorted(words))].append(words)
         
-        return [vals for vals in groups.values()]
+        return list(groups.values())
