@@ -1,14 +1,10 @@
-from collections import defaultdict
 class Solution:
     def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
-        counts = defaultdict(list)
+        hash_map = {}
 
-        for idx, num in enumerate(nums):
-            counts[num].append(idx)
-
-        for key, val in counts.items():
-            if len(val) >= 2:
-                for i in range(1, len(val)):
-                    if abs(val[i] - val[i-1]) <= k:
-                        return True
+        for i, num in enumerate(nums):
+            if num in hash_map and i - hash_map[num] <= k:
+                return True
+            hash_map[num] = i
         return False
+        
