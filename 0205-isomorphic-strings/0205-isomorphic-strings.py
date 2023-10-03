@@ -1,15 +1,13 @@
 from collections import defaultdict
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
-        s_map = defaultdict(int)
-        t_map = defaultdict(int)
-        
-        for index, char in enumerate(s):
-            left_char = t[index]
-            if char in s_map and t_map[left_char] != char:
+        s_map = defaultdict(str)
+        t_map = defaultdict(str)
+
+        for c1, c2 in zip(s, t):
+            if (c1 not in s_map) and (c2 not in t_map):
+                s_map[c1] = c2
+                t_map[c2] = c1
+            elif s_map[c1] != c2 or t_map[c2] != c1:
                 return False
-            if left_char in t_map and s_map[char] != left_char:
-                return False
-            s_map[char] = left_char
-            t_map[left_char] = char
         return True
