@@ -3,19 +3,19 @@ class Solution:
         if len(arr) < 3:
             return False
 
-        # find the peak
         peak = 0
-        for i in range(1, len(arr)):
-            if arr[i] < arr[i-1]:
-                peak = i - 1
+
+        n = len(arr)
+        for i in range(n-1):
+            if arr[i] >= arr[i+1]:
+                peak = i
                 break
-            if arr[i] == arr[i-1]:
-                return False
-        
-        if peak == 0 or peak == len(arr) - 1:
+
+        if peak == 0 or peak == n - 1:
             return False
         
-        for i in range(peak, len(arr)-1):
-            if arr[i] <= arr[i+1]:
+        while peak+1 < n:
+            if arr[peak] <= arr[peak+1]:
                 return False
+            peak += 1
         return True
