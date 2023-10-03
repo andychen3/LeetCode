@@ -8,5 +8,5 @@ class Solution:
                 distinct.add(num)
             if len(distinct) == 3:
                 return num
-        return max(nums)
+        return nums[0]
         
