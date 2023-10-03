@@ -1,9 +1,11 @@
+from collections import defaultdict
 class Solution:
     def numIdenticalPairs(self, nums: List[int]) -> int:
+        hash_map = defaultdict(int)
         ans = 0
 
-        for i in range(len(nums)):
-            for j in range(i+1, len(nums)):
-                if nums[i] == nums[j]:
-                    ans += 1
+        for num in nums:
+            ans += hash_map[num]
+            hash_map[num] += 1
         return ans
+
