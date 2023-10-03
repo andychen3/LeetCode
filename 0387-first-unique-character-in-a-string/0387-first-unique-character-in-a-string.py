@@ -1,12 +1,9 @@
+from collections import Counter
 class Solution:
     def firstUniqChar(self, s: str) -> int:
-        s_count = Counter(s)
-        
-        for index, char in enumerate(s):
-            if s_count[char] == 1:
-                return index
-            
-        return -1
-            
+        counts = Counter(s)
 
-        
+        for idx, char in enumerate(s):
+            if counts[char] == 1:
+                return idx
+        return -1
