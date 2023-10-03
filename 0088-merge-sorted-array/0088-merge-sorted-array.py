@@ -3,19 +3,16 @@ class Solution:
         """
         Do not return anything, modify nums1 in-place instead.
         """
-        left = m - 1
-        right = n - 1
+        len1 = m - 1
+        len2 = n - 1
 
         for i in range(m + n - 1, -1, -1):
-            if right < 0:
+            if len2 < 0:
                 break
-            # The reason we have to iterate with nums1 instead of nums2 is because we are writing to nums1
-            # if this wasnt the case then it wouldnt matter if this if statement was nums2[right] >= nums1[left]
-            if left >= 0 and nums1[left] >= nums2[right]:
-                nums1[i] = nums1[left]
-                left -=1
+            if len1 >= 0 and nums1[len1] >= nums2[len2]:
+                nums1[i] = nums1[len1]
+                len1 -=1
             else:
-                nums1[i] = nums2[right]
-                right -= 1
-                
+                nums1[i] = nums2[len2]
+                len2 -= 1
         return nums1
