@@ -1,15 +1,13 @@
-from collections import defaultdict
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        hash_map = defaultdict(int)
+        chars = set()
         ans = left = 0
 
         for right in range(len(s)):
-            hash_map[s[right]] += 1
-            
-            while hash_map[s[right]] > 1:
-                hash_map[s[left]] -= 1
+
+            while s[right] in chars:
+                chars.remove(s[left])
                 left += 1
-            
+            chars.add(s[right])
             ans = max(ans, right - left + 1)
         return ans
