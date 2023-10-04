@@ -5,9 +5,8 @@ class Solution:
 
         freq = sorted(counts.values(), reverse=True)[k-1]
 
-        ans = []
-
-        for num in counts:
-            if counts[num] >= freq:
-                ans.append(num)
-        return ans
+        res = []
+        for key, val in counts.items():
+            if val >= freq:
+                res.append(key)
+        return res
