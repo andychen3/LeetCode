@@ -6,11 +6,7 @@ class ValidWordAbbr:
         self.hash_map = defaultdict(set)
 
         for words in self.list:
-            length = len(words)
-            if length <= 2:
-                self.hash_map[words].add(words)
-            else:
-                self.hash_map[words[0] + str((length-2)) + words[-1]].add(words)
+            self.hash_map[self.convert_word(words)].add(words)
 
     def convert_word(self, word):
         converted = word
