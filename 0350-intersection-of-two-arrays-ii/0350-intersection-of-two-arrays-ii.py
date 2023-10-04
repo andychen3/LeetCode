@@ -2,11 +2,10 @@ from collections import Counter
 class Solution:
     def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
         nums1_counts = Counter(nums1)
-        nums2_counts = Counter(nums2)
+        res = []
 
-        ans = []
-        for key, val in nums1_counts.items():
-            if key in nums2_counts:
-                ans += [key] * min(val, nums2_counts[key])
-        
-        return ans
+        for num in nums2:
+            if num in nums1_counts and nums1_counts[num] > 0:
+                res.append(num)
+                nums1_counts[num] -= 1
+        return res
