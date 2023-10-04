@@ -1,22 +1,20 @@
+from collections import defaultdict
 class TwoSum:
 
     def __init__(self):
-        self.hash_set = set()
-        self.arr = []
+        self.hash_map = defaultdict(int)
 
     def add(self, number: int) -> None:
-        self.arr.append(number)
-        self.hash_set.add(number)
+        self.hash_map[number] += 1
         
 
     def find(self, value: int) -> bool:
-        for n in self.arr:
-            difference = value - n
-            if difference in self.hash_set and difference == n:
-                if self.arr.count(difference) > 1:
+        for num in self.hash_map.keys():
+            difference = value - num
+            if num != difference:
+                if difference in self.hash_map:
                     return True
-
-            elif difference in self.hash_set:
+            elif self.hash_map[num] > 1:
                 return True
         return False
 
