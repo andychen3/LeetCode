@@ -12,6 +12,4 @@ class Solution:
         for word in strings:
             key = create_key(word)
             groups[key].append(word)
-        
         return list(groups.values())
-            
