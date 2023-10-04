@@ -5,5 +5,4 @@ class Solution:
 
         for words in strs:
             groups[tuple(sorted(words))].append(words)
-        
         return list(groups.values())
