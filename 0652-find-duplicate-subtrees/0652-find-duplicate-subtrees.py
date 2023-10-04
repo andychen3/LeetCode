@@ -13,10 +13,10 @@ class Solution:
             if not node:
                 return ""
             
-            rep = f"{dfs(node.left)}{node.val}{dfs(node.right)}#"
-            hash_map[rep] += 1
-            if hash_map[rep] == 2:
+            key = f"{dfs(node.left)}{node.val}{dfs(node.right)}#"
+            hash_map[key] += 1
+            if hash_map[key] == 2:
                 res.append(node)
-            return rep
+            return key
         dfs(root)
         return res
