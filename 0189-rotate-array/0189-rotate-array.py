@@ -3,11 +3,18 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
+        i = 0
         n = len(nums)
-        ans = [0] * n
+        start = 0
 
-
-        for i in range(n):
-            ans[(i+k) % n] = nums[i]
-        nums[:] = ans
+        while i < n:
+            current, prev = start, nums[start]
+            while True:
+                next_idx = (current + k) % n
+                nums[next_idx], prev = prev, nums[next_idx]
+                current = next_idx
+                i += 1
+                if start == current:
+                    break
+            start += 1
         return nums
