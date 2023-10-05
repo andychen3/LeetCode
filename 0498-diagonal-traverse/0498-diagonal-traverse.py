@@ -7,7 +7,7 @@ class Solution:
         for r in range(row):
             for c in range(col):
                 anti_diag[r+c].append(mat[r][c])
-
+        
         ans = []
 
         for key, val in anti_diag.items():
@@ -16,5 +16,3 @@ class Solution:
             else:
                 ans += val
         return ans
-            
-    
