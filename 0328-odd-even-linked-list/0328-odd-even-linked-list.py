@@ -8,21 +8,21 @@ class Solution:
         if not head or not head.next:
             return head
         
-        even = head.next
-        evenHead = even
-        odd = head
-        
-        while even and even.next:
-            temp = odd.next.next
-            odd.next = odd.next.next
-            odd = temp
-            even.next = odd.next
-            even = even.next
-        
-        odd.next = evenHead
-        return head
-            
-            
+        odd, even = head, head.next
+        even_head = even
+        dummy = ListNode(next=head)
+        curr = head.next.next
+        count = 3
 
-        
-        
+        while curr:
+            if count % 2:
+                odd.next = curr
+                odd = odd.next
+            else:
+                even.next = curr
+                even = even.next
+            curr = curr.next
+            count += 1
+        even.next = None
+        odd.next = even_head
+        return dummy.next
