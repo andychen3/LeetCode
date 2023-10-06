@@ -10,22 +10,25 @@ class Node:
 
 class Solution:
     def flatten(self, head: 'Optional[Node]') -> 'Optional[Node]':
-        current = head
+        if not head:
+            return None
 
-        def merge(current):
-            child = current.child
+        def merge(curr):
+            child = curr.child
+
             while child.next:
                 child = child.next
+            
+            if curr.next:
+                child.next = curr.next
+                curr.next.prev = child
+            curr.next = curr.child
+            curr.child.prev = curr
+            curr.child = None
 
-            if current.next:
-                child.next = current.next
-                current.next.prev = child
-            current.next = current.child
-            current.child.prev = current
-            current.child = None
-
-        while current:
-            if current.child:
-                merge(current)
-            current = current.next
+        curr = head
+        while curr:
+            if curr.child:
+                merge(curr)
+            curr = curr.next
         return head
