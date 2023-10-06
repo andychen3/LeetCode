@@ -1,13 +1,17 @@
 class ListNode:
-    def __init__(self, val=0, next=None):
+    def __init__(self, val=0, next=None, prev=None):
         self.val = val
         self.next = next
+        self.prev = prev
 
 class MyLinkedList:
 
     def __init__(self):
         self.size = 0
         self.head = ListNode()
+        self.tail = ListNode()
+        self.head.next = self.tail
+        self.tail.prev = self.head
 
     def get(self, index: int) -> int:
         if index < 0 or index >= self.size:
@@ -36,8 +40,8 @@ class MyLinkedList:
         for _ in range(index):
             prev = prev.next
         
-        to_add = ListNode(val)
-        to_add.next = prev.next
+        to_add = ListNode(val, prev.next, prev)
+        prev.next.prev = to_add
         prev.next = to_add
         self.size += 1
 
@@ -48,7 +52,9 @@ class MyLinkedList:
         prev = self.head
         for _ in range(index):
             prev = prev.next
-        prev.next = prev.next.next
+        nxt = prev.next.next
+        prev.next = nxt
+        nxt.prev = prev
         self.size -= 1
 
 
