@@ -8,7 +8,7 @@ class Solution:
         if not head or not head.next:
             return head
         
-        dummy = ListNode(next=head)
+
         odd = head
         even = evenHead = head.next
 
@@ -18,4 +18,4 @@ class Solution:
             even.next = even.next.next
             even = even.next
         odd.next = evenHead
-        return dummy.next
+        return head
