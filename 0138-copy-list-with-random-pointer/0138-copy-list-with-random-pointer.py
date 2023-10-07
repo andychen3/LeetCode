@@ -11,13 +11,13 @@ class Solution:
     def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
         if not head:
             return None
-
+        
         mapping = {}
         curr = head
         while curr:
             mapping[curr] = Node(curr.val)
             curr = curr.next
-        
+
         curr = head
         while curr:
             copy = mapping[curr]
