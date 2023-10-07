@@ -3,7 +3,7 @@ class Solution:
         hash_map = {}
 
         for idx, num in enumerate(nums):
-            if num in hash_map and idx != hash_map[num]:
+            if num in hash_map:
                 if idx - hash_map[num] <= k:
                     return True
             hash_map[num] = idx
