@@ -17,6 +17,7 @@ class Solution:
             child = curr.child
 
             while child.next:
+                print(f"{child.val} child")
                 child = child.next
 
             if curr.next:
@@ -28,6 +29,7 @@ class Solution:
 
 
         while curr:
+            print(f"parent{curr.val}")
             if curr.child:
                 merge(curr)
             curr = curr.next
