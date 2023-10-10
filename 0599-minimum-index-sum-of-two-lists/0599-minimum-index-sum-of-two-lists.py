@@ -2,18 +2,19 @@ from collections import defaultdict
 class Solution:
     def findRestaurant(self, list1: List[str], list2: List[str]) -> List[str]:
         hash_map = defaultdict(int)
+        same_word = defaultdict(int)
+
+        for idx, word in enumerate(list1):
+            hash_map[word] = idx
         
-        for idx, key in enumerate(list1):
-            for idx2, key2 in enumerate(list2):
-                if key == key2:
-                    hash_map[key] = idx + idx2
-            
-        min_val = min(hash_map.values())
+        for idx1, word in enumerate(list2):
+            if word in hash_map:
+                same_word[word] = idx1 + hash_map[word]
+        
+        min_val = min(same_word.values())
         ans = []
 
-        for key, val in hash_map.items():
+        for key, val in same_word.items():
             if val == min_val:
                 ans.append(key)
         return ans
-                
-        
