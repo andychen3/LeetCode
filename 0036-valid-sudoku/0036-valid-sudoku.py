@@ -1,5 +1,6 @@
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
+        # MY assumptions are that i need row, col, and row // 3 and col //3 which will give me the box
         row_set = set()
         col_set = set()
         box_set = set()
@@ -12,7 +13,7 @@ class Solution:
                         return False
                     if (board[r][c], c) in col_set:
                         return False
-                    if (board[r][c], r // 3, c // 3) in box_set:
+                    if (board[r][c], r//3, c//3) in box_set:
                         return False
                     
                     row_set.add((board[r][c], r))
