@@ -7,16 +7,16 @@
 from collections import defaultdict
 class Solution:
     def findDuplicateSubtrees(self, root: Optional[TreeNode]) -> List[Optional[TreeNode]]:
-        hash_map = defaultdict(int)
-        res = []
+        dups = defaultdict(int)
+        ans = []
         def dfs(node):
             if not node:
                 return ""
             
-            key = f"{dfs(node.left)}{node.val}{dfs(node.right)}#"
-            hash_map[key] += 1
-            if hash_map[key] == 2:
-                res.append(node)
-            return key
+            serialize = f"{dfs(node.left)}{node.val}{dfs(node.right)}#"
+            dups[serialize] += 1
+            if dups[serialize] == 2:
+                ans.append(node)
+            return serialize
         dfs(root)
-        return res
+        return ans
