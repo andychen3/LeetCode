@@ -8,13 +8,11 @@ class Solution:
         def swap(head):
             if not head or not head.next:
                 return head
-            
+
             first = head
             second = head.next
 
             first.next = swap(second.next)
             second.next = first
             return second
-
-
         return swap(head)
