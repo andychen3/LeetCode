@@ -7,9 +7,7 @@
 class Solution:
     def searchBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
         def dfs(node):
-            if not node:
-                return 
-            if node.val == val:
+            if not node or node.val == val:
                 return node
 
             if node.val > val:
