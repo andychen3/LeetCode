@@ -12,7 +12,9 @@ class Solution:
             if node.val == val:
                 return node
 
-            left = dfs(node.left)
-            right = dfs(node.right)
-            return left or right
+            if node.val > val:
+                return dfs(node.left)
+            else:
+                return dfs(node.right)
+            
         return dfs(root)
