@@ -10,10 +10,14 @@ class Solution:
         curr = head
         
         while curr and curr.next:
-            prev.next = curr.next
-            curr.next = curr.next.next
-            prev.next.next = curr
-            prev, curr = curr, curr.next
+            first = curr
+            second = curr.next
 
+            prev.next = second
+            first.next = second.next
+            second.next = first
+
+            prev = first
+            curr = curr.next
         return dummy.next
         
