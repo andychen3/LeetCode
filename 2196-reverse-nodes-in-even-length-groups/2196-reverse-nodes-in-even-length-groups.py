@@ -5,14 +5,15 @@
 #         self.next = next
 class Solution:
     def reverseEvenLengthGroups(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        dummy = prev = ListNode(next=head)
+        dummy = ListNode(next=head)
         groups = 1
+        length = 1
         curr = head
         connect = None
-        length = 1
+
         def reverse(node, n):
             new_curr = node.next
-            prev = node
+            prev = None
             node_to_start = new_curr
 
             for _ in range(n):
@@ -23,9 +24,11 @@ class Solution:
             node.next = prev
             node_to_start.next = new_curr
             return node_to_start
-            
 
+        
         while curr:
+            # The or not curr.next covers if the last group is odd but there is an even length of nodes
+            # And you are at the end of the list. This allows you to go in and reverse the list.
             if groups == length or not curr.next:
                 if length % 2 == 0:
                     curr = reverse(connect, length)
@@ -35,5 +38,3 @@ class Solution:
             length += 1
             curr = curr.next
         return dummy.next
-
-        
