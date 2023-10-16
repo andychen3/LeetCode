@@ -7,6 +7,7 @@ class Solution:
             if c in matching:
                 if not stack:
                     return False
+                
                 previous = stack.pop()
                 if matching[c] != previous:
                     return False
