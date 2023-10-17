@@ -16,7 +16,7 @@ class MyQueue:
         while self.stack2:
             self.stack1.append(self.stack2.pop())
         return last
-
+        
     def peek(self) -> int:
         return self.stack1[0]
 
