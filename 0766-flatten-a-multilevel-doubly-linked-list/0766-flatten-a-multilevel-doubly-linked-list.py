@@ -11,8 +11,8 @@ class Node:
 class Solution:
     def flatten(self, head: 'Optional[Node]') -> 'Optional[Node]':
         if not head:
-            return 
-        
+            return None
+
         stack = []
         curr = head
 
@@ -25,8 +25,8 @@ class Solution:
                 curr.child = None
             
             if not curr.next and stack:
-                next_node = stack.pop()
-                curr.next = next_node
-                next_node.prev = curr
+                node = stack.pop()
+                curr.next = node
+                node.prev = curr
             curr = curr.next
         return head
