@@ -25,7 +25,7 @@ class Solution:
             node.next = prev
             node_to_start.next = new_curr
             return node_to_start
-
+        
         while curr:
             if groups == length or not curr.next:
                 if length % 2 == 0:
