@@ -13,24 +13,21 @@ class Solution:
         dummy = ListNode(next=head)
         curr = head
 
-        def merge(curr):
-            child = curr.child
+        def expand(node):
+            child = node.child
 
             while child.next:
-                print(f"{child.val} child")
                 child = child.next
 
-            if curr.next:
-                child.next = curr.next
-                curr.next.prev = child
-            curr.next = curr.child
-            curr.child.prev = curr
-            curr.child = None
-
+            if node.next:
+                child.next = node.next
+                node.next.prev = child
+            node.next = node.child
+            node.child.prev = node
+            node.child = None
 
         while curr:
-            print(f"parent{curr.val}")
             if curr.child:
-                merge(curr)
+                expand(curr)
             curr = curr.next
         return dummy.next
