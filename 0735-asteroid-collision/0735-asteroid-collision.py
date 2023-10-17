@@ -2,14 +2,14 @@ class Solution:
     def asteroidCollision(self, asteroids: List[int]) -> List[int]:
         stack = []
 
-        for rock in asteroids:
-            while stack and stack[-1] > 0 and rock < 0:
-                if stack[-1] < abs(rock):
+        for asteroid in asteroids:
+            while stack and stack[-1] > 0 and asteroid < 0:
+                if stack[-1] < abs(asteroid):
                     stack.pop()
                     continue
-                elif stack[-1] == abs(rock):
+                elif stack[-1] == abs(asteroid):
                     stack.pop()
                 break
             else:
-                stack.append(rock)
-        return stack        
+                stack.append(asteroid)
+        return stack
