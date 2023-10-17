@@ -8,19 +8,20 @@ class Solution:
         dummy = prev = ListNode(next=head)
         curr = head
 
-        for _ in range(left - 1):
+
+        for _ in range(left-1):
             prev = curr
             curr = curr.next
         
         reversed_prev = prev
-        new_tail = curr
+        reversed_tail = curr
 
         for _ in range(right - left + 1):
             temp = curr.next
             curr.next = reversed_prev
-
             reversed_prev = curr
             curr = temp
+        
         prev.next = reversed_prev
-        new_tail.next = curr
+        reversed_tail.next = curr
         return dummy.next
