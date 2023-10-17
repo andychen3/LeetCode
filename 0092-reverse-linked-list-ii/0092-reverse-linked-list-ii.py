@@ -8,13 +8,12 @@ class Solution:
         dummy = prev = ListNode(next=head)
         curr = head
 
-
-        for _ in range(left-1):
+        for _ in range(left - 1):
             prev = curr
             curr = curr.next
         
         reversed_prev = prev
-        reversed_tail = curr
+        new_tail = curr
 
         for _ in range(right - left + 1):
             temp = curr.next
@@ -23,5 +22,5 @@ class Solution:
             curr = temp
         
         prev.next = reversed_prev
-        reversed_tail.next = curr
+        new_tail.next = curr
         return dummy.next
