@@ -9,17 +9,21 @@ class Node:
 class Solution:
     def insert(self, head: 'Optional[Node]', insertVal: int) -> 'Node':
         if not head:
-            node = Node(insertVal)
-            node.next = node
-            return node
-        
+            new_node = ListNode(insertVal)
+            new_node.next = new_node
+            return new_node
+
         curr = head
+
         while curr.next != head:
             if curr.val <= insertVal <= curr.next.val:
                 break
-            if curr.val > curr.next.val and (insertVal >= curr.val or insertVal <= curr.next.val):
+            elif curr.val > curr.next.val and (insertVal > curr.val or insertVal < curr.next.val):
                 break
+
             curr = curr.next
-        node = Node(insertVal, curr.next)
+
+
+        node = ListNode(insertVal, next=curr.next)
         curr.next = node
         return head
