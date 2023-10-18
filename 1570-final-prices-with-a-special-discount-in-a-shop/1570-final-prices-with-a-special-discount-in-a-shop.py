@@ -6,5 +6,4 @@ class Solution:
             while stack and prices[stack[-1]] >= price:
                 prices[stack.pop()] -= price
             stack.append(index)
-
         return prices
