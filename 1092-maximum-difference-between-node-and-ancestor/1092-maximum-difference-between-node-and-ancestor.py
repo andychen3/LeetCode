@@ -6,14 +6,16 @@
 #         self.right = right
 class Solution:
     def maxAncestorDiff(self, root: Optional[TreeNode]) -> int:
-        def dfs(node, min_node, max_node):
+        
+        def dfs(node, max_node, min_node):
             if not node:
-                return max_node - min_node
-
-            left = dfs(node.left, min(min_node, node.val), max(max_node, node.val))
-            right = dfs(node.right, min(min_node, node.val), max(max_node, node.val))
-
-            return max(left, right)
-
-
-        return dfs(root, root.val, root.val)
+                return 
+            
+            dfs(node.left, max(node.val, max_node), min(min_node, node.val))
+            dfs(node.right, max(node.val, max_node), min(min_node, node.val))
+            self.diff = max(abs(max_node - node.val), self.diff, abs(min_node - node.val))
+            return
+        
+        self.diff = 0    
+        dfs(root, root.val, root.val)
+        return self.diff
