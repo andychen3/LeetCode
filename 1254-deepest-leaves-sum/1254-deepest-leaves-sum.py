@@ -7,22 +7,19 @@
 from collections import deque
 class Solution:
     def deepestLeavesSum(self, root: Optional[TreeNode]) -> int:
-        if not root:
-            return 0
-        
-        d = deque([root])
+        queue = deque([root])
         ans = 0
 
-        while d:
-            ans = 0
+        while queue:
+            length = len(queue)
+            curr = 0 
 
-            for _ in range(len(d)):
-                node = d.popleft()
-                ans += node.val
+            for _ in range(length):
+                node = queue.popleft()
+                curr += node.val
                 if node.left:
-                    d.append(node.left)
+                    queue.append(node.left)
                 if node.right:
-                    d.append(node.right)
-            
-        
+                    queue.append(node.right)
+            ans = curr
         return ans
