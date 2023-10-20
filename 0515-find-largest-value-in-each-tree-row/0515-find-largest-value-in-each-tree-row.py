@@ -12,20 +12,17 @@ class Solution:
         
         queue = deque([root])
         ans = []
-        
+
         while queue:
-            queue_len = len(queue)
-            curr_max = queue[0].val
-            
-            for _ in range(queue_len):
+            length = len(queue)
+            node_max = float("-inf")
+
+            for _ in range(length):
                 node = queue.popleft()
-                curr_max = max(node.val, curr_max)
-                
+                node_max = max(node_max, node.val)
                 if node.left:
                     queue.append(node.left)
-                    
                 if node.right:
                     queue.append(node.right)
-                    
-            ans.append(curr_max)
+            ans.append(node_max)
         return ans
