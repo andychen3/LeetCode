@@ -29,7 +29,7 @@ class Solution:
             if direction:
                 ans.append(level)
             else:
-                ans.append(reversed(level))
+                ans.append(level[::-1])
             
             direction = not direction
         return ans
