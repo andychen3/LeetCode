@@ -5,18 +5,16 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def closestValue(self, root: TreeNode, target: float) -> int:
-        def dfs(node, closest):
+    def closestValue(self, root: Optional[TreeNode], target: float) -> int:
+        def inorder(node):
             if not node:
-                return closest
-            
-            closest = min(node.val, closest, key=lambda x: (abs(target-x), x))
-
-            if target < node.val:
-                return dfs(node.left, closest)
-            else:
-                return dfs(node.right, closest)
-
-
-
-        return dfs(root, root.val)
+                return []
+            return inorder(node.left) + [node.val] + inorder(node.right)
+        arr = inorder(root)
+        min_dist = float("inf")
+        ans = 0
+        for num in arr:
+            if abs(target - num) < min_dist:
+                min_dist = abs(target - num)
+                ans = num
+        return ans
