@@ -5,20 +5,22 @@ class Solution:
         seen = set()
         ans = 0
         
+        def valid(r, c):
+            return 0 <= r < rows and 0 <= c < cols and grid[r][c] == "1"
+        
+        
         def dfs(x, y):
-            if x < 0 or x >= rows or y < 0 or y >= cols or grid[x][y] == '0' or (x, y) in seen:
-                return
-            seen.add((x,y))
-            dfs(x + 1, y)
-            dfs(x - 1, y)
-            dfs(x, y + 1)
-            dfs(x, y - 1)
+            for dx, dy in ((0,1), (1,0), (-1,0), (0,-1)):
+                new_dx, new_dy = dx + x, dy + y
+                if valid(new_dx, new_dy) and (new_dx, new_dy) not in seen:
+                    seen.add((new_dx, new_dy))
+                    dfs(new_dx, new_dy)
         
         
-        
-        for r in range(rows):
-            for c in range(cols):
-                if grid[r][c] == '1' and (r,c) not in seen:
-                    dfs(r,c)
+        for row in range(rows):
+            for col in range(cols):
+                if grid[row][col] == "1" and (row, col) not in seen:
+                    seen.add((row, col))
                     ans += 1
+                    dfs(row, col)
         return ans
