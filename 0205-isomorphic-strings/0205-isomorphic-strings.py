@@ -9,6 +9,6 @@ class Solution:
                 s_map[s_char] = t_char
                 t_map[t_char] = s_char
             
-            if s_map[s_char] != t_char or t_map[t_char] != s_char:
+            elif s_map[s_char] != t_char or t_map[t_char] != s_char:
                 return False
         return True
