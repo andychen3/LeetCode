@@ -3,13 +3,11 @@ class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
             return False
+        counts = Counter(s)
         
-        s_char = Counter(s)
-
         for char in t:
-            if char in s_char and s_char[char] > 0:
-                s_char[char] -= 1
+            if char in counts and counts[char] > 0:
+                counts[char] -= 1
             else:
                 return False
         return True
-        
