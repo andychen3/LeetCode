@@ -9,15 +9,13 @@ class Solution:
         self.balanced = True
         def dfs(node):
             if not node:
-                return 0
-        
+                return True
+            
             left = dfs(node.left)
             right = dfs(node.right)
             if abs(left - right) > 1:
                 self.balanced = False
-            
             return max(left, right) + 1
-        
         
         dfs(root)
         return self.balanced
