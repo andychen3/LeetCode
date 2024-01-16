@@ -7,4 +7,4 @@ class Solution:
             if diff in hash_map:
                 return [idx, hash_map[diff]]
             hash_map[num] = idx
-        return [-1,-1]                
+        return [-1,-1]
