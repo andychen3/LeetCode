@@ -1,49 +1,22 @@
 class Solution:
     def floodFill(self, image: List[List[int]], sr: int, sc: int, color: int) -> List[List[int]]:
-        rows = len(image)
-        cols = len(image[0])
-        starting_pixel = image[sr][sc]
-        
-        if image[sr][sc] == color:
-            return image
+        original_color = image[sr][sc]
+        rows, col = len(image), len(image[0])
+        seen = set()
         
         def dfs(x, y):
-            if 0 <= x < rows and 0 <= y < cols and image[x][y] == starting_pixel:
-                image[x][y] = color
-            else:
+            if x < 0 or x >= rows or y < 0 or y >= col or image[x][y] != original_color or (x,y) in seen:
                 return
             
-            dfs(x+1, y)
-            dfs(x-1, y)
-            dfs(x, y+1)
-            dfs(x, y-1)
+            image[x][y] = color
+            seen.add((x,y))
             
+            dfs(x + 1, y)
+            dfs(x - 1, y)
+            dfs(x, y + 1)
+            dfs(x, y - 1)
         
         dfs(sr, sc)
         return image
-        
-        
-#         rows = len(image)
-#         cols = len(image[0])
-        
-#         starting_pixel = image[sr][sc]
-#         image[sr][sc] = color
-#         q = deque([(sr, sc)])
-#         seen = set()
-        
-#         while q:
-#             curr_x, curr_y = q.popleft()
-        
-#             for x, y in [(-1, 0), (1, 0), (0, 1), (0, -1)]:
-#                 new_x = curr_x+x
-#                 new_y = curr_y+y
-#                 if 0 <= (new_x) < rows and 0 <= (new_y) < cols and image[new_x][new_y] == starting_pixel:
-#                     if (new_x, new_y) not in seen: 
-#                         image[new_x][new_y] = color
-#                         q.append((new_x, new_y))
-#                         seen.add((new_x, new_y))   
-#         return image
-
-        
             
-        
+            
