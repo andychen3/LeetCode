@@ -9,8 +9,7 @@ class Solution:
         self.balanced = True
         def dfs(node):
             if not node:
-                return True
-            
+                return 0
             left = dfs(node.left)
             right = dfs(node.right)
             if abs(left - right) > 1:
