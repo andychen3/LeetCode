@@ -15,6 +15,5 @@ class Solution:
             if abs(left - right) > 1:
                 self.balanced = False
             return max(left, right) + 1
-        
         dfs(root)
         return self.balanced
