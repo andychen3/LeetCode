@@ -1,12 +1,12 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        brackets = {")" : "(", "]": "[", "}": "{"}
+        brackets = {"]": "[", "}": "{", ")": "("}
         stack = []
         
         for char in s:
-            if char in brackets and stack:
-                open_bracket = stack.pop()
-                if brackets[char] != open_bracket:
+            if stack and char in brackets:
+                match = stack.pop()
+                if brackets[char] != match:
                     return False
             else:
                 stack.append(char)
