@@ -1,14 +1,10 @@
+from collections import Counter
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        majority = 0
-        freq = 0
+        counts = Counter(nums)
+        max_val = max(counts.values())
         
-        for num in nums:
-            if freq == 0:
-                majority = num
-                freq += 1
-            elif num != majority:
-                freq -= 1
-            else:
-                freq += 1
-        return majority
+        for key, val in counts.items():
+            if val == max_val:
+                return key
+            
