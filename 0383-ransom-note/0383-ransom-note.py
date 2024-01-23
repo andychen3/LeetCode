@@ -1,19 +1,15 @@
-from collections import defaultdict
+from collections import Counter
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
         if len(ransomNote) > len(magazine):
             return False
-        hash_map = defaultdict(int)
-        
-        for char in magazine:
-            hash_map[char] += 1
+        mag_counts = Counter(magazine)
         
         for char in ransomNote:
-            if char in hash_map and hash_map[char] > 0:
-                hash_map[char] -= 1
-                if hash_map[char] == 0:
-                    del hash_map[char]
+            if char in mag_counts:
+                mag_counts[char] -= 1
+                if mag_counts[char] == 0:
+                    del mag_counts[char]
             else:
                 return False
         return True
-        
