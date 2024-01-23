@@ -7,13 +7,7 @@ class Solution:
         
         while i < n:
             char = s[i]
-            if i + 1 < n and char == "I" and (s[i + 1] == 'V' or s[i + 1] == "X"):
-                ans += roman_map[s[i + 1]] - roman_map[char]
-                i += 2
-            elif i + 1 < n and char == "X" and (s[i + 1] == 'L' or s[i + 1] == "C"):
-                ans += roman_map[s[i + 1]] - roman_map[char]
-                i += 2
-            elif i + 1 < n and char == "C" and (s[i + 1] == 'D' or s[i + 1] == "M"):
+            if i + 1 < n and roman_map[char] < roman_map[s[i + 1]]:
                 ans += roman_map[s[i + 1]] - roman_map[char]
                 i += 2
             else:
