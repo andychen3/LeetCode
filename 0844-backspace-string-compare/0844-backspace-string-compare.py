@@ -1,35 +1,14 @@
 class Solution:
     def backspaceCompare(self, s: str, t: str) -> bool:
-        i = len(s) - 1
-        j = len(t) - 1
-        while i >= 0 or j >= 0:
-            skipS = 0
-            skipT = 0
-            while i >= 0:
-                if s[i] == '#':
-                    skipS += 1
-                    i -= 1
-                elif skipS > 0:
-                    skipS -= 1
-                    i -= 1
+        def remove_backspace(string):
+            stack = []
+            
+            for char in string:
+                if char == "#":
+                    if stack:
+                        stack.pop()
                 else:
-                    break
-            while j >= 0:
-                if t[j] == '#':
-                    skipT += 1
-                    j -= 1
-                elif skipT > 0:
-                    skipT -= 1
-                    j -= 1
-                else:
-                    break
-            
-            if (i >= 0) != (j >= 0):
-                return False
-            
-            if i >= 0 and j >= 0 and s[i] != t[j]:
-                return False
-            i -= 1
-            j -= 1
-        return True
-            
+                    stack.append(char)
+            return "".join(stack)
+        
+        return remove_backspace(s) == remove_backspace(t)
