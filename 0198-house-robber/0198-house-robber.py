@@ -1,16 +1,20 @@
 class Solution:
     def rob(self, nums: List[int]) -> int:
-        if len(nums) == 1:
-            return nums[0]
-
-        # We do len(nums) and not len(nums)+1 because we don't start with needing a subproblem of zero
-        # At our first decision we can choose to rob the first house or not if there are only 1 house
-        dp = [0] * len(nums)
-        dp[0] = nums[0] # Base cases that are similar to top down. Here 0 represents the first house
-        dp[1] = max(nums[0], nums[1])
-
-        # We start at 2 because our base cases ended at 1.
-        for i in range(2, len(nums)):
-            dp[i] = max(dp[i-1], dp[i-2] + nums[i])
+        # What is the function trying to return and waht arg can i use?
+        # max amount of money. 1d array so probably i will work
+        # What is the recurrence relation?
+        # 1 house or 2nd house. Max of them both
+        # What are the base cases?
+        # i = 0 then pick the house that has the most
+        @cache
+        def dp(i):
+            if i == 0:
+                return nums[0]
+            if i == 1:
+                return max(nums[0], nums[1])
+            
+            return max(nums[i] + dp(i-2), dp(i-1))
         
-        return dp[-1] # Answer is at the end. We could also do len(nums)-1
+        
+        
+        return dp(len(nums) - 1)
