@@ -1,12 +1,13 @@
+from collections import Counter
 class Solution:
     def longestPalindrome(self, s: str) -> int:
-        hash_set = set()
+        freq = Counter(s)
+        odds = 0
         
-        for char in s:
-            if char in hash_set:
-                hash_set.remove(char)
-            else:
-                hash_set.add(char)
+        for counts in freq.values():
+            if counts % 2:
+                odds += 1
         
-        return len(s)-len(hash_set)+1 if len(hash_set) > 1 else len(s)
-        
+        if odds > 1:
+            return len(s) - odds + 1
+        return len(s)
