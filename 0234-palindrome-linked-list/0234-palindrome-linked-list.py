@@ -6,22 +6,25 @@
 class Solution:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
         slow = fast = head
-
+        
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
         
         prev = None
-        while slow:
-            temp = slow.next
-            slow.next = prev
-            prev = slow
-            slow = temp
+        curr = slow
         
-        start = head
+        while curr:
+            temp = curr.next
+            curr.next = prev
+            prev = curr
+            curr = temp
+        
+        
         while prev:
-            if prev.val != start.val:
+            if prev.val != head.val:
                 return False
             prev = prev.next
-            start = start.next
+            head = head.next
         return True
+            
