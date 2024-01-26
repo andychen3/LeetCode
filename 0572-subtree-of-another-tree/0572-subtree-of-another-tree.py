@@ -9,24 +9,25 @@ class Solution:
         if not root:
             return
         
-        if root.val == subRoot.val and self.sameTree(root, subRoot):
+        if root.val == subRoot.val and self.same(root, subRoot):
+            return True
+        left = self.isSubtree(root.left, subRoot)
+        right = self.isSubtree(root.right, subRoot)
+        
+        return left or right
+        
+    
+    def same(self, p, q):
+        if not p and not q:
             return True
         
-        return self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
-        
-        
-        
-    def sameTree(self, root_node, sub_root):
-        if not root_node and not sub_root:
-            return True
-
-        if not root_node or not sub_root:
+        if not p or not q:
             return False
-
-        if root_node.val != sub_root.val:
+        
+        if p.val != q.val:
             return False
-
-        left = self.sameTree(root_node.left, sub_root.left)
-        right = self.sameTree(root_node.right, sub_root.right)
-
+        
+        left = self.same(p.left, q.left)
+        right = self.same(p.right, q.right)
+        
         return left and right
