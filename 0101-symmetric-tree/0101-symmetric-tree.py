@@ -12,8 +12,10 @@ class Solution:
             
             if not p or not q:
                 return False
+            
             if p.val != q.val:
                 return False
+            
             left = same(p.left, q.right)
             right = same(p.right, q.left)
             return left and right
