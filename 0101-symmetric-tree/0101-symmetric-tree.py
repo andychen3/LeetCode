@@ -18,5 +18,6 @@ class Solution:
             
             left = same(p.left, q.right)
             right = same(p.right, q.left)
+            
             return left and right
         return same(root.left, root.right)
