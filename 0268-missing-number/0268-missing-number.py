@@ -3,5 +3,5 @@ class Solution:
         ans = len(nums)
         
         for i, num in enumerate(nums):
-            ans ^= i ^ num
+            ans ^= num ^ i
         return ans
