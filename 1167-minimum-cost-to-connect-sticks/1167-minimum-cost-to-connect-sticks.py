@@ -1,14 +1,14 @@
 import heapq
 class Solution:
     def connectSticks(self, sticks: List[int]) -> int:
-        heapq.heapify(sticks)
-        ans = 0
+        heapify(sticks)
+        cost = 0
         
         while len(sticks) > 1:
-            first = heapq.heappop(sticks)
-            second = heapq.heappop(sticks)
+            first_stick = heappop(sticks)
+            second_stick = heappop(sticks)
             
-            ans += first + second
-            heapq.heappush(sticks, first+second)
+            cost += first_stick + second_stick
+            heappush(sticks, first_stick + second_stick)
         
-        return ans
+        return cost
