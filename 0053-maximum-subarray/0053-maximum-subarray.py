@@ -1,8 +1,9 @@
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        best = float("-inf")
-        current = 0
+        ans = float("-inf")
+        curr = 0
+        
         for num in nums:
-            current = max(current+num, num)
-            best = max(current, best)
-        return best
+            curr = max(curr + num, num)
+            ans = max(curr, ans)
+        return ans
