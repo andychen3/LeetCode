@@ -5,9 +5,5 @@ class Solution:
             if i >= len(questions):
                 return 0
             
-            # or not skip
-            not_skip = questions[i][1] + 1 + i
-            
-            return max(dp(i+1), dp(not_skip) + questions[i][0])
-            
+            return max(dp(i + 1), questions[i][0] + dp(i + questions[i][1] + 1))
         return dp(0)
