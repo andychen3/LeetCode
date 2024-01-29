@@ -3,7 +3,6 @@ class MyQueue:
     def __init__(self):
         self.stack1 = []
         self.stack2 = []
-        
 
     def push(self, x: int) -> None:
         self.stack1.append(x)
@@ -11,12 +10,11 @@ class MyQueue:
     def pop(self) -> int:
         while self.stack1:
             self.stack2.append(self.stack1.pop())
-        last_item = self.stack2.pop()
+        last = self.stack2.pop()
         while self.stack2:
             self.stack1.append(self.stack2.pop())
-        return last_item
+        return last
             
-        
 
     def peek(self) -> int:
         if self.stack1:
