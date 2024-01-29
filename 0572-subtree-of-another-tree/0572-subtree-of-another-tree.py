@@ -29,4 +29,6 @@ class Solution:
         
         left = self.isSubtree(root.left, subRoot)
         right = self.isSubtree(root.right, subRoot)
+        
         return left or right
+        
