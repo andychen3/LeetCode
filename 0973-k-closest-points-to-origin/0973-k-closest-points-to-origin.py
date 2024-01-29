@@ -1,12 +1,13 @@
 import heapq
-
+import math
 class Solution:
     def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
         heap = []
         
-        for point in points:
-            distance = sqrt(((point[0]-0)**2 + (point[1]-0)**2))
-            heapq.heappush(heap, (-distance, point))
-            if len(heap) > k:
-                heapq.heappop(heap)
-        return [x[1] for x in heap]
+        
+        for x, y in points:
+            euclidean = math.sqrt((x - 0)**2 + (y - 0) ** 2)
+            heappush(heap, (-euclidean, [x, y]))
+            while len(heap) > k:
+                heappop(heap)
+        return [val[1] for val in heap]
