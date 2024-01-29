@@ -14,7 +14,6 @@ class KthLargest:
         while len(self.heap) > self.k:
             heappop(self.heap)
         return self.heap[0]
-        
 
 
 # Your KthLargest object will be instantiated and called as such:
