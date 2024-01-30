@@ -6,8 +6,7 @@ class Solution:
                 return 0
             
             if text1[i] == text2[j]:
-                return dp(i+1, j+1) + 1
+                return 1 + dp(i+1, j+1)
             
             return max(dp(i+1, j), dp(i, j+1))
-        
         return dp(0,0)
