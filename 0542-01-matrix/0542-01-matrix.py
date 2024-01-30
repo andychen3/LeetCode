@@ -11,7 +11,7 @@ class Solution:
                     queue.append((row, col, 1))
                     seen.add((row, col))
         def valid(r, c):
-            return 0 <= r < rows and 0 <= c < cols
+            return 0 <= r < rows and 0 <= c < cols and mat[r][c] == 1
         
         while queue:
             x, y, steps = queue.popleft()
