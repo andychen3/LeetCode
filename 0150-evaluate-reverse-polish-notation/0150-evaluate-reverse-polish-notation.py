@@ -4,16 +4,17 @@ class Solution:
         
         for char in tokens:
             if char in "+/-*":
-                second = stack.pop()
-                first = stack.pop()
-                if char == "+":
-                    stack.append(first + second)
-                elif char == "-":
-                    stack.append(first - second)
-                elif char == "*":
-                    stack.append(first * second)
-                else:
-                    stack.append(int(first / second))
+                second_operand = stack.pop()
+                first_operand = stack.pop()
+                match char:
+                    case "+":
+                        stack.append(first_operand + second_operand)
+                    case "*":
+                        stack.append(first_operand * second_operand)
+                    case "-":
+                        stack.append(first_operand - second_operand)
+                    case "/":
+                        stack.append(int(first_operand / second_operand))
             else:
                 stack.append(int(char))
-        return stack[-1]
+        return stack[0]
