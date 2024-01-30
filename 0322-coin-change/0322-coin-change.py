@@ -7,8 +7,11 @@ class Solution:
             if remaining == 0:
                 return 0
             
-            min_coins = float("inf")
+            ans = float("inf")
+            
             for c in coins:
-                min_coins = min(min_coins, dp(remaining - c) + 1)
-            return min_coins
+                ans = min(ans, dp(remaining - c) + 1)
+            return ans
         return dp(amount) if dp(amount) != float("inf") else -1
+            
+            
