@@ -7,21 +7,22 @@ class Solution:
         for x, y in prerequisites:
             graph[y].append(x)
             indegree[x] += 1
-            
+        
         queue = deque()
         for i in range(numCourses):
             if indegree[i] == 0:
                 queue.append(i)
         
-        nodeVisited = 0
+        visited = 0
         
         while queue:
             node = queue.popleft()
-            nodeVisited += 1
+            visited += 1
             
             for neighbor in graph[node]:
                 indegree[neighbor] -= 1
                 if indegree[neighbor] == 0:
                     queue.append(neighbor)
-        return nodeVisited == numCourses
+        return visited == numCourses
+            
             
