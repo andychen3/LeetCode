@@ -5,5 +5,5 @@ class Solution:
         
         for num in nums:
             curr = max(curr + num, num)
-            ans = max(curr, ans)
+            ans = max(ans, curr)
         return ans
