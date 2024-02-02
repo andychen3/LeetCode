@@ -1,20 +1,26 @@
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
+        res = []
         nums.sort()
         
-        seen = set()
-        ans = []
-        
         for i, num in enumerate(nums):
-            if i > 0 and nums[i - 1] == nums[i]:
+            if num > 0:
+                break
+            
+            if i > 0 and num == nums[i - 1]:
                 continue
-            hash_map = {}
-            for j in range(i + 1, len(nums)):
-                diff = (num + nums[j]) * -1
-                if diff in hash_map:
-                    triplets = tuple(sorted([num, nums[j], diff]))
-                    if triplets not in seen:
-                        seen.add(triplets)
-                        ans.append(list(triplets))
-                hash_map[nums[j]] = nums[j]
-        return ans
+            
+            left, right = i + 1, len(nums) - 1
+            while left < right:
+                total = num + nums[left] + nums[right]
+                if total > 0:
+                    right -= 1
+                elif total < 0:
+                    left += 1
+                else:
+                    res.append([num, nums[left], nums[right]])
+                    left += 1
+                    right -= 1
+                    while nums[left] == nums[left - 1] and left < right:
+                        left += 1
+        return res
