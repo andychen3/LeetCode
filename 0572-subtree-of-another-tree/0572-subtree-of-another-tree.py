@@ -16,13 +16,10 @@ class Solution:
             if p.val != q.val:
                 return False
             
-            left = same(p.left, q.left)
-            right = same(p.right, q.right)
-            
-            return left and right
+            return same(p.left, q.left) and same(p.right, q.right)
         
         if not root:
-            return False
+            return None
         
         if root.val == subRoot.val and same(root, subRoot):
             return True
@@ -31,4 +28,3 @@ class Solution:
         right = self.isSubtree(root.right, subRoot)
         
         return left or right
-        
