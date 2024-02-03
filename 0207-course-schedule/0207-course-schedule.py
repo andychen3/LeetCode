@@ -1,28 +1,25 @@
-from collections import defaultdict
+from collections import deque, defaultdict
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         graph = defaultdict(list)
-        
+        indegree = [0] * numCourses
+                
         for x, y in prerequisites:
-            graph[x].append(y)
+            graph[y].append(x)
+            indegree[x] += 1
         
-        def dfs(node):
-            if node in seen:
-                return False
-            if graph[node] == []:
-                return True
-            seen.add(node)
+        queue = deque()
+        for i in range(numCourses):
+            if indegree[i] == 0:
+                queue.append(i)
+        
+        visited = 0
+        while queue:
+            node = queue.popleft()
+            visited += 1
             
             for neighbors in graph[node]:
-                if not dfs(neighbors):
-                    return False
-            seen.remove(node)
-            graph[node] = []
-            return True
-            
-        
-        seen = set()
-        for i in range(numCourses):
-            if not dfs(i):
-                return False
-        return True
+                indegree[neighbors] -= 1
+                if indegree[neighbors] == 0:
+                    queue.append(neighbors)
+        return visited == numCourses
