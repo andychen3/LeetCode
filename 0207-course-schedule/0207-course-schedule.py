@@ -5,27 +5,24 @@ class Solution:
         
         for x, y in prerequisites:
             graph[x].append(y)
-            
+        
         def dfs(node):
             if node in seen:
                 return False
             if graph[node] == []:
                 return True
-            
             seen.add(node)
-            for neighbor in graph[node]:
-                if not dfs(neighbor):
-                    return False
             
+            for neighbors in graph[node]:
+                if not dfs(neighbors):
+                    return False
             seen.remove(node)
             graph[node] = []
             return True
-  
             
+        
         seen = set()
         for i in range(numCourses):
             if not dfs(i):
                 return False
         return True
-
-            
