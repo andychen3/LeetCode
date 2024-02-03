@@ -3,18 +3,18 @@ class Solution:
         stack = []
         
         for char in tokens:
-            if char in "+/-*":
-                second_operand = stack.pop()
-                first_operand = stack.pop()
+            if char in "+-*/":
+                second = stack.pop()
+                first = stack.pop()
                 match char:
                     case "+":
-                        stack.append(first_operand + second_operand)
-                    case "*":
-                        stack.append(first_operand * second_operand)
+                        stack.append(first + second)
                     case "-":
-                        stack.append(first_operand - second_operand)
+                        stack.append(first - second)
+                    case "*":
+                        stack.append(first * second)
                     case "/":
-                        stack.append(int(first_operand / second_operand))
+                        stack.append(int(first / second))
             else:
                 stack.append(int(char))
         return stack[0]
