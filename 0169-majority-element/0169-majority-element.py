@@ -1,14 +1,14 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        ans = 0
+        majority = 0
         freq = 0
+        
         for num in nums:
-            if num != ans and freq == 0:
-                ans = num
-                freq += 1
-            elif num == ans:
-                freq += 1
-            else: 
+            if freq == 0:
+                majority = num
+            if num != majority:
                 freq -= 1
-        return ans
+            else:
+                freq += 1
+        return majority
         
