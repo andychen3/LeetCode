@@ -1,9 +1,9 @@
-from collections import deque, defaultdict
+from collections import defaultdict, deque
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         graph = defaultdict(list)
         indegree = [0] * numCourses
-                
+        
         for x, y in prerequisites:
             graph[y].append(x)
             indegree[x] += 1
@@ -14,6 +14,7 @@ class Solution:
                 queue.append(i)
         
         visited = 0
+        
         while queue:
             node = queue.popleft()
             visited += 1
