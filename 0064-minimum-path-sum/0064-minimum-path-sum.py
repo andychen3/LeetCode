@@ -9,9 +9,7 @@ class Solution:
             if row > 0:
                 ans = min(ans, dp(row - 1, col))
             if col > 0:
-                ans = min(ans, dp(row, col -1))
-            
+                ans = min(ans, dp(row, col - 1))
             return grid[row][col] + ans
+        return dp(len(grid) - 1, len(grid[0]) - 1)
             
-        m, n = len(grid), len(grid[0])
-        return dp(m - 1, n - 1)
