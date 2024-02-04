@@ -4,9 +4,9 @@ class Solution:
         stack = []
         
         for char in s:
-            if stack and char in brackets:
-                match = stack.pop()
-                if brackets[char] != match:
+            if char in brackets and stack:
+                matching_bracket = stack.pop()
+                if brackets[char] != matching_bracket:
                     return False
             else:
                 stack.append(char)
