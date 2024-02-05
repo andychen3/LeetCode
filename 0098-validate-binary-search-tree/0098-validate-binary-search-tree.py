@@ -13,8 +13,8 @@ class Solution:
             if not (curr_min < node.val < curr_max):
                 return False
             
-            left = dfs(node.left, curr_min, min(curr_max, node.val))
-            right = dfs(node.right, max(curr_min, node.val), curr_max)
+            left = dfs(node.left, curr_min, node.val)
+            right = dfs(node.right, node.val, curr_max)
             return left and right
             
         return dfs(root, float("-inf"), float("inf"))
