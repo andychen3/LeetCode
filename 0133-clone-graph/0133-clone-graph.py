@@ -21,7 +21,8 @@ class Solution:
                 new_node.neighbors.append(dfs(neighbors))
             return new_node
             
-        return dfs(node) if node else None
+            
         
+        return dfs(node) if node else None
         
         
