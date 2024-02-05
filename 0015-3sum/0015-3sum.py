@@ -6,17 +6,16 @@ class Solution:
         for i, num in enumerate(nums):
             if num > 0:
                 break
-            
-            if i > 0 and nums[i - 1] == nums[i]:
+                
+            if i > 0 and nums[i - 1] == num:
                 continue
                 
             left, right = i + 1, len(nums) - 1
-            
             while left < right:
-                total = num + nums[left] + nums[right]
-                if total > 0:
+                triplet = num + nums[left] + nums[right]
+                if triplet > 0:
                     right -= 1
-                elif total < 0:
+                elif triplet < 0:
                     left += 1
                 else:
                     ans.append([num, nums[left], nums[right]])
