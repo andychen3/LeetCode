@@ -1,15 +1,13 @@
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
         row, col = len(grid), len(grid[0])
-        seen = set()
         ans = 0
         
         
         def dfs(x, y):
-            if x >= row or x < 0 or y >= col or y < 0 or grid[x][y] == "0" or (x, y) in seen:
+            if x >= row or x < 0 or y >= col or y < 0 or grid[x][y] == "0":
                 return
-            # grid[x][y] = "0"
-            seen.add((x, y))
+            grid[x][y] = "0"
             dfs(x - 1, y)
             dfs(x + 1, y)
             dfs(x, y - 1)
@@ -17,7 +15,7 @@ class Solution:
         
         for r in range(row):
             for c in range(col):
-                if grid[r][c] == "1" and (r,c) not in seen:
+                if grid[r][c] == "1":
                     ans += 1
                     dfs(r, c)
         return ans
