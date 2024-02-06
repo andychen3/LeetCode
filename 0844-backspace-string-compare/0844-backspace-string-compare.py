@@ -1,7 +1,8 @@
 class Solution:
     def backspaceCompare(self, s: str, t: str) -> bool:
-        def remove(string):
+        def parse(string):
             stack = []
+            
             for char in string:
                 if char == "#":
                     if stack:
@@ -9,4 +10,5 @@ class Solution:
                 else:
                     stack.append(char)
             return "".join(stack)
-        return remove(s) == remove(t)
+        
+        return parse(s) == parse(t)
