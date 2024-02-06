@@ -15,9 +15,6 @@ class Solution:
                     if grid[r][c] == 1:
                         fresh += 1
         
-        if fresh == 0:
-            return 0
-        
         def valid(x, y):
             return 0 <= x < row and 0 <= y < col and grid[x][y] == 1
         
