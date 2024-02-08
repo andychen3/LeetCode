@@ -1,28 +1,23 @@
 from collections import defaultdict
 class Solution:
     def countComponents(self, n: int, edges: List[List[int]]) -> int:
+        seen = set()
         graph = defaultdict(list)
         
         for x, y in edges:
             graph[x].append(y)
             graph[y].append(x)
             
-            
         def dfs(node):
+            if node in seen:
+                return
+            seen.add(node)
             for neighbors in graph[node]:
-                if neighbors not in seen:
-                    seen.add(neighbors)
-                    dfs(neighbors)
-        
-        
-        seen = set()
+                dfs(neighbors)
+                
         ans = 0
-        
         for i in range(n):
             if i not in seen:
                 ans += 1
-                seen.add(i)
                 dfs(i)
         return ans
-                
-            
