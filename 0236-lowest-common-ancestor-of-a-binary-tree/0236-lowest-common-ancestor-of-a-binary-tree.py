@@ -10,7 +10,7 @@ class Solution:
         if not root:
             return None
         
-        if p == root or q == root:
+        if root == q or root == p:
             return root
         
         left = self.lowestCommonAncestor(root.left, p, q)
