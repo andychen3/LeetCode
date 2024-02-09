@@ -9,6 +9,7 @@ class Solution:
         def dfs(left, right):
             if left > right:
                 return None
+            
             mid = (left + right) // 2
             
             node = TreeNode(nums[mid])
@@ -16,5 +17,4 @@ class Solution:
             node.right = dfs(mid + 1, right)
             return node
             
-            
-        return dfs(0, len(nums) - 1)
+        return dfs(0, len(nums)-1)
