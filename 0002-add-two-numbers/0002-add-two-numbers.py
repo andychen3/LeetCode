@@ -20,3 +20,4 @@ class Solution:
             ans = ans.next
         return dummy.next
             
+                
