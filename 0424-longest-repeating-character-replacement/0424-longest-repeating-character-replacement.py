@@ -1,20 +1,18 @@
 from collections import defaultdict
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
-        hash_map = defaultdict(int)
-        max_char = 0
-        left = 0
-        longest = 0
+        left = max_freq = 0
+        char_map = defaultdict(int)
+        ans = 0
         
-        for right, word in enumerate(s):
-            hash_map[word] += 1
+        for right, char in enumerate(s):
+            char_map[char] += 1
+            max_freq = max(max_freq, char_map[char])
             
-            max_char = max(max_char, hash_map[word])
-            
-            while right - left + 1 - max_char > k:
-                left_word = s[left]
-                hash_map[left_word] -= 1
+            while (right - left + 1) - max_freq > k:
+                char_map[s[left]] -= 1
+                
                 left += 1
             
-            longest = max(longest, right - left + 1)
-        return longest
+            ans = max(ans, right - left + 1)
+        return ans
