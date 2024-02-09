@@ -11,18 +11,15 @@ class Solution:
     def cloneGraph(self, node: Optional['Node']) -> Optional['Node']:
         graph = {}
         
-        def dfs(root):
-            if root in graph:
-                return graph[root]
+        def dfs(node):
+            if node in graph:
+                return graph[node]
             
-            new_node = Node(root.val)
-            graph[root] = new_node
-            for neighbors in root.neighbors:
+            new_node = Node(node.val)
+            graph[node] = new_node
+            for neighbors in node.neighbors:
                 new_node.neighbors.append(dfs(neighbors))
             return new_node
-            
-            
+        
         
         return dfs(node) if node else None
-        
-        
