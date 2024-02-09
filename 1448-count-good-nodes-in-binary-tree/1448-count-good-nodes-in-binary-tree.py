@@ -9,15 +9,13 @@ class Solution:
         def dfs(node, max_so_far):
             if not node:
                 return 0
-            
-            
-            left = dfs(node.left, max(max_so_far, node.val))
-            right = dfs(node.right, max(max_so_far, node.val))
+            max_so_far = max(node.val, max_so_far)
+            left = dfs(node.left, max_so_far)
+            right = dfs(node.right, max_so_far)
             ans = left + right
             if node.val >= max_so_far:
                 ans += 1
-            
             return ans
-                        
+            
         
         return dfs(root, root.val)
