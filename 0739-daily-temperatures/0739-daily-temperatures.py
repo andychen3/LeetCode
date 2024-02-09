@@ -4,8 +4,8 @@ class Solution:
         stack = []
         
         for i in range(len(temperatures)):
-            while stack and stack[-1][0] < temperatures[i]:
-                _, days = stack.pop()
+            while stack and temperatures[stack[-1]] < temperatures[i]:
+                days = stack.pop()
                 ans[days] = i - days
-            stack.append([temperatures[i], i])
+            stack.append(i)
         return ans
