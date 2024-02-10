@@ -10,8 +10,6 @@ class Solution:
                     arr.append(num)
                     backtrack(arr)
                     arr.pop()
-            
-            
         ans = []
         backtrack([])
         return ans
