@@ -5,7 +5,7 @@
 #         self.next = next
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        dummy = ans = ListNode()
+        dummy = new_list = ListNode()
         carry = 0
         
         while l1 or l2 or carry:
@@ -15,9 +15,7 @@ class Solution:
             if l2:
                 carry += l2.val
                 l2 = l2.next
-            ans.next = ListNode(carry % 10)
+            new_list.next = ListNode(carry % 10)
             carry //= 10
-            ans = ans.next
+            new_list = new_list.next
         return dummy.next
-            
-                
