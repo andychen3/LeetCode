@@ -9,16 +9,15 @@ class Solution:
             
         def dfs(node):
             if node in seen:
-                return
+                return 
             seen.add(node)
             for neighbors in graph[node]:
                 dfs(neighbors)
-            
-            
-        seen = set()    
+        
+        seen = set()
         ans = 0
         for i in range(n):
             if i not in seen:
-                ans += 1 
+                ans += 1
                 dfs(i)
         return ans
