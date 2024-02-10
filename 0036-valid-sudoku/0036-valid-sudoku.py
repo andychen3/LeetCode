@@ -3,22 +3,18 @@ class Solution:
         row_set = set()
         col_set = set()
         box_set = set()
-        n = len(board)
         
-        for r in range(n):
-            for c in range(n):
-                if board[r][c] != ".":
-                    if (r, board[r][c]) in row_set:
+        for row in range(9):
+            for col in range(9):
+                if board[row][col] != ".":
+                    if (board[row][col], row) in row_set:
+                        return False
+                    if (board[row][col], col) in col_set:
+                        return False
+                    if (board[row][col], row//3, col//3) in box_set:
                         return False
                     
-                    if (c, board[r][c]) in col_set:
-                        return False
-                    
-                    if (r//3, c//3, board[r][c]) in box_set:
-                        return False
-                    
-                row_set.add((r, board[r][c]))
-                col_set.add((c, board[r][c]))
-                box_set.add((r//3, c//3, board[r][c]))
+                row_set.add((board[row][col], row))
+                col_set.add((board[row][col], col))
+                box_set.add((board[row][col], row//3, col//3))
         return True
-        
