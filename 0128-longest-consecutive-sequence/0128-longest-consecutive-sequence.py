@@ -4,9 +4,9 @@ class Solution:
         ans = 0
         
         for num in nums:
-            if (num - 1) not in hash_set:
-                length = 1
-                while (num + length) in hash_set:
-                    length += 1
-                ans = max(ans, length)
+            if num - 1 not in hash_set:
+                longest = 1
+                while num + longest in hash_set:
+                    longest += 1
+                ans = max(ans, longest)
         return ans
