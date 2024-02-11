@@ -5,7 +5,7 @@ class Solution:
         
         for i in range(len(temperatures)):
             while stack and temperatures[stack[-1]] < temperatures[i]:
-                days = stack.pop()
-                ans[days] = i - days
+                day = stack.pop()
+                ans[day] = i - day
             stack.append(i)
         return ans
