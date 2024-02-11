@@ -15,13 +15,12 @@ class Solution:
             fast = fast.next.next
             
         prev = None
-        curr = slow
         
-        while curr:
-            temp = curr.next
-            curr.next = prev
-            prev = curr
-            curr = temp
+        while slow:
+            temp = slow.next
+            slow.next = prev
+            prev = slow
+            slow = temp
         
         curr = head
         
@@ -32,4 +31,6 @@ class Solution:
             prev.next = temp1
             curr = temp1
             prev = temp2
+        
         return head
+            
