@@ -7,11 +7,9 @@ class Solution:
             
             if i >= len(nums):
                 return 0
+        
             
-            ways = 0
+            return dp(i+1, total + nums[i]) + dp(i + 1, total - nums[i])
             
-            ways += dp(i+1, total + nums[i]) + dp(i + 1, total - nums[i])
-            
-            return ways
         
         return dp(0,0)
