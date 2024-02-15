@@ -4,20 +4,25 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+from collections import defaultdict
 class Solution:
     def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
-        
-        def dfs(left, right):
+        def build(left, right):
             nonlocal preorder_idx
             if left > right:
-                return
+                return None
+            
             root = TreeNode(preorder[preorder_idx])
+            
             preorder_idx += 1
-            mid = hash_map[root.val]
-            root.left = dfs(left, mid -1)
-            root.right = dfs(mid + 1, right)
+            
+            root.left = build(left, inorder_map[root.val] - 1)
+            root.right = build(inorder_map[root.val]+1, right)
             return root
         
         preorder_idx = 0
-        hash_map = {node: index for index, node in enumerate(inorder)}
-        return dfs(0, len(inorder)-1)
+        inorder_map = defaultdict(int)
+        for idx, node in enumerate(inorder):
+            inorder_map[node] = idx
+        
+        return build(0, len(preorder) - 1)
