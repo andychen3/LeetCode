@@ -1,24 +1,30 @@
-from collections import defaultdict
+class UnionFind:
+    def __init__(self, n):
+        self.parent = [node for node in range(n)]
+        
+    def find(self, node):
+        while node != self.parent[node]:
+            node = self.parent[node]
+        return node
+    
+    def union(self, node1, node2):
+        root1 = self.find(node1)
+        root2 = self.find(node2)
+        
+        if root1 == root2:
+            return False
+    
+        self.parent[root1] = root2
+        return True
+
 class Solution:
     def validTree(self, n: int, edges: List[List[int]]) -> bool:
-        if len(edges) != n - 1:
+        if len(edges) != n-1:
             return False
         
-        graph = defaultdict(list)
+        unionFind = UnionFind(n)
         
         for x, y in edges:
-            graph[x].append(y)
-            graph[y].append(x)
-            
-        def dfs(node):
-            if node in seen:
-                return
-            seen.add(node)
-            
-            for neighbors in graph[node]:
-                dfs(neighbors)
-            
-        
-        seen = set()
-        dfs(0)
-        return len(seen) == n
+            if not unionFind.union(x, y):
+                return False
+        return True
