@@ -1,9 +1,11 @@
 class UnionFind:
     def __init__(self, n):
         self.parent = [node for node in range(n)]
+        self.rank = [1] * n
         
     def find(self, node):
         while node != self.parent[node]:
+            self.parent[node] = self.parent[self.parent[node]]
             node = self.parent[node]
         return node
     
@@ -13,8 +15,14 @@ class UnionFind:
         
         if root1 == root2:
             return False
+        
+        if self.rank[root1] < self.rank[root2]:
+            self.parent[root1] = root2
+            self.rank[root2] += self.rank[root1]
+        else:
+            self.parent[root2] = root1
+            self.rank[root1] += self.rank[root2] 
     
-        self.parent[root1] = root2
         return True
 
 class Solution:
