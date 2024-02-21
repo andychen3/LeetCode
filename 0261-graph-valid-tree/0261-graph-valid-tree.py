@@ -12,13 +12,13 @@ class Solution:
             
         def dfs(node):
             if node in seen:
-                return False
+                return
             seen.add(node)
             
-            for neighbor in graph[node]:
-                dfs(neighbor)
-                    
-        seen = set()
+            for neighbors in graph[node]:
+                dfs(neighbors)
+            
         
+        seen = set()
         dfs(0)
         return len(seen) == n
