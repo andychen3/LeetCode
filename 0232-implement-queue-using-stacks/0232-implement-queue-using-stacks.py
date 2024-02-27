@@ -15,10 +15,10 @@ class MyQueue:
             self.stack1.append(self.stack2.pop())
         return last
             
-
     def peek(self) -> int:
         if self.stack1:
             return self.stack1[0]
+        
 
     def empty(self) -> bool:
         return not self.stack1
