@@ -10,4 +10,6 @@ class Solution:
         
         if odds > 1:
             return len(s) - odds + 1
-        return len(s)
+        else:
+            return len(s)
+        
