@@ -4,54 +4,47 @@ class ListNode:
         self.val = val
         self.next = None
         self.prev = None
-        
-        
+
 class LRUCache:
 
     def __init__(self, capacity: int):
         self.capacity = capacity
-        self.dic = {}
-        self.head = ListNode(-1, -1)
-        self.tail = ListNode(-1, -1)
-        self.head.next = self.tail
-        self.tail.prev = self.head
+        self.cache = {}
+        
+        self.left, self.right = ListNode(0,0), ListNode(0,0)
+        self.left.next, self.right.prev = self.right, self.left
         
 
-    def get(self, key: int) -> int:
-        if key not in self.dic:
-            return -1
+    def add(self, node):
+        prev, nxt = self.right.prev, self.right
+        prev.next = node
+        nxt.prev = node
+        node.prev = prev
+        node.next = nxt
         
-        node = self.dic[key]
-        self.remove(node)
-        self.add(node)
-        return node.val
+    def remove(self, node):
+        prev, nxt = node.prev, node.next
+        prev.next = nxt
+        nxt.prev = prev
+        
+    def get(self, key: int) -> int:
+        if key in self.cache:
+            self.remove(self.cache[key])
+            self.add(self.cache[key])
+            return self.cache[key].val
+        return -1
         
 
     def put(self, key: int, value: int) -> None:
-        if key in self.dic:
-            old_node = self.dic[key]
-            self.remove(old_node)
+        if key in self.cache:
+            self.remove(self.cache[key])
+        self.cache[key] = ListNode(key, value)
+        self.add(self.cache[key])
         
-        node = ListNode(key, value)
-        self.dic[key] = node
-        self.add(node)
-        
-        if len(self.dic) > self.capacity:
-            node_to_delete = self.head.next
-            self.remove(node_to_delete)
-            del self.dic[node_to_delete.key]
-        
-    
-    def add(self, node):
-        previous_end = self.tail.prev
-        previous_end.next = node
-        node.prev = previous_end
-        node.next = self.tail
-        self.tail.prev = node
-        
-    def remove(self, node):
-        node.prev.next = node.next
-        node.next.prev = node.prev
+        if len(self.cache) > self.capacity:
+            lru = self.left.next
+            self.remove(lru)
+            del self.cache[lru.key]
         
 
 
