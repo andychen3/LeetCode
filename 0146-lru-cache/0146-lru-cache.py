@@ -2,8 +2,8 @@ class ListNode:
     def __init__(self, key, val):
         self.key = key
         self.val = val
-        self.prev = None
         self.next = None
+        self.prev = None
         
 class LRUCache:
 
@@ -15,16 +15,13 @@ class LRUCache:
         
     def add(self, node):
         prev, nxt = self.right.prev, self.right
-        prev.next = node
-        nxt.prev = node
-        node.prev, node.next = prev, nxt
-        
+        prev.next, nxt.prev = node, node
+        node.next, node.prev = nxt, prev
         
     def remove(self, node):
         prev, nxt = node.prev, node.next
-        prev.next = nxt
-        nxt.prev = prev
-        
+        prev.next, nxt.prev = nxt, prev
+
     def get(self, key: int) -> int:
         if key in self.cache:
             self.remove(self.cache[key])
