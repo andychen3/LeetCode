@@ -8,12 +8,12 @@ class Solution:
         dummy = ListNode(0, head)
         curr = head
         length = 0
+        
         while curr:
             length += 1
             curr = curr.next
-
-        prev = dummy
         
+        prev = dummy
         while length >= k:
             curr = prev.next
             nxt = curr.next
