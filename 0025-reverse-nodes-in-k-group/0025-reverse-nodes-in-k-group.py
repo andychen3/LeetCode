@@ -12,7 +12,7 @@ class Solution:
         while curr:
             length += 1
             curr = curr.next
-        
+            
         prev = dummy
         while length >= k:
             curr = prev.next
@@ -24,4 +24,5 @@ class Solution:
                 nxt = curr.next
             prev = curr
             length -= k
+        
         return dummy.next
