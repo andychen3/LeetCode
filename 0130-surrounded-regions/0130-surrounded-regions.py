@@ -3,31 +3,26 @@ class Solution:
         """
         Do not return anything, modify board in-place instead.
         """
-        
+        row, col = len(board), len(board[0])
         
         def dfs(r, c):
-            if r < 0 or r >= rows or c < 0 or c >= cols or board[r][c] != 'O':
+            if r < 0 or r >= row or c < 0 or c >= col or board[r][c] != "O":
                 return
-            board[r][c] = 'V'
-            dfs(r+1, c)
-            dfs(r-1, c)
-            dfs(r, c+1)
-            dfs(r, c-1)
+            board[r][c] = "E"
+            dfs(r + 1, c)
+            dfs(r - 1, c)
+            dfs(r, c + 1)
+            dfs(r, c - 1)
         
-        rows = len(board)
-        cols = len(board[0])
-        # Find os in border
-        for r in range(rows):
-            dfs(r, 0)
-            dfs(r, cols-1)
-        for c in range(cols):
-            dfs(0, c)
-            dfs(rows-1, c)
-            
-        for r in range(rows):
-            for c in range(cols):
-                if board[r][c] == 'O':
-                    board[r][c] = 'X'
-                elif board[r][c] == 'V':
-                    board[r][c] = 'O'
+        for r in range(row):
+            for c in range(col):
+                if board[r][c] == "O" and r in [0, row-1] or c in [0, col - 1]:
+                    dfs(r, c)
+        
+        for r in range(row):
+            for c in range(col):
+                if board[r][c] == "O":
+                    board[r][c] = "X"
+                elif board[r][c] == "E":
+                    board[r][c] = "O"
         return board
