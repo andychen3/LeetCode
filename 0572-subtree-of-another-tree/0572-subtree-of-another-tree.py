@@ -9,22 +9,22 @@ class Solution:
         def same(p, q):
             if not p and not q:
                 return True
-            
             if not p or not q:
                 return False
-            
             if p.val != q.val:
                 return False
-            
-            return same(p.left, q.left) and same(p.right, q.right)
+            left = same(p.left, q.left)
+            right = same(p.right, q.right)
+            return left and right
         
-        if not root:
-            return None
+        if not root and not subRoot:
+            return True
+        if not root or not subRoot:
+            return False
         
         if root.val == subRoot.val and same(root, subRoot):
             return True
         
         left = self.isSubtree(root.left, subRoot)
         right = self.isSubtree(root.right, subRoot)
-        
         return left or right
