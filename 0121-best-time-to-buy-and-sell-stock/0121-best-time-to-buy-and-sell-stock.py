@@ -3,6 +3,6 @@ class Solution:
         profit = 0
         curr = float("inf")
         for price in prices:
-            curr = min(curr, price)
+            curr = min(price, curr)
             profit = max(profit, price - curr)
         return profit
