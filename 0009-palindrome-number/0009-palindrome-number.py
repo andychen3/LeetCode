@@ -1,6 +1,6 @@
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        string = [s for s in str(x)]
+        string = str(x)
         left, right = 0, len(string) - 1
         
         while left < right:
