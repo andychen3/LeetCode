@@ -6,4 +6,3 @@ class Solution:
             if intervals[i-1][1] > intervals[i][0]:
                 return False
         return True
-            
