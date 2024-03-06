@@ -4,3 +4,4 @@ class Solution:
         for num in nums:
             ans ^= num
         return ans
+    
