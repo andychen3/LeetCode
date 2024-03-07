@@ -1,31 +1,30 @@
 class Solution:
     def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
+        pac_set = set()
+        atl_set = set()
         
-        def valid(r, c):
-            return 0 <= r < rows and 0 <= c < cols
+        row, col = len(heights), len(heights[0])
         
-        pacific_set = set()
-        atlantic_set = set()
-        rows = len(heights)
-        cols = len(heights[0])
-        directions = ((0,1), (1,0), (-1,0), (0,-1))
-        
-        def dfs(x, y, visited):
-            if (x,y) in visited:
+        # DFS each call
+        def dfs(x, y, seen, prev):
+            if x < 0 or x >= row or y < 0 or y >= col or (x, y) in seen or heights[x][y] < prev:
                 return
-            visited.add((x,y))
-            for dx, dy in directions:
-                new_dx, new_dy = dx + x, dy + y
-                if valid(new_dx, new_dy):
-                    if heights[new_dx][new_dy] >= heights[x][y]:
-                        dfs(new_dx, new_dy, visited)
-        
-        for r in range(rows):
-            dfs(r, 0, pacific_set)
-            dfs(r, cols-1, atlantic_set)
-        for c in range(cols):
-            dfs(0, c, pacific_set)
-            dfs(rows-1, c, atlantic_set)
+            seen.add((x, y))
             
-        return list(pacific_set & atlantic_set)
+            dfs(x+1, y, seen, heights[x][y])
+            dfs(x-1, y, seen, heights[x][y])
+            dfs(x, y+1, seen, heights[x][y])
+            dfs(x, y-1, seen, heights[x][y])
         
+        # Get Top and left
+        for c in range(col):
+            dfs(0, c, pac_set, -1)
+            dfs(row - 1, c, atl_set, -1)
+        
+        # Get Bottom and Right
+        for r in range(row):
+            dfs(r, 0, pac_set, -1)
+            dfs(r, col-1, atl_set, -1)
+        
+        # Return intersection of the sets
+        return list(pac_set.intersection(atl_set))
