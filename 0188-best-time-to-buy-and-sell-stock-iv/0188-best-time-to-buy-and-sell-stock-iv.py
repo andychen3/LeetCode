@@ -12,7 +12,7 @@ class Solution:
                         ans = max(ans, prices[i] + dp[i+1][remaining - 1][0])
                     else:
                         ans = max(ans, -prices[i] + dp[i+1][remaining][1])
-                    dp[i][remaining][holding] = max(ans, dp[i][remaining][holding])
+                    dp[i][remaining][holding] = ans
         return dp[0][k][0]
         
         
