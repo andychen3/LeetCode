@@ -7,7 +7,7 @@ class Solution:
             
             for j in range(i, len(nums)):
                 arr.append(nums[j])
-                backtrack(j+1, arr)
+                backtrack(j + 1, arr)
                 arr.pop()
         ans = []
         backtrack(0, [])
