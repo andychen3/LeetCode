@@ -11,13 +11,11 @@ class Solution:
                 ans.append("".join(arr[:]))
                 return
             
-            curr = numbers[digits[i]]
-            for num in curr:
-                arr.append(num)
+            letters = numbers[digits[i]]
+            for char in letters:
+                arr.append(char)
                 backtrack(arr, i + 1)
                 arr.pop()
-                
-            
         ans = []
         backtrack([], 0)
         return ans
