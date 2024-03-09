@@ -5,9 +5,9 @@ class Solution:
                 ans.append(arr[:])
                 return
             
-            for j in range(i, n+1):
-                arr.append(j)
-                backtrack(j+1, arr)
+            for num in range(i, n + 1):
+                arr.append(num)
+                backtrack(num + 1, arr)
                 arr.pop()
         ans = []
         backtrack(1, [])
