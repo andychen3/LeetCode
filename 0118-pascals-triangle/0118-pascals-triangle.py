@@ -1,10 +1,10 @@
 class Solution:
     def generate(self, numRows: int) -> List[List[int]]:
         ans = []
-
-        for row in range(numRows):
-            new_row = [1] * (row+1)
-            for j in range(1, len(new_row)-1):
-                new_row[j] = ans[row-1][j-1] + ans[row-1][j]
-            ans.append(new_row)
+        
+        for row in range(1, numRows+1):
+            r = [1] * row
+            for i in range(1, len(r) - 1):
+                r[i] = ans[-1][i-1] + ans[-1][i]
+            ans.append(r)
         return ans
