@@ -13,4 +13,3 @@ class Solution:
         ans = []
         backtrack([0], 0)
         return ans
-                
