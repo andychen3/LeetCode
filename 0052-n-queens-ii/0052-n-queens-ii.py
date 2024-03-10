@@ -1,40 +1,24 @@
 class Solution:
     def totalNQueens(self, n: int) -> int:
-        # The trick is you can make sure a queen is not attacked by checking if
-        # They are in the same row, col, diagonal, or anti diagonal
-        # A way to check diagonal is row - col and to check anti diagonal is row + col
-        # Backtrack because of time complexity
-
-        def backtrack(row, column, diagonal, anti_diagonal):
+        def backtrack(row, col_set, diag_set, anti_diag_set):
             if row == n:
-                return 1
-
-            ans = 0
-            for col in range(n):
-                curr_diagonal = row - col
-                curr_anti_diagonal = row + col
-
-                # Check if they are in the same row, col, diagonal, or anti_diagonal
-                if (col in column or curr_diagonal in diagonal or 
-                    curr_anti_diagonal in anti_diagonal):
-                    continue
-                
-                # Add them all to set so easy O(1) check to see if next queen placement
-                # is valid
-                column.add(col)
-                diagonal.add(curr_diagonal)
-                anti_diagonal.add(curr_anti_diagonal)
-
-                # Call backtrack and add to the answer
-                ans += backtrack(row + 1, column, diagonal, anti_diagonal)
-
-                # Remove state when backtrack comes back to check other possibilities
-                column.remove(col)
-                diagonal.remove(curr_diagonal)
-                anti_diagonal.remove(curr_anti_diagonal)
+                nonlocal ans
+                ans += 1
+                return
             
-            return ans
-
-        return backtrack(0, set(), set(), set())
-
-
+            for col in range(n):
+                if col in col_set or (row + col) in diag_set or (row - col) in anti_diag_set:
+                    continue
+                    
+                col_set.add(col)
+                diag_set.add(row+col)
+                anti_diag_set.add(row-col)
+                
+                backtrack(row + 1, col_set, diag_set, anti_diag_set)
+                col_set.remove(col)
+                diag_set.remove(row+col)
+                anti_diag_set.remove(row-col)
+        ans = 0
+        backtrack(0, set(), set(), set())
+        return ans
+                
