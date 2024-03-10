@@ -5,7 +5,7 @@ class Solution:
         
         def valid(x, y):
             return 0 <= x < row and 0 <= y < col
-        
+            
         def backtrack(x, y, index, seen):
             if index == len(word):
                 return True
@@ -22,6 +22,8 @@ class Solution:
             
         for r in range(row):
             for c in range(col):
-                if board[r][c] == word[0] and backtrack(r, c, 1, {(r, c)}):
+                if board[r][c] == word[0] and backtrack(r, c, 1, {(r,c)}):
                     return True
         return False
+                
+                
