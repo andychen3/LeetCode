@@ -4,13 +4,12 @@ class Solution:
             if len(arr) == len(nums):
                 ans.append(arr[:])
                 return
-        
+            
             for num in nums:
                 if num not in arr:
                     arr.append(num)
                     backtrack(arr)
                     arr.pop()
-            
         ans = []
         backtrack([])
         return ans
