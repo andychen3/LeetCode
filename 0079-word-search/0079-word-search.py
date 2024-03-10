@@ -6,7 +6,7 @@ class Solution:
         def valid(x, y):
             return 0 <= x < row and 0 <= y < col
         
-        def dfs(index, seen, x, y):
+        def backtrack(x, y, index, seen):
             if index == len(word):
                 return True
             
@@ -15,13 +15,13 @@ class Solution:
                 if valid(new_dx, new_dy) and (new_dx, new_dy) not in seen:
                     if board[new_dx][new_dy] == word[index]:
                         seen.add((new_dx, new_dy))
-                        if dfs(index + 1, seen, new_dx, new_dy):
+                        if backtrack(new_dx, new_dy, index + 1, seen):
                             return True
                         seen.remove((new_dx, new_dy))
             return False
             
         for r in range(row):
             for c in range(col):
-                if board[r][c] == word[0] and dfs(1, {(r, c)}, r, c):
+                if board[r][c] == word[0] and backtrack(r, c, 1, {(r, c)}):
                     return True
         return False
