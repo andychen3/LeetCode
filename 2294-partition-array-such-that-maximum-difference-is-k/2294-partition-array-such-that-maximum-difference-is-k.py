@@ -2,10 +2,10 @@ class Solution:
     def partitionArray(self, nums: List[int], k: int) -> int:
         nums.sort()
         ans = 1
-        left = 0
+        total = nums[0]
         
-        for index, val in enumerate(nums):
-            if val - nums[left] > k:
+        for num in nums[1:]:
+            if num - total > k:
+                total = num
                 ans += 1
-                left = index
         return ans
