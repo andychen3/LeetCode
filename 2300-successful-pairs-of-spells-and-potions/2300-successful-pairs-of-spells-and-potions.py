@@ -4,7 +4,7 @@ class Solution:
             left, right = 0, len(potions) - 1
             while left <= right:
                 mid = (left + right) // 2
-                strength = potions[mid] * multi
+                strength = multi * potions[mid]
                 if strength < success:
                     left = mid + 1
                 else:
