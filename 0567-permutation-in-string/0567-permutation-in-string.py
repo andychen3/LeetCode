@@ -4,12 +4,11 @@ class Solution:
         pattern = Counter(s1)
         left = 0
         
-        for right, word in enumerate(s2):
-            pattern[word] -= 1
-                
-            while pattern[word] < 0:
-                left_word = s2[left]
-                pattern[left_word] += 1
+        for right, char in enumerate(s2):
+            pattern[char] -= 1
+            
+            while pattern[char] < 0:
+                pattern[s2[left]] += 1
                 left += 1
             
             if right - left + 1 == len(s1):
