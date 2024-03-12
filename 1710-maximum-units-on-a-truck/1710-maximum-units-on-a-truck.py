@@ -1,13 +1,17 @@
 class Solution:
     def maximumUnits(self, boxTypes: List[List[int]], truckSize: int) -> int:
-        by_units = sorted(boxTypes, key=lambda x:-x[1])
-        size = truckSize
-        total = 0
+        boxes = sorted(boxTypes, key=lambda x: x[1], reverse=True)
+        print(boxes)
+        ans = 0
+        i = 0
         
-        for num_boxes, units in by_units:
-            boxes = min(size, num_boxes)
-            total += boxes*units
-            size -= boxes
-            
-        return total
+        while truckSize and i < len(boxes):
+            if boxes[i][0] <= truckSize:
+                ans += (boxes[i][0] * boxes[i][1])
+                truckSize -= boxes[i][0]
+                i += 1
+            else:
+                ans += (boxes[i][1] * truckSize)
+                truckSize -= truckSize
+        return ans
             
