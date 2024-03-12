@@ -1,15 +1,15 @@
-import heapq
 class Solution:
     def maxNumberOfApples(self, weight: List[int]) -> int:
-        heapq.heapify(weight)
+        weight.sort()
         ans = 0
-        total = 0
+        num = 5000
         
-        for _ in range(len(weight)):
-            total += heapq.heappop(weight)
-            if total <= 5000:
+        for apple in weight:
+            if num - apple >= 0:
+                num -= apple
                 ans += 1
             else:
                 break
         return ans
+        
             
