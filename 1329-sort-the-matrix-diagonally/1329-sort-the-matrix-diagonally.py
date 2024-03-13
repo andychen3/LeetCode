@@ -9,11 +9,11 @@ class Solution:
             for col in range(n):
                 diag[row - col].append(mat[row][col])
                 
-        for vals in diag.values():
-            heapify(vals)
+        for key, vals in diag.items():
+            diag[key] = sorted(vals, reverse=True)
             
         for row in range(m):
             for col in range(n):
-                val = heappop(diag[row-col])
+                val = diag[row-col].pop()
                 mat[row][col] = val
         return mat
