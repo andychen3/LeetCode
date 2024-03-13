@@ -4,10 +4,12 @@ class Solution:
         Do not return anything, modify matrix in-place instead.
         """
         n = len(matrix)
-        for r in range(n):
-            for c in range(1 + r, n):
-                matrix[r][c], matrix[c][r] = matrix[c][r], matrix[r][c]
-        
-        for row in matrix:
-            row.reverse()
+        for row in range(n):
+            for col in range(row + 1, n):
+                matrix[row][col], matrix[col][row] = matrix[col][row], matrix[row][col]
+                
+        for r in matrix:
+            r.reverse()
+            
         return matrix
+            
