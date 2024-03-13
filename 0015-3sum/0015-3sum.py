@@ -4,10 +4,12 @@ class Solution:
         ans = []
         
         for i, num in enumerate(nums):
+            if i > 0 and nums[i] == nums[i - 1]:
+                continue
+            
             if num > 0:
                 break
-            if i > 0 and nums[i - 1] == nums[i]:
-                continue
+            
             left, right = i + 1, len(nums) - 1
             while left < right:
                 triplets = num + nums[left] + nums[right]
@@ -19,6 +21,7 @@ class Solution:
                     ans.append([num, nums[left], nums[right]])
                     left += 1
                     right -= 1
-                    while left < right and nums[left - 1] == nums[left]:
+                    while left < right and nums[left] == nums[left - 1]:
                         left += 1
         return ans
+                    
