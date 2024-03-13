@@ -11,7 +11,7 @@ class Solution:
             while pattern[char] < 0:
                 pattern[s[left]] += 1
                 left += 1
-            
+                
             if right - left + 1 == len(p):
                 ans.append(left)
         return ans
