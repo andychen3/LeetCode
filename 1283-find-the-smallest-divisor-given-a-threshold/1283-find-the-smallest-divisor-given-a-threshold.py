@@ -1,17 +1,14 @@
 class Solution:
-    def smallestDivisor(self, nums: List[int], threshold: int) -> int: 
-        def check(divisor):
-            curr_sum = 0
+    def smallestDivisor(self, nums: List[int], threshold: int) -> int:
+        def check(k):
+            total = 0
+            for num in nums:
+                total += ceil(num / k)
+            return total <= threshold
             
-            for n in nums:
-                curr_sum += ceil(n/divisor)
             
-            return curr_sum <= threshold
-        
-        
         left = 1
-        right = sum(nums)
-        total = sum(nums)
+        right = max(nums)
         
         while left <= right:
             mid = (left + right) // 2
@@ -20,4 +17,3 @@ class Solution:
             else:
                 left = mid + 1
         return left
-                
