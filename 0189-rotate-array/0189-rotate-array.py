@@ -3,18 +3,10 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        i = 0
         n = len(nums)
-        start = 0
-
-        while i < n:
-            current, prev = start, nums[start]
-            while True:
-                next_idx = (current + k) % n
-                nums[next_idx], prev = prev, nums[next_idx]
-                current = next_idx
-                i += 1
-                if start == current:
-                    break
-            start += 1
+        ans = [0] * n
+        
+        for i, num in enumerate(nums):
+            ans[(i + k) % n] = num
+        nums[:] = ans
         return nums
