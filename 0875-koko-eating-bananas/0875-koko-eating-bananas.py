@@ -1,14 +1,14 @@
 class Solution:
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
-        def check(speed):
-            hours = 0
-            for banana in piles:
-                hours += ceil(banana/speed)
-            return hours <= h
+        def check(k):
+            hour = 0
             
+            for pile in piles:
+                hour += ceil(pile / k)
+            
+            return hour <= h
         
-        left = 1
-        right = max(piles)
+        left, right = 1, max(piles)
         while left <= right:
             mid = (left + right) // 2
             if check(mid):
