@@ -10,5 +10,3 @@ class Solution:
             ans += counts[curr - k]
             counts[curr] += 1
         return ans
-            
-        
