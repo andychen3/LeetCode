@@ -1,15 +1,17 @@
 import heapq
 class Solution:
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
-        intervals.sort(key=lambda x:x[0])
-        rooms = []
-        heappush(rooms, intervals[0][1])
+        intervals.sort()
+        heap = [intervals[0][1]]
+        ans = 1
         
         for interval in intervals[1:]:
-            start, end = interval
+            start = interval[0]
+            end = interval[1]
             
-            if rooms[0] <= start:
-                heappop(rooms)
-            heappush(rooms, end)
-        return len(rooms)
-        
+            if start >= heap[0]:
+                heappop(heap)
+            
+            heappush(heap, end)
+            ans = max(ans, len(heap))
+        return ans
