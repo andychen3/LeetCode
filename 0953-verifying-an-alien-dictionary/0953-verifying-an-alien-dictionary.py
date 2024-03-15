@@ -9,6 +9,7 @@ class Solution:
                 if j == len(w2):
                     return False
                 
+                
                 if w1[j] != w2[j]:
                     if mapping[w1[j]] > mapping[w2[j]]:
                         return False
