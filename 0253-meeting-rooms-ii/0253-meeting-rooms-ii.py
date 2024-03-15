@@ -3,7 +3,6 @@ class Solution:
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
         intervals.sort()
         heap = [intervals[0][1]]
-        ans = 1
         
         for interval in intervals[1:]:
             start = interval[0]
@@ -13,5 +12,4 @@ class Solution:
                 heappop(heap)
             
             heappush(heap, end)
-            ans = max(ans, len(heap))
-        return ans
+        return len(heap)
