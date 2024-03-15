@@ -6,7 +6,7 @@ class Solution:
         for num in hash_set:
             if num - 1 not in hash_set:
                 length = 1
-                while (num + 1) in hash_set:
+                while num + 1 in hash_set:
                     length += 1
                     num += 1
                 longest = max(longest, length)
