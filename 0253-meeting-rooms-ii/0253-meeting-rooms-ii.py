@@ -5,11 +5,9 @@ class Solution:
         heap = [intervals[0][1]]
         
         for interval in intervals[1:]:
-            start = interval[0]
-            end = interval[1]
+            start, end = interval
             
             if start >= heap[0]:
                 heappop(heap)
-            
             heappush(heap, end)
         return len(heap)
