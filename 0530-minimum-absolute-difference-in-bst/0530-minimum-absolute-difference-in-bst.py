@@ -8,15 +8,11 @@ class Solution:
     def getMinimumDifference(self, root: Optional[TreeNode]) -> int:
         def inorder(node):
             if not node:
-                return 
-            
-            inorder(node.left)
-            arr.append(node.val)
-            inorder(node.right)
-
-        arr = []
-        inorder(root)
-        ans = float("inf")
+                return []
+            return inorder(node.left) + [node.val] + inorder(node.right)
+        
+        arr = inorder(root)
+        ans = inf
         for i in range(1, len(arr)):
-            ans = min(ans, arr[i] - arr[i-1])
+            ans = min(ans, abs(arr[i] - arr[i-1]))
         return ans
