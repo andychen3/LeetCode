@@ -6,13 +6,10 @@
 #         self.right = right
 class Solution:
     def leafSimilar(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> bool:
-        def postorder(node, arr):
+        def dfs(node):
             if not node:
                 return []
-            left = postorder(node.left, arr)
-            right = postorder(node.right, arr)
             if not node.left and not node.right:
-                arr.append(node.val)
-            return arr
-        
-        return postorder(root1, []) == postorder(root2,[])
+                return [node.val]
+            return dfs(node.left) + dfs(node.right)
+        return dfs(root1) == dfs(root2)
