@@ -9,15 +9,14 @@ class Solution:
                 else:
                     right = mid - 1
             return left
-        
-        nums.sort()
-        prefix = [nums[0]]
-        for num in nums[1:]:
-            prefix.append(prefix[-1] + num)
             
+        nums.sort()
         ans = []
+        prefix = [nums[0]]
+        for i in range(1, len(nums)):
+            prefix.append(prefix[-1] + nums[i])
         
         for query in queries:
             ans.append(binary_search(prefix, query))
         return ans
-            
+        
