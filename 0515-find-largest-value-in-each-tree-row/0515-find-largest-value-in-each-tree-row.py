@@ -9,18 +9,19 @@ class Solution:
     def largestValues(self, root: Optional[TreeNode]) -> List[int]:
         if not root:
             return []
+            
         queue = deque([root])
         ans = []
-
+        
         while queue:
-            curr = float("-inf")
-
+            curr_max = -inf
+            
             for _ in range(len(queue)):
                 node = queue.popleft()
-                curr = max(curr, node.val)
+                curr_max = max(curr_max, node.val)
                 if node.left:
                     queue.append(node.left)
                 if node.right:
                     queue.append(node.right)
-            ans.append(curr)
+            ans.append(curr_max)
         return ans
