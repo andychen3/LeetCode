@@ -1,20 +1,18 @@
 from collections import defaultdict
 class Solution:
     def findDiagonalOrder(self, mat: List[List[int]]) -> List[int]:
-        anti_diagonals = defaultdict(list)
-        
+        anti_diag = defaultdict(list)
         m, n = len(mat), len(mat[0])
         
         for row in range(m):
             for col in range(n):
-                anti_diagonals[row + col].append(mat[row][col])
-                
-                
-        ans = []
+                anti_diag[row + col].append(mat[row][col])
         
-        for key, val in anti_diagonals.items():
+        ans = []
+        for key, diag in anti_diag.items():
             if key % 2 == 0:
-                ans += val[::-1]
+                ans += diag[::-1]
             else:
-                ans += val
+                ans += diag
         return ans
+        
