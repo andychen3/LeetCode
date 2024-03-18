@@ -11,8 +11,9 @@ class Solution:
                     continue
                 if candidates[j] + total <= target:
                     arr.append(candidates[j])
-                    backtrack(arr, j + 1, total + candidates[j])
+                    backtrack(arr, j+1, total + candidates[j])
                     arr.pop()
+                    
         ans = []
-        backtrack([], 0, 0)
+        backtrack([],0,0)
         return ans
