@@ -4,12 +4,9 @@ class Solution:
         i = 0
         
         while i < len(nums):
-            if nums[i] != i + 1:
-                j = nums[i] - 1
-                if nums[i] != nums[j]:
-                    nums[i], nums[j] = nums[j], nums[i]
-                else:
-                    i += 1
+            correct_idx = nums[i] - 1
+            if nums[i] != nums[correct_idx]:
+                    nums[i], nums[correct_idx] = nums[correct_idx], nums[i]
             else:
                 i += 1
         
