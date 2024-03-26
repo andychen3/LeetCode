@@ -10,20 +10,21 @@ class Solution:
         if not root:
             return []
         queue = deque([(root, 0)])
-        ans = []
         mapping = defaultdict(list)
+        ans = []
         
         while queue:
             for _ in range(len(queue)):
                 node, offset = queue.popleft()
                 mapping[offset].append(node.val)
                 if node.left:
-                    queue.append([node.left, offset - 1])
+                    queue.append((node.left, offset - 1))
                 if node.right:
-                    queue.append([node.right, offset + 1])
+                    queue.append((node.right, offset + 1))
         
-        ans = []
-        for key in sorted(mapping.keys()):
-            ans.append(mapping[key])
+        for keys in sorted(mapping.keys()):
+            ans.append(mapping[keys])
         return ans
-        
+                
+                    
+                            
