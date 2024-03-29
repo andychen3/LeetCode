@@ -2,7 +2,8 @@ from collections import deque
 class Solution:
     def minKnightMoves(self, x: int, y: int) -> int:
         queue = deque([(0, 0, 0)])
-        directions = [(-1, -2), (-2,-1), (1,-2), (2,-1), (-2,1), (-1,2), (1,2), (2,1)]
+        # directions = [(-1, -2), (-2,-1), (1,-2), (2,-1), (-2,1), (-1,2), (1,2), (2,1)]
+        directions = [(-1,-2), (1,-2), (-1,2), (1, 2), (-2,-1), (-2,1), (2,-1), (2,1)]
         seen = {(0,0)}
         
         while queue:
