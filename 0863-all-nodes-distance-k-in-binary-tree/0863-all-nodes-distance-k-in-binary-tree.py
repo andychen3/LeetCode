@@ -14,7 +14,7 @@ class Solution:
             dfs(node.left, node)
             dfs(node.right, node)
         
-        dfs(root, None)
+        dfs(root, root)
         queue = deque([target])
         seen = {target}
         distance = 0
