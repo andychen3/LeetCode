@@ -4,10 +4,10 @@ class Solution:
         graph = defaultdict(list)
         roads = set()
         
-        for x,y in connections:
+        for x, y in connections:
+            roads.add((x, y))
             graph[x].append(y)
             graph[y].append(x)
-            roads.add((x, y))
             
         def dfs(node):
             ans = 0
@@ -15,9 +15,10 @@ class Solution:
                 if neighbors not in seen:
                     if (node, neighbors) in roads:
                         ans += 1
+                    
                     seen.add(neighbors)
                     ans += dfs(neighbors)
             return ans
-    
+        
         seen = {0}
         return dfs(0)
