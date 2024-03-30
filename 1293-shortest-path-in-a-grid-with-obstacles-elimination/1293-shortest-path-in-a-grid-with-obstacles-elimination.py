@@ -21,8 +21,7 @@ class Solution:
                     if grid[new_dx][new_dy] == 1 and remain > 0 and (new_dx, new_dy, remain - 1) not in seen:
                         seen.add((new_dx, new_dy, remain - 1))
                         queue.append((new_dx, new_dy, steps + 1, remain - 1))
-                    elif grid[new_dx][new_dy] == 0:
-                        if (new_dx, new_dy, remain) not in seen:
-                            seen.add((new_dx, new_dy, remain))
-                            queue.append((new_dx, new_dy, steps + 1, remain))
+                    elif grid[new_dx][new_dy] == 0 and (new_dx, new_dy, remain) not in seen:
+                        seen.add((new_dx, new_dy, remain))
+                        queue.append((new_dx, new_dy, steps + 1, remain))
         return -1        
