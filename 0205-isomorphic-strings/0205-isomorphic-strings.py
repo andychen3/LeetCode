@@ -4,11 +4,13 @@ class Solution:
         s_map = defaultdict(str)
         t_map = defaultdict(str)
         
-        for s_char, t_char in zip(s, t):
-            if s_char not in s_map and t_char not in t_map:
-                s_map[s_char] = t_char
-                t_map[t_char] = s_char
+        for i, char in enumerate(s):
+            if char not in s_map and t[i] not in t_map:
+                s_map[char] = t[i]
+                t_map[t[i]] = char
             
-            elif s_map[s_char] != t_char or t_map[t_char] != s_char:
+            if s_map[char] != t[i] or t_map[t[i]] != char:
                 return False
         return True
+            
+            
