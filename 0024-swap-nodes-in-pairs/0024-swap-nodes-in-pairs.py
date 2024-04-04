@@ -7,7 +7,6 @@ class Solution:
     def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
         dummy = ListNode(next=head)
         prev = dummy
-        
         curr = head
         
         while curr and curr.next:
@@ -17,6 +16,4 @@ class Solution:
             prev.next = temp
             prev = curr
             curr = curr.next
-        
         return dummy.next
-    
