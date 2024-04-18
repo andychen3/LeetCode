@@ -2,26 +2,25 @@ class Solution:
     def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
         nums.sort()
         res = []
-        size = len(nums)
         
-        for index, num in enumerate(nums):
-            if index > 0 and num == nums[index-1]:
+        for i, num in enumerate(nums):
+            if i > 0 and nums[i] == nums[i - 1]:
                 continue
-            for j in range(index + 1, size):
-                if j > index + 1 and nums[j] == nums[j - 1]:
+                
+            for j in range(i + 1, len(nums)):
+                if j > i + 1 and nums[j] == nums[j - 1]:
                     continue
-                left = j + 1
-                right = size - 1
+                left, right = j+1, len(nums) - 1
                 while left < right:
-                    total = num + nums[j] + nums[left] + nums[right]
-                    if total == target:
-                        res.append([num, nums[j], nums[left], nums[right]])
+                    quad = num + nums[j] + nums[left] + nums[right]
+                    if quad > target:
+                        right -= 1
+                    elif quad < target:
+                        left += 1
+                    else:
+                        res.append([num, nums[left], nums[j], nums[right]])
                         left += 1
                         right -= 1
                         while left < right and nums[left] == nums[left - 1]:
                             left += 1
-                    elif total > target:
-                        right -= 1
-                    else:
-                        left += 1
         return res
