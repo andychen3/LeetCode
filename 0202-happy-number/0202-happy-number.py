@@ -6,5 +6,6 @@ class Solution:
             if n in seen:
                 return False
             seen.add(n)
-            n = sum([int(num)**2 for num in str(n)])
+            n = sum([int(digit) ** 2 for digit in str(n)])
         return True
+            
