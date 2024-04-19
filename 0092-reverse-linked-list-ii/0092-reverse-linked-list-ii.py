@@ -17,10 +17,10 @@ class Solution:
 
         for _ in range(right - left + 1):
             temp = curr.next
-            curr.next = reversed_prev
-            reversed_prev = curr
+            curr.next = prev
+            prev = curr
             curr = temp
         
-        prev.next = reversed_prev
+        reversed_prev.next = prev
         new_tail.next = curr
         return dummy.next
