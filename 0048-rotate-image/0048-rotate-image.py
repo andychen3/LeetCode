@@ -7,8 +7,14 @@ class Solution:
         for row in range(n):
             for col in range(row + 1, n):
                 matrix[row][col], matrix[col][row] = matrix[col][row], matrix[row][col]
-                
-        for r in matrix:
-            r.reverse()
-            
+    
+        for row in matrix:
+            row.reverse()
+        
         return matrix
+    
+    
+        # Time
+        # O(N^2)
+        # Space
+        # O(1)
