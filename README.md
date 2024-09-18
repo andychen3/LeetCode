@@ -38,6 +38,7 @@ My solutions to Leetcode problems.
 ## String
 |  |
 | ------- |
+| [0482-license-key-formatting](https://github.com/andychen3/LeetCode/tree/master/0482-license-key-formatting) |
 | [1632-number-of-good-ways-to-split-a-string](https://github.com/andychen3/LeetCode/tree/master/1632-number-of-good-ways-to-split-a-string) |
 | [1858-latest-time-by-replacing-hidden-digits](https://github.com/andychen3/LeetCode/tree/master/1858-latest-time-by-replacing-hidden-digits) |
 ## Dynamic Programming
