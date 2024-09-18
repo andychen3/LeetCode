@@ -9,6 +9,7 @@ My solutions to Leetcode problems.
 | [0777-toeplitz-matrix](https://github.com/andychen3/LeetCode/tree/master/0777-toeplitz-matrix) |
 | [0940-fruit-into-baskets](https://github.com/andychen3/LeetCode/tree/master/0940-fruit-into-baskets) |
 | [0965-unique-email-addresses](https://github.com/andychen3/LeetCode/tree/master/0965-unique-email-addresses) |
+| [1049-minimum-domino-rotations-for-equal-row](https://github.com/andychen3/LeetCode/tree/master/1049-minimum-domino-rotations-for-equal-row) |
 | [1370-count-number-of-nice-subarrays](https://github.com/andychen3/LeetCode/tree/master/1370-count-number-of-nice-subarrays) |
 | [1616-minimum-difference-between-largest-and-smallest-value-in-three-moves](https://github.com/andychen3/LeetCode/tree/master/1616-minimum-difference-between-largest-and-smallest-value-in-three-moves) |
 ## Matrix
@@ -34,6 +35,7 @@ My solutions to Leetcode problems.
 ## Greedy
 |  |
 | ------- |
+| [1049-minimum-domino-rotations-for-equal-row](https://github.com/andychen3/LeetCode/tree/master/1049-minimum-domino-rotations-for-equal-row) |
 | [1616-minimum-difference-between-largest-and-smallest-value-in-three-moves](https://github.com/andychen3/LeetCode/tree/master/1616-minimum-difference-between-largest-and-smallest-value-in-three-moves) |
 | [1858-latest-time-by-replacing-hidden-digits](https://github.com/andychen3/LeetCode/tree/master/1858-latest-time-by-replacing-hidden-digits) |
 ## Sorting
