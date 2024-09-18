@@ -7,6 +7,7 @@ My solutions to Leetcode problems.
 |  |
 | ------- |
 | [0777-toeplitz-matrix](https://github.com/andychen3/LeetCode/tree/master/0777-toeplitz-matrix) |
+| [0940-fruit-into-baskets](https://github.com/andychen3/LeetCode/tree/master/0940-fruit-into-baskets) |
 | [0965-unique-email-addresses](https://github.com/andychen3/LeetCode/tree/master/0965-unique-email-addresses) |
 | [1370-count-number-of-nice-subarrays](https://github.com/andychen3/LeetCode/tree/master/1370-count-number-of-nice-subarrays) |
 | [1616-minimum-difference-between-largest-and-smallest-value-in-three-moves](https://github.com/andychen3/LeetCode/tree/master/1616-minimum-difference-between-largest-and-smallest-value-in-three-moves) |
@@ -17,6 +18,7 @@ My solutions to Leetcode problems.
 ## Hash Table
 |  |
 | ------- |
+| [0940-fruit-into-baskets](https://github.com/andychen3/LeetCode/tree/master/0940-fruit-into-baskets) |
 | [0965-unique-email-addresses](https://github.com/andychen3/LeetCode/tree/master/0965-unique-email-addresses) |
 | [1370-count-number-of-nice-subarrays](https://github.com/andychen3/LeetCode/tree/master/1370-count-number-of-nice-subarrays) |
 | [1632-number-of-good-ways-to-split-a-string](https://github.com/andychen3/LeetCode/tree/master/1632-number-of-good-ways-to-split-a-string) |
@@ -27,6 +29,7 @@ My solutions to Leetcode problems.
 ## Sliding Window
 |  |
 | ------- |
+| [0940-fruit-into-baskets](https://github.com/andychen3/LeetCode/tree/master/0940-fruit-into-baskets) |
 | [1370-count-number-of-nice-subarrays](https://github.com/andychen3/LeetCode/tree/master/1370-count-number-of-nice-subarrays) |
 ## Greedy
 |  |
