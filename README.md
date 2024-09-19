@@ -8,6 +8,7 @@ My solutions to Leetcode problems.
 | ------- |
 | [0300-longest-increasing-subsequence](https://github.com/andychen3/LeetCode/tree/master/0300-longest-increasing-subsequence) |
 | [0777-toeplitz-matrix](https://github.com/andychen3/LeetCode/tree/master/0777-toeplitz-matrix) |
+| [0792-binary-search](https://github.com/andychen3/LeetCode/tree/master/0792-binary-search) |
 | [0940-fruit-into-baskets](https://github.com/andychen3/LeetCode/tree/master/0940-fruit-into-baskets) |
 | [0965-unique-email-addresses](https://github.com/andychen3/LeetCode/tree/master/0965-unique-email-addresses) |
 | [1049-minimum-domino-rotations-for-equal-row](https://github.com/andychen3/LeetCode/tree/master/1049-minimum-domino-rotations-for-equal-row) |
@@ -79,4 +80,5 @@ My solutions to Leetcode problems.
 |  |
 | ------- |
 | [0300-longest-increasing-subsequence](https://github.com/andychen3/LeetCode/tree/master/0300-longest-increasing-subsequence) |
+| [0792-binary-search](https://github.com/andychen3/LeetCode/tree/master/0792-binary-search) |
 <!---LeetCode Topics End-->
