@@ -6,6 +6,7 @@ My solutions to Leetcode problems.
 ## Array
 |  |
 | ------- |
+| [0074-search-a-2d-matrix](https://github.com/andychen3/LeetCode/tree/master/0074-search-a-2d-matrix) |
 | [0300-longest-increasing-subsequence](https://github.com/andychen3/LeetCode/tree/master/0300-longest-increasing-subsequence) |
 | [0777-toeplitz-matrix](https://github.com/andychen3/LeetCode/tree/master/0777-toeplitz-matrix) |
 | [0792-binary-search](https://github.com/andychen3/LeetCode/tree/master/0792-binary-search) |
@@ -17,6 +18,7 @@ My solutions to Leetcode problems.
 ## Matrix
 |  |
 | ------- |
+| [0074-search-a-2d-matrix](https://github.com/andychen3/LeetCode/tree/master/0074-search-a-2d-matrix) |
 | [0777-toeplitz-matrix](https://github.com/andychen3/LeetCode/tree/master/0777-toeplitz-matrix) |
 ## Hash Table
 |  |
@@ -79,6 +81,7 @@ My solutions to Leetcode problems.
 ## Binary Search
 |  |
 | ------- |
+| [0074-search-a-2d-matrix](https://github.com/andychen3/LeetCode/tree/master/0074-search-a-2d-matrix) |
 | [0300-longest-increasing-subsequence](https://github.com/andychen3/LeetCode/tree/master/0300-longest-increasing-subsequence) |
 | [0792-binary-search](https://github.com/andychen3/LeetCode/tree/master/0792-binary-search) |
 <!---LeetCode Topics End-->
