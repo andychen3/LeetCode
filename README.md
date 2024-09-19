@@ -6,6 +6,7 @@ My solutions to Leetcode problems.
 ## Array
 |  |
 | ------- |
+| [0300-longest-increasing-subsequence](https://github.com/andychen3/LeetCode/tree/master/0300-longest-increasing-subsequence) |
 | [0777-toeplitz-matrix](https://github.com/andychen3/LeetCode/tree/master/0777-toeplitz-matrix) |
 | [0940-fruit-into-baskets](https://github.com/andychen3/LeetCode/tree/master/0940-fruit-into-baskets) |
 | [0965-unique-email-addresses](https://github.com/andychen3/LeetCode/tree/master/0965-unique-email-addresses) |
@@ -52,6 +53,7 @@ My solutions to Leetcode problems.
 ## Dynamic Programming
 |  |
 | ------- |
+| [0300-longest-increasing-subsequence](https://github.com/andychen3/LeetCode/tree/master/0300-longest-increasing-subsequence) |
 | [1632-number-of-good-ways-to-split-a-string](https://github.com/andychen3/LeetCode/tree/master/1632-number-of-good-ways-to-split-a-string) |
 ## Bit Manipulation
 |  |
@@ -73,4 +75,8 @@ My solutions to Leetcode problems.
 |  |
 | ------- |
 | [1116-maximum-level-sum-of-a-binary-tree](https://github.com/andychen3/LeetCode/tree/master/1116-maximum-level-sum-of-a-binary-tree) |
+## Binary Search
+|  |
+| ------- |
+| [0300-longest-increasing-subsequence](https://github.com/andychen3/LeetCode/tree/master/0300-longest-increasing-subsequence) |
 <!---LeetCode Topics End-->
