@@ -5,7 +5,7 @@ class Solution:
         second_split = Counter()
         good_splits = 0
 
-        for idx, char in enumerate(s):
+        for char in s:
             first_split[char] -= 1
             if first_split[char] == 0:
                 del first_split[char]
