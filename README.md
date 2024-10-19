@@ -16,6 +16,7 @@ My solutions to Leetcode problems.
 | [1370-count-number-of-nice-subarrays](https://github.com/andychen3/LeetCode/tree/master/1370-count-number-of-nice-subarrays) |
 | [1616-minimum-difference-between-largest-and-smallest-value-in-three-moves](https://github.com/andychen3/LeetCode/tree/master/1616-minimum-difference-between-largest-and-smallest-value-in-three-moves) |
 | [2245-destroying-asteroids](https://github.com/andychen3/LeetCode/tree/master/2245-destroying-asteroids) |
+| [2387-partition-array-such-that-maximum-difference-is-k](https://github.com/andychen3/LeetCode/tree/master/2387-partition-array-such-that-maximum-difference-is-k) |
 ## Matrix
 |  |
 | ------- |
@@ -44,11 +45,13 @@ My solutions to Leetcode problems.
 | [1616-minimum-difference-between-largest-and-smallest-value-in-three-moves](https://github.com/andychen3/LeetCode/tree/master/1616-minimum-difference-between-largest-and-smallest-value-in-three-moves) |
 | [1858-latest-time-by-replacing-hidden-digits](https://github.com/andychen3/LeetCode/tree/master/1858-latest-time-by-replacing-hidden-digits) |
 | [2245-destroying-asteroids](https://github.com/andychen3/LeetCode/tree/master/2245-destroying-asteroids) |
+| [2387-partition-array-such-that-maximum-difference-is-k](https://github.com/andychen3/LeetCode/tree/master/2387-partition-array-such-that-maximum-difference-is-k) |
 ## Sorting
 |  |
 | ------- |
 | [1616-minimum-difference-between-largest-and-smallest-value-in-three-moves](https://github.com/andychen3/LeetCode/tree/master/1616-minimum-difference-between-largest-and-smallest-value-in-three-moves) |
 | [2245-destroying-asteroids](https://github.com/andychen3/LeetCode/tree/master/2245-destroying-asteroids) |
+| [2387-partition-array-such-that-maximum-difference-is-k](https://github.com/andychen3/LeetCode/tree/master/2387-partition-array-such-that-maximum-difference-is-k) |
 ## String
 |  |
 | ------- |
