@@ -15,6 +15,7 @@ My solutions to Leetcode problems.
 | [1049-minimum-domino-rotations-for-equal-row](https://github.com/andychen3/LeetCode/tree/master/1049-minimum-domino-rotations-for-equal-row) |
 | [1370-count-number-of-nice-subarrays](https://github.com/andychen3/LeetCode/tree/master/1370-count-number-of-nice-subarrays) |
 | [1616-minimum-difference-between-largest-and-smallest-value-in-three-moves](https://github.com/andychen3/LeetCode/tree/master/1616-minimum-difference-between-largest-and-smallest-value-in-three-moves) |
+| [2245-destroying-asteroids](https://github.com/andychen3/LeetCode/tree/master/2245-destroying-asteroids) |
 ## Matrix
 |  |
 | ------- |
@@ -42,10 +43,12 @@ My solutions to Leetcode problems.
 | [1049-minimum-domino-rotations-for-equal-row](https://github.com/andychen3/LeetCode/tree/master/1049-minimum-domino-rotations-for-equal-row) |
 | [1616-minimum-difference-between-largest-and-smallest-value-in-three-moves](https://github.com/andychen3/LeetCode/tree/master/1616-minimum-difference-between-largest-and-smallest-value-in-three-moves) |
 | [1858-latest-time-by-replacing-hidden-digits](https://github.com/andychen3/LeetCode/tree/master/1858-latest-time-by-replacing-hidden-digits) |
+| [2245-destroying-asteroids](https://github.com/andychen3/LeetCode/tree/master/2245-destroying-asteroids) |
 ## Sorting
 |  |
 | ------- |
 | [1616-minimum-difference-between-largest-and-smallest-value-in-three-moves](https://github.com/andychen3/LeetCode/tree/master/1616-minimum-difference-between-largest-and-smallest-value-in-three-moves) |
+| [2245-destroying-asteroids](https://github.com/andychen3/LeetCode/tree/master/2245-destroying-asteroids) |
 ## String
 |  |
 | ------- |
