@@ -8,6 +8,7 @@ My solutions to Leetcode problems.
 | ------- |
 | [0074-search-a-2d-matrix](https://github.com/andychen3/LeetCode/tree/master/0074-search-a-2d-matrix) |
 | [0300-longest-increasing-subsequence](https://github.com/andychen3/LeetCode/tree/master/0300-longest-increasing-subsequence) |
+| [0724-find-pivot-index](https://github.com/andychen3/LeetCode/tree/master/0724-find-pivot-index) |
 | [0777-toeplitz-matrix](https://github.com/andychen3/LeetCode/tree/master/0777-toeplitz-matrix) |
 | [0792-binary-search](https://github.com/andychen3/LeetCode/tree/master/0792-binary-search) |
 | [0940-fruit-into-baskets](https://github.com/andychen3/LeetCode/tree/master/0940-fruit-into-baskets) |
@@ -90,4 +91,8 @@ My solutions to Leetcode problems.
 | [0074-search-a-2d-matrix](https://github.com/andychen3/LeetCode/tree/master/0074-search-a-2d-matrix) |
 | [0300-longest-increasing-subsequence](https://github.com/andychen3/LeetCode/tree/master/0300-longest-increasing-subsequence) |
 | [0792-binary-search](https://github.com/andychen3/LeetCode/tree/master/0792-binary-search) |
+## Prefix Sum
+|  |
+| ------- |
+| [0724-find-pivot-index](https://github.com/andychen3/LeetCode/tree/master/0724-find-pivot-index) |
 <!---LeetCode Topics End-->
