@@ -8,12 +8,7 @@ class Solution:
         ans = curr / k
 
         for right in range(k, len(nums)):
-            curr += nums[right]
-
-            while right - left + 1 > k:
-                curr -= nums[left]
-                left += 1
-            
+            curr += nums[right] - nums[right - k]
             ans = max(curr / k, ans)
         
         return ans
