@@ -9,7 +9,7 @@ class Solution:
         for right, num in enumerate(nums):
             product *= num
 
-            while left < len(nums) and product >= k:
+            while product >= k:
                 product //= nums[left]
                 left += 1
             
