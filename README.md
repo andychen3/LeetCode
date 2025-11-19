@@ -113,6 +113,7 @@ My solutions to Leetcode problems.
 | [0560-subarray-sum-equals-k](https://github.com/andychen3/LeetCode/tree/master/0560-subarray-sum-equals-k) |
 | [0713-subarray-product-less-than-k](https://github.com/andychen3/LeetCode/tree/master/0713-subarray-product-less-than-k) |
 | [0724-find-pivot-index](https://github.com/andychen3/LeetCode/tree/master/0724-find-pivot-index) |
+| [1370-count-number-of-nice-subarrays](https://github.com/andychen3/LeetCode/tree/master/1370-count-number-of-nice-subarrays) |
 | [1833-find-the-highest-altitude](https://github.com/andychen3/LeetCode/tree/master/1833-find-the-highest-altitude) |
 | [2358-number-of-ways-to-split-array](https://github.com/andychen3/LeetCode/tree/master/2358-number-of-ways-to-split-array) |
 ## Two Pointers
