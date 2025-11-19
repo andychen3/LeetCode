@@ -19,6 +19,7 @@ My solutions to Leetcode problems.
 | [1370-count-number-of-nice-subarrays](https://github.com/andychen3/LeetCode/tree/master/1370-count-number-of-nice-subarrays) |
 | [1548-check-if-all-1s-are-at-least-length-k-places-away](https://github.com/andychen3/LeetCode/tree/master/1548-check-if-all-1s-are-at-least-length-k-places-away) |
 | [1616-minimum-difference-between-largest-and-smallest-value-in-three-moves](https://github.com/andychen3/LeetCode/tree/master/1616-minimum-difference-between-largest-and-smallest-value-in-three-moves) |
+| [1833-find-the-highest-altitude](https://github.com/andychen3/LeetCode/tree/master/1833-find-the-highest-altitude) |
 | [2245-destroying-asteroids](https://github.com/andychen3/LeetCode/tree/master/2245-destroying-asteroids) |
 | [2358-number-of-ways-to-split-array](https://github.com/andychen3/LeetCode/tree/master/2358-number-of-ways-to-split-array) |
 | [2387-partition-array-such-that-maximum-difference-is-k](https://github.com/andychen3/LeetCode/tree/master/2387-partition-array-such-that-maximum-difference-is-k) |
@@ -107,6 +108,7 @@ My solutions to Leetcode problems.
 | ------- |
 | [0713-subarray-product-less-than-k](https://github.com/andychen3/LeetCode/tree/master/0713-subarray-product-less-than-k) |
 | [0724-find-pivot-index](https://github.com/andychen3/LeetCode/tree/master/0724-find-pivot-index) |
+| [1833-find-the-highest-altitude](https://github.com/andychen3/LeetCode/tree/master/1833-find-the-highest-altitude) |
 | [2358-number-of-ways-to-split-array](https://github.com/andychen3/LeetCode/tree/master/2358-number-of-ways-to-split-array) |
 ## Two Pointers
 |  |
