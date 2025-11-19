@@ -6,6 +6,7 @@ My solutions to Leetcode problems.
 ## Array
 |  |
 | ------- |
+| [0049-group-anagrams](https://github.com/andychen3/LeetCode/tree/master/0049-group-anagrams) |
 | [0074-search-a-2d-matrix](https://github.com/andychen3/LeetCode/tree/master/0074-search-a-2d-matrix) |
 | [0300-longest-increasing-subsequence](https://github.com/andychen3/LeetCode/tree/master/0300-longest-increasing-subsequence) |
 | [0303-range-sum-query-immutable](https://github.com/andychen3/LeetCode/tree/master/0303-range-sum-query-immutable) |
@@ -33,6 +34,7 @@ My solutions to Leetcode problems.
 ## Hash Table
 |  |
 | ------- |
+| [0049-group-anagrams](https://github.com/andychen3/LeetCode/tree/master/0049-group-anagrams) |
 | [0560-subarray-sum-equals-k](https://github.com/andychen3/LeetCode/tree/master/0560-subarray-sum-equals-k) |
 | [0940-fruit-into-baskets](https://github.com/andychen3/LeetCode/tree/master/0940-fruit-into-baskets) |
 | [0965-unique-email-addresses](https://github.com/andychen3/LeetCode/tree/master/0965-unique-email-addresses) |
@@ -60,12 +62,14 @@ My solutions to Leetcode problems.
 ## Sorting
 |  |
 | ------- |
+| [0049-group-anagrams](https://github.com/andychen3/LeetCode/tree/master/0049-group-anagrams) |
 | [1616-minimum-difference-between-largest-and-smallest-value-in-three-moves](https://github.com/andychen3/LeetCode/tree/master/1616-minimum-difference-between-largest-and-smallest-value-in-three-moves) |
 | [2245-destroying-asteroids](https://github.com/andychen3/LeetCode/tree/master/2245-destroying-asteroids) |
 | [2387-partition-array-such-that-maximum-difference-is-k](https://github.com/andychen3/LeetCode/tree/master/2387-partition-array-such-that-maximum-difference-is-k) |
 ## String
 |  |
 | ------- |
+| [0049-group-anagrams](https://github.com/andychen3/LeetCode/tree/master/0049-group-anagrams) |
 | [0344-reverse-string](https://github.com/andychen3/LeetCode/tree/master/0344-reverse-string) |
 | [0482-license-key-formatting](https://github.com/andychen3/LeetCode/tree/master/0482-license-key-formatting) |
 | [0965-unique-email-addresses](https://github.com/andychen3/LeetCode/tree/master/0965-unique-email-addresses) |
