@@ -40,6 +40,7 @@ My solutions to Leetcode problems.
 | [0560-subarray-sum-equals-k](https://github.com/andychen3/LeetCode/tree/master/0560-subarray-sum-equals-k) |
 | [0940-fruit-into-baskets](https://github.com/andychen3/LeetCode/tree/master/0940-fruit-into-baskets) |
 | [0965-unique-email-addresses](https://github.com/andychen3/LeetCode/tree/master/0965-unique-email-addresses) |
+| [1297-maximum-number-of-balloons](https://github.com/andychen3/LeetCode/tree/master/1297-maximum-number-of-balloons) |
 | [1370-count-number-of-nice-subarrays](https://github.com/andychen3/LeetCode/tree/master/1370-count-number-of-nice-subarrays) |
 | [1632-number-of-good-ways-to-split-a-string](https://github.com/andychen3/LeetCode/tree/master/1632-number-of-good-ways-to-split-a-string) |
 ## Math
@@ -75,6 +76,7 @@ My solutions to Leetcode problems.
 | [0344-reverse-string](https://github.com/andychen3/LeetCode/tree/master/0344-reverse-string) |
 | [0482-license-key-formatting](https://github.com/andychen3/LeetCode/tree/master/0482-license-key-formatting) |
 | [0965-unique-email-addresses](https://github.com/andychen3/LeetCode/tree/master/0965-unique-email-addresses) |
+| [1297-maximum-number-of-balloons](https://github.com/andychen3/LeetCode/tree/master/1297-maximum-number-of-balloons) |
 | [1632-number-of-good-ways-to-split-a-string](https://github.com/andychen3/LeetCode/tree/master/1632-number-of-good-ways-to-split-a-string) |
 | [1858-latest-time-by-replacing-hidden-digits](https://github.com/andychen3/LeetCode/tree/master/1858-latest-time-by-replacing-hidden-digits) |
 ## Dynamic Programming
@@ -135,4 +137,8 @@ My solutions to Leetcode problems.
 |  |
 | ------- |
 | [0303-range-sum-query-immutable](https://github.com/andychen3/LeetCode/tree/master/0303-range-sum-query-immutable) |
+## Counting
+|  |
+| ------- |
+| [1297-maximum-number-of-balloons](https://github.com/andychen3/LeetCode/tree/master/1297-maximum-number-of-balloons) |
 <!---LeetCode Topics End-->
