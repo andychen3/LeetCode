@@ -1,14 +1,24 @@
+from collections import defaultdict
 class Solution:
     def findMaxLength(self, nums: List[int]) -> int:
-        counts = {}
-        curr = ans = 0
-        
+        counts = defaultdict(int)
+        ans = 0
+        zero = 0
+        ones = 0
+
         for i, num in enumerate(nums):
-            curr += num if num else -1
-            if curr == 0:
-                ans = max(ans, i + 1)
-            elif curr in counts:
-                ans = max(ans, i - counts[curr])
+            if num == 1:
+                ones += 1
             else:
+                zero += 1
+
+            curr = zero - ones
+
+            if curr == 0:
+                ans = zero + ones
+            elif curr not in counts:
                 counts[curr] = i
+            else:
+                ans = max(ans, i - counts[curr])
+        
         return ans
