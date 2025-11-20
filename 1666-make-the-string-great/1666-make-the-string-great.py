@@ -1,10 +1,14 @@
 class Solution:
     def makeGood(self, s: str) -> str:
+        if len(s) <= 1:
+            return s
+        
         stack = []
-
-        for c in s:
-            if stack and c == stack[-1].swapcase():
+        
+        for char in s:
+            if stack and stack[-1].swapcase() == char:
                 stack.pop()
             else:
-                stack.append(c)
-        return "".join(stack)
+                stack.append(char)
+        
+        return ''.join(stack)
