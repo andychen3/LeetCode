@@ -81,6 +81,7 @@ My solutions to Leetcode problems.
 | [0965-unique-email-addresses](https://github.com/andychen3/LeetCode/tree/master/0965-unique-email-addresses) |
 | [1297-maximum-number-of-balloons](https://github.com/andychen3/LeetCode/tree/master/1297-maximum-number-of-balloons) |
 | [1632-number-of-good-ways-to-split-a-string](https://github.com/andychen3/LeetCode/tree/master/1632-number-of-good-ways-to-split-a-string) |
+| [1666-make-the-string-great](https://github.com/andychen3/LeetCode/tree/master/1666-make-the-string-great) |
 | [1858-latest-time-by-replacing-hidden-digits](https://github.com/andychen3/LeetCode/tree/master/1858-latest-time-by-replacing-hidden-digits) |
 ## Dynamic Programming
 |  |
@@ -136,6 +137,7 @@ My solutions to Leetcode problems.
 |  |
 | ------- |
 | [0144-binary-tree-preorder-traversal](https://github.com/andychen3/LeetCode/tree/master/0144-binary-tree-preorder-traversal) |
+| [1666-make-the-string-great](https://github.com/andychen3/LeetCode/tree/master/1666-make-the-string-great) |
 ## Design
 |  |
 | ------- |
