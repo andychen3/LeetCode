@@ -35,6 +35,7 @@ My solutions to Leetcode problems.
 ## Hash Table
 |  |
 | ------- |
+| [0003-longest-substring-without-repeating-characters](https://github.com/andychen3/LeetCode/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0049-group-anagrams](https://github.com/andychen3/LeetCode/tree/master/0049-group-anagrams) |
 | [0525-contiguous-array](https://github.com/andychen3/LeetCode/tree/master/0525-contiguous-array) |
 | [0560-subarray-sum-equals-k](https://github.com/andychen3/LeetCode/tree/master/0560-subarray-sum-equals-k) |
@@ -50,6 +51,7 @@ My solutions to Leetcode problems.
 ## Sliding Window
 |  |
 | ------- |
+| [0003-longest-substring-without-repeating-characters](https://github.com/andychen3/LeetCode/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0643-maximum-average-subarray-i](https://github.com/andychen3/LeetCode/tree/master/0643-maximum-average-subarray-i) |
 | [0713-subarray-product-less-than-k](https://github.com/andychen3/LeetCode/tree/master/0713-subarray-product-less-than-k) |
 | [0940-fruit-into-baskets](https://github.com/andychen3/LeetCode/tree/master/0940-fruit-into-baskets) |
@@ -72,6 +74,7 @@ My solutions to Leetcode problems.
 ## String
 |  |
 | ------- |
+| [0003-longest-substring-without-repeating-characters](https://github.com/andychen3/LeetCode/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0049-group-anagrams](https://github.com/andychen3/LeetCode/tree/master/0049-group-anagrams) |
 | [0344-reverse-string](https://github.com/andychen3/LeetCode/tree/master/0344-reverse-string) |
 | [0482-license-key-formatting](https://github.com/andychen3/LeetCode/tree/master/0482-license-key-formatting) |
