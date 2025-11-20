@@ -22,6 +22,7 @@ My solutions to Leetcode problems.
 | [0940-fruit-into-baskets](https://github.com/andychen3/LeetCode/tree/master/0940-fruit-into-baskets) |
 | [0965-unique-email-addresses](https://github.com/andychen3/LeetCode/tree/master/0965-unique-email-addresses) |
 | [1049-minimum-domino-rotations-for-equal-row](https://github.com/andychen3/LeetCode/tree/master/1049-minimum-domino-rotations-for-equal-row) |
+| [1192-divide-chocolate](https://github.com/andychen3/LeetCode/tree/master/1192-divide-chocolate) |
 | [1370-count-number-of-nice-subarrays](https://github.com/andychen3/LeetCode/tree/master/1370-count-number-of-nice-subarrays) |
 | [1548-check-if-all-1s-are-at-least-length-k-places-away](https://github.com/andychen3/LeetCode/tree/master/1548-check-if-all-1s-are-at-least-length-k-places-away) |
 | [1616-minimum-difference-between-largest-and-smallest-value-in-three-moves](https://github.com/andychen3/LeetCode/tree/master/1616-minimum-difference-between-largest-and-smallest-value-in-three-moves) |
@@ -121,6 +122,7 @@ My solutions to Leetcode problems.
 | [0300-longest-increasing-subsequence](https://github.com/andychen3/LeetCode/tree/master/0300-longest-increasing-subsequence) |
 | [0713-subarray-product-less-than-k](https://github.com/andychen3/LeetCode/tree/master/0713-subarray-product-less-than-k) |
 | [0792-binary-search](https://github.com/andychen3/LeetCode/tree/master/0792-binary-search) |
+| [1192-divide-chocolate](https://github.com/andychen3/LeetCode/tree/master/1192-divide-chocolate) |
 ## Prefix Sum
 |  |
 | ------- |
