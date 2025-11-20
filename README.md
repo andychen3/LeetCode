@@ -10,6 +10,7 @@ My solutions to Leetcode problems.
 | [0074-search-a-2d-matrix](https://github.com/andychen3/LeetCode/tree/master/0074-search-a-2d-matrix) |
 | [0300-longest-increasing-subsequence](https://github.com/andychen3/LeetCode/tree/master/0300-longest-increasing-subsequence) |
 | [0303-range-sum-query-immutable](https://github.com/andychen3/LeetCode/tree/master/0303-range-sum-query-immutable) |
+| [0525-contiguous-array](https://github.com/andychen3/LeetCode/tree/master/0525-contiguous-array) |
 | [0560-subarray-sum-equals-k](https://github.com/andychen3/LeetCode/tree/master/0560-subarray-sum-equals-k) |
 | [0643-maximum-average-subarray-i](https://github.com/andychen3/LeetCode/tree/master/0643-maximum-average-subarray-i) |
 | [0713-subarray-product-less-than-k](https://github.com/andychen3/LeetCode/tree/master/0713-subarray-product-less-than-k) |
@@ -35,6 +36,7 @@ My solutions to Leetcode problems.
 |  |
 | ------- |
 | [0049-group-anagrams](https://github.com/andychen3/LeetCode/tree/master/0049-group-anagrams) |
+| [0525-contiguous-array](https://github.com/andychen3/LeetCode/tree/master/0525-contiguous-array) |
 | [0560-subarray-sum-equals-k](https://github.com/andychen3/LeetCode/tree/master/0560-subarray-sum-equals-k) |
 | [0940-fruit-into-baskets](https://github.com/andychen3/LeetCode/tree/master/0940-fruit-into-baskets) |
 | [0965-unique-email-addresses](https://github.com/andychen3/LeetCode/tree/master/0965-unique-email-addresses) |
@@ -114,6 +116,7 @@ My solutions to Leetcode problems.
 |  |
 | ------- |
 | [0303-range-sum-query-immutable](https://github.com/andychen3/LeetCode/tree/master/0303-range-sum-query-immutable) |
+| [0525-contiguous-array](https://github.com/andychen3/LeetCode/tree/master/0525-contiguous-array) |
 | [0560-subarray-sum-equals-k](https://github.com/andychen3/LeetCode/tree/master/0560-subarray-sum-equals-k) |
 | [0713-subarray-product-less-than-k](https://github.com/andychen3/LeetCode/tree/master/0713-subarray-product-less-than-k) |
 | [0724-find-pivot-index](https://github.com/andychen3/LeetCode/tree/master/0724-find-pivot-index) |
