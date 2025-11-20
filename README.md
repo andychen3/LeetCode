@@ -15,6 +15,7 @@ My solutions to Leetcode problems.
 | [0643-maximum-average-subarray-i](https://github.com/andychen3/LeetCode/tree/master/0643-maximum-average-subarray-i) |
 | [0713-subarray-product-less-than-k](https://github.com/andychen3/LeetCode/tree/master/0713-subarray-product-less-than-k) |
 | [0724-find-pivot-index](https://github.com/andychen3/LeetCode/tree/master/0724-find-pivot-index) |
+| [0739-daily-temperatures](https://github.com/andychen3/LeetCode/tree/master/0739-daily-temperatures) |
 | [0777-toeplitz-matrix](https://github.com/andychen3/LeetCode/tree/master/0777-toeplitz-matrix) |
 | [0792-binary-search](https://github.com/andychen3/LeetCode/tree/master/0792-binary-search) |
 | [0940-fruit-into-baskets](https://github.com/andychen3/LeetCode/tree/master/0940-fruit-into-baskets) |
@@ -137,6 +138,7 @@ My solutions to Leetcode problems.
 |  |
 | ------- |
 | [0144-binary-tree-preorder-traversal](https://github.com/andychen3/LeetCode/tree/master/0144-binary-tree-preorder-traversal) |
+| [0739-daily-temperatures](https://github.com/andychen3/LeetCode/tree/master/0739-daily-temperatures) |
 | [1666-make-the-string-great](https://github.com/andychen3/LeetCode/tree/master/1666-make-the-string-great) |
 ## Design
 |  |
@@ -146,4 +148,8 @@ My solutions to Leetcode problems.
 |  |
 | ------- |
 | [1297-maximum-number-of-balloons](https://github.com/andychen3/LeetCode/tree/master/1297-maximum-number-of-balloons) |
+## Monotonic Stack
+|  |
+| ------- |
+| [0739-daily-temperatures](https://github.com/andychen3/LeetCode/tree/master/0739-daily-temperatures) |
 <!---LeetCode Topics End-->
