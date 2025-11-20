@@ -10,6 +10,7 @@ My solutions to Leetcode problems.
 | [0074-search-a-2d-matrix](https://github.com/andychen3/LeetCode/tree/master/0074-search-a-2d-matrix) |
 | [0300-longest-increasing-subsequence](https://github.com/andychen3/LeetCode/tree/master/0300-longest-increasing-subsequence) |
 | [0303-range-sum-query-immutable](https://github.com/andychen3/LeetCode/tree/master/0303-range-sum-query-immutable) |
+| [0496-next-greater-element-i](https://github.com/andychen3/LeetCode/tree/master/0496-next-greater-element-i) |
 | [0525-contiguous-array](https://github.com/andychen3/LeetCode/tree/master/0525-contiguous-array) |
 | [0560-subarray-sum-equals-k](https://github.com/andychen3/LeetCode/tree/master/0560-subarray-sum-equals-k) |
 | [0643-maximum-average-subarray-i](https://github.com/andychen3/LeetCode/tree/master/0643-maximum-average-subarray-i) |
@@ -38,6 +39,7 @@ My solutions to Leetcode problems.
 | ------- |
 | [0003-longest-substring-without-repeating-characters](https://github.com/andychen3/LeetCode/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0049-group-anagrams](https://github.com/andychen3/LeetCode/tree/master/0049-group-anagrams) |
+| [0496-next-greater-element-i](https://github.com/andychen3/LeetCode/tree/master/0496-next-greater-element-i) |
 | [0525-contiguous-array](https://github.com/andychen3/LeetCode/tree/master/0525-contiguous-array) |
 | [0560-subarray-sum-equals-k](https://github.com/andychen3/LeetCode/tree/master/0560-subarray-sum-equals-k) |
 | [0940-fruit-into-baskets](https://github.com/andychen3/LeetCode/tree/master/0940-fruit-into-baskets) |
@@ -138,6 +140,7 @@ My solutions to Leetcode problems.
 |  |
 | ------- |
 | [0144-binary-tree-preorder-traversal](https://github.com/andychen3/LeetCode/tree/master/0144-binary-tree-preorder-traversal) |
+| [0496-next-greater-element-i](https://github.com/andychen3/LeetCode/tree/master/0496-next-greater-element-i) |
 | [0739-daily-temperatures](https://github.com/andychen3/LeetCode/tree/master/0739-daily-temperatures) |
 | [1666-make-the-string-great](https://github.com/andychen3/LeetCode/tree/master/1666-make-the-string-great) |
 ## Design
@@ -151,5 +154,6 @@ My solutions to Leetcode problems.
 ## Monotonic Stack
 |  |
 | ------- |
+| [0496-next-greater-element-i](https://github.com/andychen3/LeetCode/tree/master/0496-next-greater-element-i) |
 | [0739-daily-temperatures](https://github.com/andychen3/LeetCode/tree/master/0739-daily-temperatures) |
 <!---LeetCode Topics End-->
