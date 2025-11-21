@@ -111,6 +111,7 @@ My solutions to Leetcode problems.
 | ------- |
 | [0100-same-tree](https://github.com/andychen3/LeetCode/tree/master/0100-same-tree) |
 | [0104-maximum-depth-of-binary-tree](https://github.com/andychen3/LeetCode/tree/master/0104-maximum-depth-of-binary-tree) |
+| [0111-minimum-depth-of-binary-tree](https://github.com/andychen3/LeetCode/tree/master/0111-minimum-depth-of-binary-tree) |
 | [0112-path-sum](https://github.com/andychen3/LeetCode/tree/master/0112-path-sum) |
 | [0144-binary-tree-preorder-traversal](https://github.com/andychen3/LeetCode/tree/master/0144-binary-tree-preorder-traversal) |
 | [1116-maximum-level-sum-of-a-binary-tree](https://github.com/andychen3/LeetCode/tree/master/1116-maximum-level-sum-of-a-binary-tree) |
@@ -120,6 +121,7 @@ My solutions to Leetcode problems.
 | ------- |
 | [0100-same-tree](https://github.com/andychen3/LeetCode/tree/master/0100-same-tree) |
 | [0104-maximum-depth-of-binary-tree](https://github.com/andychen3/LeetCode/tree/master/0104-maximum-depth-of-binary-tree) |
+| [0111-minimum-depth-of-binary-tree](https://github.com/andychen3/LeetCode/tree/master/0111-minimum-depth-of-binary-tree) |
 | [0112-path-sum](https://github.com/andychen3/LeetCode/tree/master/0112-path-sum) |
 | [0144-binary-tree-preorder-traversal](https://github.com/andychen3/LeetCode/tree/master/0144-binary-tree-preorder-traversal) |
 | [1116-maximum-level-sum-of-a-binary-tree](https://github.com/andychen3/LeetCode/tree/master/1116-maximum-level-sum-of-a-binary-tree) |
@@ -129,6 +131,7 @@ My solutions to Leetcode problems.
 | ------- |
 | [0100-same-tree](https://github.com/andychen3/LeetCode/tree/master/0100-same-tree) |
 | [0104-maximum-depth-of-binary-tree](https://github.com/andychen3/LeetCode/tree/master/0104-maximum-depth-of-binary-tree) |
+| [0111-minimum-depth-of-binary-tree](https://github.com/andychen3/LeetCode/tree/master/0111-minimum-depth-of-binary-tree) |
 | [0112-path-sum](https://github.com/andychen3/LeetCode/tree/master/0112-path-sum) |
 | [1116-maximum-level-sum-of-a-binary-tree](https://github.com/andychen3/LeetCode/tree/master/1116-maximum-level-sum-of-a-binary-tree) |
 | [1448-count-good-nodes-in-binary-tree](https://github.com/andychen3/LeetCode/tree/master/1448-count-good-nodes-in-binary-tree) |
@@ -137,6 +140,7 @@ My solutions to Leetcode problems.
 | ------- |
 | [0100-same-tree](https://github.com/andychen3/LeetCode/tree/master/0100-same-tree) |
 | [0104-maximum-depth-of-binary-tree](https://github.com/andychen3/LeetCode/tree/master/0104-maximum-depth-of-binary-tree) |
+| [0111-minimum-depth-of-binary-tree](https://github.com/andychen3/LeetCode/tree/master/0111-minimum-depth-of-binary-tree) |
 | [0112-path-sum](https://github.com/andychen3/LeetCode/tree/master/0112-path-sum) |
 | [0144-binary-tree-preorder-traversal](https://github.com/andychen3/LeetCode/tree/master/0144-binary-tree-preorder-traversal) |
 | [1116-maximum-level-sum-of-a-binary-tree](https://github.com/andychen3/LeetCode/tree/master/1116-maximum-level-sum-of-a-binary-tree) |
