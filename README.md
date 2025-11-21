@@ -114,6 +114,7 @@ My solutions to Leetcode problems.
 | [0111-minimum-depth-of-binary-tree](https://github.com/andychen3/LeetCode/tree/master/0111-minimum-depth-of-binary-tree) |
 | [0112-path-sum](https://github.com/andychen3/LeetCode/tree/master/0112-path-sum) |
 | [0144-binary-tree-preorder-traversal](https://github.com/andychen3/LeetCode/tree/master/0144-binary-tree-preorder-traversal) |
+| [1026-maximum-difference-between-node-and-ancestor](https://github.com/andychen3/LeetCode/tree/master/1026-maximum-difference-between-node-and-ancestor) |
 | [1116-maximum-level-sum-of-a-binary-tree](https://github.com/andychen3/LeetCode/tree/master/1116-maximum-level-sum-of-a-binary-tree) |
 | [1448-count-good-nodes-in-binary-tree](https://github.com/andychen3/LeetCode/tree/master/1448-count-good-nodes-in-binary-tree) |
 ## Depth-First Search
@@ -124,6 +125,7 @@ My solutions to Leetcode problems.
 | [0111-minimum-depth-of-binary-tree](https://github.com/andychen3/LeetCode/tree/master/0111-minimum-depth-of-binary-tree) |
 | [0112-path-sum](https://github.com/andychen3/LeetCode/tree/master/0112-path-sum) |
 | [0144-binary-tree-preorder-traversal](https://github.com/andychen3/LeetCode/tree/master/0144-binary-tree-preorder-traversal) |
+| [1026-maximum-difference-between-node-and-ancestor](https://github.com/andychen3/LeetCode/tree/master/1026-maximum-difference-between-node-and-ancestor) |
 | [1116-maximum-level-sum-of-a-binary-tree](https://github.com/andychen3/LeetCode/tree/master/1116-maximum-level-sum-of-a-binary-tree) |
 | [1448-count-good-nodes-in-binary-tree](https://github.com/andychen3/LeetCode/tree/master/1448-count-good-nodes-in-binary-tree) |
 ## Breadth-First Search
@@ -143,6 +145,7 @@ My solutions to Leetcode problems.
 | [0111-minimum-depth-of-binary-tree](https://github.com/andychen3/LeetCode/tree/master/0111-minimum-depth-of-binary-tree) |
 | [0112-path-sum](https://github.com/andychen3/LeetCode/tree/master/0112-path-sum) |
 | [0144-binary-tree-preorder-traversal](https://github.com/andychen3/LeetCode/tree/master/0144-binary-tree-preorder-traversal) |
+| [1026-maximum-difference-between-node-and-ancestor](https://github.com/andychen3/LeetCode/tree/master/1026-maximum-difference-between-node-and-ancestor) |
 | [1116-maximum-level-sum-of-a-binary-tree](https://github.com/andychen3/LeetCode/tree/master/1116-maximum-level-sum-of-a-binary-tree) |
 | [1448-count-good-nodes-in-binary-tree](https://github.com/andychen3/LeetCode/tree/master/1448-count-good-nodes-in-binary-tree) |
 ## Binary Search
