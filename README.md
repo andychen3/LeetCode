@@ -31,6 +31,7 @@ My solutions to Leetcode problems.
 | [2245-destroying-asteroids](https://github.com/andychen3/LeetCode/tree/master/2245-destroying-asteroids) |
 | [2358-number-of-ways-to-split-array](https://github.com/andychen3/LeetCode/tree/master/2358-number-of-ways-to-split-array) |
 | [2387-partition-array-such-that-maximum-difference-is-k](https://github.com/andychen3/LeetCode/tree/master/2387-partition-array-such-that-maximum-difference-is-k) |
+| [2392-successful-pairs-of-spells-and-potions](https://github.com/andychen3/LeetCode/tree/master/2392-successful-pairs-of-spells-and-potions) |
 ## Matrix
 |  |
 | ------- |
@@ -77,6 +78,7 @@ My solutions to Leetcode problems.
 | [1616-minimum-difference-between-largest-and-smallest-value-in-three-moves](https://github.com/andychen3/LeetCode/tree/master/1616-minimum-difference-between-largest-and-smallest-value-in-three-moves) |
 | [2245-destroying-asteroids](https://github.com/andychen3/LeetCode/tree/master/2245-destroying-asteroids) |
 | [2387-partition-array-such-that-maximum-difference-is-k](https://github.com/andychen3/LeetCode/tree/master/2387-partition-array-such-that-maximum-difference-is-k) |
+| [2392-successful-pairs-of-spells-and-potions](https://github.com/andychen3/LeetCode/tree/master/2392-successful-pairs-of-spells-and-potions) |
 ## String
 |  |
 | ------- |
@@ -127,6 +129,7 @@ My solutions to Leetcode problems.
 | [0713-subarray-product-less-than-k](https://github.com/andychen3/LeetCode/tree/master/0713-subarray-product-less-than-k) |
 | [0792-binary-search](https://github.com/andychen3/LeetCode/tree/master/0792-binary-search) |
 | [1192-divide-chocolate](https://github.com/andychen3/LeetCode/tree/master/1192-divide-chocolate) |
+| [2392-successful-pairs-of-spells-and-potions](https://github.com/andychen3/LeetCode/tree/master/2392-successful-pairs-of-spells-and-potions) |
 ## Prefix Sum
 |  |
 | ------- |
@@ -143,6 +146,7 @@ My solutions to Leetcode problems.
 |  |
 | ------- |
 | [0344-reverse-string](https://github.com/andychen3/LeetCode/tree/master/0344-reverse-string) |
+| [2392-successful-pairs-of-spells-and-potions](https://github.com/andychen3/LeetCode/tree/master/2392-successful-pairs-of-spells-and-potions) |
 ## Stack
 |  |
 | ------- |
