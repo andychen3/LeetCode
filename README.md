@@ -6,6 +6,7 @@ My solutions to Leetcode problems.
 ## Array
 |  |
 | ------- |
+| [0035-search-insert-position](https://github.com/andychen3/LeetCode/tree/master/0035-search-insert-position) |
 | [0049-group-anagrams](https://github.com/andychen3/LeetCode/tree/master/0049-group-anagrams) |
 | [0074-search-a-2d-matrix](https://github.com/andychen3/LeetCode/tree/master/0074-search-a-2d-matrix) |
 | [0300-longest-increasing-subsequence](https://github.com/andychen3/LeetCode/tree/master/0300-longest-increasing-subsequence) |
@@ -126,6 +127,7 @@ My solutions to Leetcode problems.
 ## Binary Search
 |  |
 | ------- |
+| [0035-search-insert-position](https://github.com/andychen3/LeetCode/tree/master/0035-search-insert-position) |
 | [0074-search-a-2d-matrix](https://github.com/andychen3/LeetCode/tree/master/0074-search-a-2d-matrix) |
 | [0300-longest-increasing-subsequence](https://github.com/andychen3/LeetCode/tree/master/0300-longest-increasing-subsequence) |
 | [0410-split-array-largest-sum](https://github.com/andychen3/LeetCode/tree/master/0410-split-array-largest-sum) |
