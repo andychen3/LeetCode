@@ -109,6 +109,7 @@ My solutions to Leetcode problems.
 ## Tree
 |  |
 | ------- |
+| [0100-same-tree](https://github.com/andychen3/LeetCode/tree/master/0100-same-tree) |
 | [0104-maximum-depth-of-binary-tree](https://github.com/andychen3/LeetCode/tree/master/0104-maximum-depth-of-binary-tree) |
 | [0112-path-sum](https://github.com/andychen3/LeetCode/tree/master/0112-path-sum) |
 | [0144-binary-tree-preorder-traversal](https://github.com/andychen3/LeetCode/tree/master/0144-binary-tree-preorder-traversal) |
@@ -117,6 +118,7 @@ My solutions to Leetcode problems.
 ## Depth-First Search
 |  |
 | ------- |
+| [0100-same-tree](https://github.com/andychen3/LeetCode/tree/master/0100-same-tree) |
 | [0104-maximum-depth-of-binary-tree](https://github.com/andychen3/LeetCode/tree/master/0104-maximum-depth-of-binary-tree) |
 | [0112-path-sum](https://github.com/andychen3/LeetCode/tree/master/0112-path-sum) |
 | [0144-binary-tree-preorder-traversal](https://github.com/andychen3/LeetCode/tree/master/0144-binary-tree-preorder-traversal) |
@@ -125,6 +127,7 @@ My solutions to Leetcode problems.
 ## Breadth-First Search
 |  |
 | ------- |
+| [0100-same-tree](https://github.com/andychen3/LeetCode/tree/master/0100-same-tree) |
 | [0104-maximum-depth-of-binary-tree](https://github.com/andychen3/LeetCode/tree/master/0104-maximum-depth-of-binary-tree) |
 | [0112-path-sum](https://github.com/andychen3/LeetCode/tree/master/0112-path-sum) |
 | [1116-maximum-level-sum-of-a-binary-tree](https://github.com/andychen3/LeetCode/tree/master/1116-maximum-level-sum-of-a-binary-tree) |
@@ -132,6 +135,7 @@ My solutions to Leetcode problems.
 ## Binary Tree
 |  |
 | ------- |
+| [0100-same-tree](https://github.com/andychen3/LeetCode/tree/master/0100-same-tree) |
 | [0104-maximum-depth-of-binary-tree](https://github.com/andychen3/LeetCode/tree/master/0104-maximum-depth-of-binary-tree) |
 | [0112-path-sum](https://github.com/andychen3/LeetCode/tree/master/0112-path-sum) |
 | [0144-binary-tree-preorder-traversal](https://github.com/andychen3/LeetCode/tree/master/0144-binary-tree-preorder-traversal) |
