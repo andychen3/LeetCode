@@ -134,6 +134,7 @@ My solutions to Leetcode problems.
 | [1026-maximum-difference-between-node-and-ancestor](https://github.com/andychen3/LeetCode/tree/master/1026-maximum-difference-between-node-and-ancestor) |
 | [1116-maximum-level-sum-of-a-binary-tree](https://github.com/andychen3/LeetCode/tree/master/1116-maximum-level-sum-of-a-binary-tree) |
 | [1448-count-good-nodes-in-binary-tree](https://github.com/andychen3/LeetCode/tree/master/1448-count-good-nodes-in-binary-tree) |
+| [1466-reorder-routes-to-make-all-paths-lead-to-the-city-zero](https://github.com/andychen3/LeetCode/tree/master/1466-reorder-routes-to-make-all-paths-lead-to-the-city-zero) |
 ## Breadth-First Search
 |  |
 | ------- |
@@ -145,6 +146,7 @@ My solutions to Leetcode problems.
 | [0547-number-of-provinces](https://github.com/andychen3/LeetCode/tree/master/0547-number-of-provinces) |
 | [1116-maximum-level-sum-of-a-binary-tree](https://github.com/andychen3/LeetCode/tree/master/1116-maximum-level-sum-of-a-binary-tree) |
 | [1448-count-good-nodes-in-binary-tree](https://github.com/andychen3/LeetCode/tree/master/1448-count-good-nodes-in-binary-tree) |
+| [1466-reorder-routes-to-make-all-paths-lead-to-the-city-zero](https://github.com/andychen3/LeetCode/tree/master/1466-reorder-routes-to-make-all-paths-lead-to-the-city-zero) |
 ## Binary Tree
 |  |
 | ------- |
@@ -217,4 +219,5 @@ My solutions to Leetcode problems.
 |  |
 | ------- |
 | [0547-number-of-provinces](https://github.com/andychen3/LeetCode/tree/master/0547-number-of-provinces) |
+| [1466-reorder-routes-to-make-all-paths-lead-to-the-city-zero](https://github.com/andychen3/LeetCode/tree/master/1466-reorder-routes-to-make-all-paths-lead-to-the-city-zero) |
 <!---LeetCode Topics End-->
