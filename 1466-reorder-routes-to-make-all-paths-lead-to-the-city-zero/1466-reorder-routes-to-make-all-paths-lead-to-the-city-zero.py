@@ -10,17 +10,18 @@ class Solution:
             roads.add((x, y))
 
         def dfs(node):
-            nonlocal ans
-            
+            ans = 0
+
             for neighbor in graph[node]:
                 if neighbor not in seen:
                     if (node, neighbor) in roads:
                         ans += 1
                     
                     seen.add(neighbor)
-                    dfs(neighbor)
+                    ans += dfs(neighbor)
+            
+            return ans
 
         seen = {0}
-        ans = 0
-        dfs(0)
-        return ans
+        return dfs(0)
+        
