@@ -29,6 +29,7 @@ My solutions to Leetcode problems.
 | [1049-minimum-domino-rotations-for-equal-row](https://github.com/andychen3/LeetCode/tree/master/1049-minimum-domino-rotations-for-equal-row) |
 | [1091-shortest-path-in-binary-matrix](https://github.com/andychen3/LeetCode/tree/master/1091-shortest-path-in-binary-matrix) |
 | [1192-divide-chocolate](https://github.com/andychen3/LeetCode/tree/master/1192-divide-chocolate) |
+| [1293-shortest-path-in-a-grid-with-obstacles-elimination](https://github.com/andychen3/LeetCode/tree/master/1293-shortest-path-in-a-grid-with-obstacles-elimination) |
 | [1370-count-number-of-nice-subarrays](https://github.com/andychen3/LeetCode/tree/master/1370-count-number-of-nice-subarrays) |
 | [1548-check-if-all-1s-are-at-least-length-k-places-away](https://github.com/andychen3/LeetCode/tree/master/1548-check-if-all-1s-are-at-least-length-k-places-away) |
 | [1616-minimum-difference-between-largest-and-smallest-value-in-three-moves](https://github.com/andychen3/LeetCode/tree/master/1616-minimum-difference-between-largest-and-smallest-value-in-three-moves) |
@@ -46,6 +47,7 @@ My solutions to Leetcode problems.
 | [0542-01-matrix](https://github.com/andychen3/LeetCode/tree/master/0542-01-matrix) |
 | [0777-toeplitz-matrix](https://github.com/andychen3/LeetCode/tree/master/0777-toeplitz-matrix) |
 | [1091-shortest-path-in-binary-matrix](https://github.com/andychen3/LeetCode/tree/master/1091-shortest-path-in-binary-matrix) |
+| [1293-shortest-path-in-a-grid-with-obstacles-elimination](https://github.com/andychen3/LeetCode/tree/master/1293-shortest-path-in-a-grid-with-obstacles-elimination) |
 ## Hash Table
 |  |
 | ------- |
@@ -154,6 +156,7 @@ My solutions to Leetcode problems.
 | [0841-keys-and-rooms](https://github.com/andychen3/LeetCode/tree/master/0841-keys-and-rooms) |
 | [1091-shortest-path-in-binary-matrix](https://github.com/andychen3/LeetCode/tree/master/1091-shortest-path-in-binary-matrix) |
 | [1116-maximum-level-sum-of-a-binary-tree](https://github.com/andychen3/LeetCode/tree/master/1116-maximum-level-sum-of-a-binary-tree) |
+| [1293-shortest-path-in-a-grid-with-obstacles-elimination](https://github.com/andychen3/LeetCode/tree/master/1293-shortest-path-in-a-grid-with-obstacles-elimination) |
 | [1448-count-good-nodes-in-binary-tree](https://github.com/andychen3/LeetCode/tree/master/1448-count-good-nodes-in-binary-tree) |
 | [1466-reorder-routes-to-make-all-paths-lead-to-the-city-zero](https://github.com/andychen3/LeetCode/tree/master/1466-reorder-routes-to-make-all-paths-lead-to-the-city-zero) |
 ## Binary Tree
