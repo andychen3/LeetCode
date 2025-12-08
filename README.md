@@ -31,6 +31,7 @@ My solutions to Leetcode problems.
 | [1192-divide-chocolate](https://github.com/andychen3/LeetCode/tree/master/1192-divide-chocolate) |
 | [1293-shortest-path-in-a-grid-with-obstacles-elimination](https://github.com/andychen3/LeetCode/tree/master/1293-shortest-path-in-a-grid-with-obstacles-elimination) |
 | [1370-count-number-of-nice-subarrays](https://github.com/andychen3/LeetCode/tree/master/1370-count-number-of-nice-subarrays) |
+| [1470-shuffle-the-array](https://github.com/andychen3/LeetCode/tree/master/1470-shuffle-the-array) |
 | [1548-check-if-all-1s-are-at-least-length-k-places-away](https://github.com/andychen3/LeetCode/tree/master/1548-check-if-all-1s-are-at-least-length-k-places-away) |
 | [1616-minimum-difference-between-largest-and-smallest-value-in-three-moves](https://github.com/andychen3/LeetCode/tree/master/1616-minimum-difference-between-largest-and-smallest-value-in-three-moves) |
 | [1833-find-the-highest-altitude](https://github.com/andychen3/LeetCode/tree/master/1833-find-the-highest-altitude) |
