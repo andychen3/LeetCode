@@ -13,6 +13,7 @@ My solutions to Leetcode problems.
 | [0300-longest-increasing-subsequence](https://github.com/andychen3/LeetCode/tree/master/0300-longest-increasing-subsequence) |
 | [0303-range-sum-query-immutable](https://github.com/andychen3/LeetCode/tree/master/0303-range-sum-query-immutable) |
 | [0410-split-array-largest-sum](https://github.com/andychen3/LeetCode/tree/master/0410-split-array-largest-sum) |
+| [0485-max-consecutive-ones](https://github.com/andychen3/LeetCode/tree/master/0485-max-consecutive-ones) |
 | [0496-next-greater-element-i](https://github.com/andychen3/LeetCode/tree/master/0496-next-greater-element-i) |
 | [0525-contiguous-array](https://github.com/andychen3/LeetCode/tree/master/0525-contiguous-array) |
 | [0542-01-matrix](https://github.com/andychen3/LeetCode/tree/master/0542-01-matrix) |
