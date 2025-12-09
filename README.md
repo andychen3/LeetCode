@@ -32,6 +32,7 @@ My solutions to Leetcode problems.
 | [1091-shortest-path-in-binary-matrix](https://github.com/andychen3/LeetCode/tree/master/1091-shortest-path-in-binary-matrix) |
 | [1192-divide-chocolate](https://github.com/andychen3/LeetCode/tree/master/1192-divide-chocolate) |
 | [1293-shortest-path-in-a-grid-with-obstacles-elimination](https://github.com/andychen3/LeetCode/tree/master/1293-shortest-path-in-a-grid-with-obstacles-elimination) |
+| [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/andychen3/LeetCode/tree/master/1365-how-many-numbers-are-smaller-than-the-current-number) |
 | [1370-count-number-of-nice-subarrays](https://github.com/andychen3/LeetCode/tree/master/1370-count-number-of-nice-subarrays) |
 | [1470-shuffle-the-array](https://github.com/andychen3/LeetCode/tree/master/1470-shuffle-the-array) |
 | [1548-check-if-all-1s-are-at-least-length-k-places-away](https://github.com/andychen3/LeetCode/tree/master/1548-check-if-all-1s-are-at-least-length-k-places-away) |
@@ -64,6 +65,7 @@ My solutions to Leetcode problems.
 | [0940-fruit-into-baskets](https://github.com/andychen3/LeetCode/tree/master/0940-fruit-into-baskets) |
 | [0965-unique-email-addresses](https://github.com/andychen3/LeetCode/tree/master/0965-unique-email-addresses) |
 | [1297-maximum-number-of-balloons](https://github.com/andychen3/LeetCode/tree/master/1297-maximum-number-of-balloons) |
+| [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/andychen3/LeetCode/tree/master/1365-how-many-numbers-are-smaller-than-the-current-number) |
 | [1370-count-number-of-nice-subarrays](https://github.com/andychen3/LeetCode/tree/master/1370-count-number-of-nice-subarrays) |
 | [1632-number-of-good-ways-to-split-a-string](https://github.com/andychen3/LeetCode/tree/master/1632-number-of-good-ways-to-split-a-string) |
 ## Math
@@ -94,6 +96,7 @@ My solutions to Leetcode problems.
 | ------- |
 | [0049-group-anagrams](https://github.com/andychen3/LeetCode/tree/master/0049-group-anagrams) |
 | [0645-set-mismatch](https://github.com/andychen3/LeetCode/tree/master/0645-set-mismatch) |
+| [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/andychen3/LeetCode/tree/master/1365-how-many-numbers-are-smaller-than-the-current-number) |
 | [1616-minimum-difference-between-largest-and-smallest-value-in-three-moves](https://github.com/andychen3/LeetCode/tree/master/1616-minimum-difference-between-largest-and-smallest-value-in-three-moves) |
 | [2245-destroying-asteroids](https://github.com/andychen3/LeetCode/tree/master/2245-destroying-asteroids) |
 | [2387-partition-array-such-that-maximum-difference-is-k](https://github.com/andychen3/LeetCode/tree/master/2387-partition-array-such-that-maximum-difference-is-k) |
@@ -242,4 +245,8 @@ My solutions to Leetcode problems.
 | [0547-number-of-provinces](https://github.com/andychen3/LeetCode/tree/master/0547-number-of-provinces) |
 | [0841-keys-and-rooms](https://github.com/andychen3/LeetCode/tree/master/0841-keys-and-rooms) |
 | [1466-reorder-routes-to-make-all-paths-lead-to-the-city-zero](https://github.com/andychen3/LeetCode/tree/master/1466-reorder-routes-to-make-all-paths-lead-to-the-city-zero) |
+## Counting Sort
+|  |
+| ------- |
+| [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/andychen3/LeetCode/tree/master/1365-how-many-numbers-are-smaller-than-the-current-number) |
 <!---LeetCode Topics End-->
