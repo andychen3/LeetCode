@@ -35,6 +35,7 @@ My solutions to Leetcode problems.
 | [1293-shortest-path-in-a-grid-with-obstacles-elimination](https://github.com/andychen3/LeetCode/tree/master/1293-shortest-path-in-a-grid-with-obstacles-elimination) |
 | [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/andychen3/LeetCode/tree/master/1365-how-many-numbers-are-smaller-than-the-current-number) |
 | [1370-count-number-of-nice-subarrays](https://github.com/andychen3/LeetCode/tree/master/1370-count-number-of-nice-subarrays) |
+| [1441-build-an-array-with-stack-operations](https://github.com/andychen3/LeetCode/tree/master/1441-build-an-array-with-stack-operations) |
 | [1470-shuffle-the-array](https://github.com/andychen3/LeetCode/tree/master/1470-shuffle-the-array) |
 | [1548-check-if-all-1s-are-at-least-length-k-places-away](https://github.com/andychen3/LeetCode/tree/master/1548-check-if-all-1s-are-at-least-length-k-places-away) |
 | [1616-minimum-difference-between-largest-and-smallest-value-in-three-moves](https://github.com/andychen3/LeetCode/tree/master/1616-minimum-difference-between-largest-and-smallest-value-in-three-moves) |
@@ -222,6 +223,7 @@ My solutions to Leetcode problems.
 | [0144-binary-tree-preorder-traversal](https://github.com/andychen3/LeetCode/tree/master/0144-binary-tree-preorder-traversal) |
 | [0496-next-greater-element-i](https://github.com/andychen3/LeetCode/tree/master/0496-next-greater-element-i) |
 | [0739-daily-temperatures](https://github.com/andychen3/LeetCode/tree/master/0739-daily-temperatures) |
+| [1441-build-an-array-with-stack-operations](https://github.com/andychen3/LeetCode/tree/master/1441-build-an-array-with-stack-operations) |
 | [1666-make-the-string-great](https://github.com/andychen3/LeetCode/tree/master/1666-make-the-string-great) |
 ## Design
 |  |
@@ -251,4 +253,8 @@ My solutions to Leetcode problems.
 |  |
 | ------- |
 | [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/andychen3/LeetCode/tree/master/1365-how-many-numbers-are-smaller-than-the-current-number) |
+## Simulation
+|  |
+| ------- |
+| [1441-build-an-array-with-stack-operations](https://github.com/andychen3/LeetCode/tree/master/1441-build-an-array-with-stack-operations) |
 <!---LeetCode Topics End-->
