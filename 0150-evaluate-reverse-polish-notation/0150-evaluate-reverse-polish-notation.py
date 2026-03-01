@@ -1,8 +1,7 @@
-import math
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
         stack = []
-        operations = {"-": lambda x,y : x - y, "+": lambda x,y: x + y, "/": lambda x, y: math.trunc(x / y), "*": lambda x, y: x * y }
+        operations = {"-": lambda x,y : x - y, "+": lambda x,y: x + y, "/": lambda x, y: int(x / y), "*": lambda x, y: x * y }
 
         for token in tokens:
             if token in "-+/*":
