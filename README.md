@@ -6,6 +6,7 @@ My solutions to Leetcode problems.
 ## Array
 |  |
 | ------- |
+| [0001-two-sum](https://github.com/andychen3/LeetCode/tree/master/0001-two-sum) |
 | [0035-search-insert-position](https://github.com/andychen3/LeetCode/tree/master/0035-search-insert-position) |
 | [0049-group-anagrams](https://github.com/andychen3/LeetCode/tree/master/0049-group-anagrams) |
 | [0074-search-a-2d-matrix](https://github.com/andychen3/LeetCode/tree/master/0074-search-a-2d-matrix) |
@@ -59,6 +60,7 @@ My solutions to Leetcode problems.
 ## Hash Table
 |  |
 | ------- |
+| [0001-two-sum](https://github.com/andychen3/LeetCode/tree/master/0001-two-sum) |
 | [0003-longest-substring-without-repeating-characters](https://github.com/andychen3/LeetCode/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0049-group-anagrams](https://github.com/andychen3/LeetCode/tree/master/0049-group-anagrams) |
 | [0448-find-all-numbers-disappeared-in-an-array](https://github.com/andychen3/LeetCode/tree/master/0448-find-all-numbers-disappeared-in-an-array) |
