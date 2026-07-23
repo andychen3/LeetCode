@@ -121,6 +121,7 @@ My solutions to Leetcode problems.
 | [0344-reverse-string](https://github.com/andychen3/LeetCode/tree/master/0344-reverse-string) |
 | [0482-license-key-formatting](https://github.com/andychen3/LeetCode/tree/master/0482-license-key-formatting) |
 | [0965-unique-email-addresses](https://github.com/andychen3/LeetCode/tree/master/0965-unique-email-addresses) |
+| [1047-remove-all-adjacent-duplicates-in-string](https://github.com/andychen3/LeetCode/tree/master/1047-remove-all-adjacent-duplicates-in-string) |
 | [1297-maximum-number-of-balloons](https://github.com/andychen3/LeetCode/tree/master/1297-maximum-number-of-balloons) |
 | [1632-number-of-good-ways-to-split-a-string](https://github.com/andychen3/LeetCode/tree/master/1632-number-of-good-ways-to-split-a-string) |
 | [1666-make-the-string-great](https://github.com/andychen3/LeetCode/tree/master/1666-make-the-string-great) |
@@ -235,6 +236,7 @@ My solutions to Leetcode problems.
 | [0150-evaluate-reverse-polish-notation](https://github.com/andychen3/LeetCode/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0496-next-greater-element-i](https://github.com/andychen3/LeetCode/tree/master/0496-next-greater-element-i) |
 | [0739-daily-temperatures](https://github.com/andychen3/LeetCode/tree/master/0739-daily-temperatures) |
+| [1047-remove-all-adjacent-duplicates-in-string](https://github.com/andychen3/LeetCode/tree/master/1047-remove-all-adjacent-duplicates-in-string) |
 | [1441-build-an-array-with-stack-operations](https://github.com/andychen3/LeetCode/tree/master/1441-build-an-array-with-stack-operations) |
 | [1666-make-the-string-great](https://github.com/andychen3/LeetCode/tree/master/1666-make-the-string-great) |
 ## Design
