@@ -1,12 +1,14 @@
+
 class Solution:
     def removeDuplicates(self, s: str) -> str:
         stack = []
-        
-        for c in s:
-            if stack:
-                if stack[-1] == c:
-                    stack.pop()
-                    continue
-            stack.append(c)
-                
+
+        for char in s:
+            if not stack:
+                stack.append(char)
+            elif stack[-1] == char:
+                stack.pop()
+            else:
+                stack.append(char)
+
         return "".join(stack)
