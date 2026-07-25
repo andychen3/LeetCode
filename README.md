@@ -80,6 +80,7 @@ My solutions to Leetcode problems.
 |  |
 | ------- |
 | [0150-evaluate-reverse-polish-notation](https://github.com/andychen3/LeetCode/tree/master/0150-evaluate-reverse-polish-notation) |
+| [0412-fizz-buzz](https://github.com/andychen3/LeetCode/tree/master/0412-fizz-buzz) |
 | [0509-fibonacci-number](https://github.com/andychen3/LeetCode/tree/master/0509-fibonacci-number) |
 | [1370-count-number-of-nice-subarrays](https://github.com/andychen3/LeetCode/tree/master/1370-count-number-of-nice-subarrays) |
 | [3432-count-partitions-with-even-sum-difference](https://github.com/andychen3/LeetCode/tree/master/3432-count-partitions-with-even-sum-difference) |
@@ -119,6 +120,7 @@ My solutions to Leetcode problems.
 | [0003-longest-substring-without-repeating-characters](https://github.com/andychen3/LeetCode/tree/master/0003-longest-substring-without-repeating-characters) |
 | [0049-group-anagrams](https://github.com/andychen3/LeetCode/tree/master/0049-group-anagrams) |
 | [0344-reverse-string](https://github.com/andychen3/LeetCode/tree/master/0344-reverse-string) |
+| [0412-fizz-buzz](https://github.com/andychen3/LeetCode/tree/master/0412-fizz-buzz) |
 | [0482-license-key-formatting](https://github.com/andychen3/LeetCode/tree/master/0482-license-key-formatting) |
 | [0965-unique-email-addresses](https://github.com/andychen3/LeetCode/tree/master/0965-unique-email-addresses) |
 | [1047-remove-all-adjacent-duplicates-in-string](https://github.com/andychen3/LeetCode/tree/master/1047-remove-all-adjacent-duplicates-in-string) |
@@ -270,6 +272,7 @@ My solutions to Leetcode problems.
 ## Simulation
 |  |
 | ------- |
+| [0412-fizz-buzz](https://github.com/andychen3/LeetCode/tree/master/0412-fizz-buzz) |
 | [1441-build-an-array-with-stack-operations](https://github.com/andychen3/LeetCode/tree/master/1441-build-an-array-with-stack-operations) |
 ## Recursion
 |  |
