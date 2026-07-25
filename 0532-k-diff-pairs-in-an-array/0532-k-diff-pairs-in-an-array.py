@@ -1,13 +1,15 @@
-
+from collections import Counter
 class Solution:
     def findPairs(self, nums: List[int], k: int) -> int:
-        n = len(nums)
-        unique_set = set()
+        freq = Counter(nums)
+        count = 0
 
-        for i, num in enumerate(nums):
-            for second_num in range(i + 1, n):
-                if abs(num - nums[second_num]) == k and (num, nums[second_num]) not in unique_set:
-                    pair = (min(num, nums[second_num]), max(num, nums[second_num]))
-                    unique_set.add(pair)
-
-        return len(unique_set)
+        if k == 0:
+            for num in freq.values():
+                if num >= 2:
+                    count += 1
+        else:
+            for num in freq:
+                if num + k in freq:
+                    count += 1
+        return count
