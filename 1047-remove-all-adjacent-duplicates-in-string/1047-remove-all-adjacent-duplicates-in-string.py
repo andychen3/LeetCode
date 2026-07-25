@@ -1,4 +1,3 @@
-
 class Solution:
     def removeDuplicates(self, s: str) -> str:
         stack = []
@@ -10,5 +9,5 @@ class Solution:
                 stack.pop()
             else:
                 stack.append(char)
-
+        
         return "".join(stack)
